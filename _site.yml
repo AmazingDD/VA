@@ -1,0 +1,19 @@
+name: "VA"
+title: "VA Exercises"
+description: |
+  VA Exercises
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+  left:
+    - text: "Take-home Exercise"
+      menu:
+      - text: "Exercise 1"
+        href: "Exe1"
+      - text: "Exercise 2"
+        href: "Exe2"
+output: distill::distill_article

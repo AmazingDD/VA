@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "This website contains many exercises I did in IS603 visual analytics class duting my MITB(AI) journey. I hope you enjoy reading them!",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-04-21T00:12:52+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "VA Exercises",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-04-21T00:09:54+08:00"
+    }
+  ],
+  "collections": []
+}
