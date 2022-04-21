@@ -1,0 +1,32 @@
+---
+title: "Exercise 1"
+description: |
+  Take the data from VAST challenge, used the data collected from volunteers to evaluate the city's demographics.
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r,include=FALSE}
+df<-read.csv('./data/Participants.csv')
+head(df)
+```
+
+
+## Demographics
+
+```{r pressure, echo=FALSE}
+ggplot(data=df)+aes(householdSize)+geom_bar()
+ggplot(data=df)+aes(haveKids)+geom_bar()
+ggplot(data=df,aes(x=age,fill=haveKids))+geom_histogram(binwidth = 5)
+ggplot(data=df)+aes(educationLevel,fill=haveKids)+geom_bar()
+ggplot(data=df)+aes(interestGroup)+geom_bar()
+ggplot(data=df)+aes(joviality)+geom_density()
+ggplot(data=df,aes(x=joviality,colour=haveKids))+geom_density()
+ggplot(data=df,aes(x=joviality,colour=interestGroup))+geom_density()
+```
+

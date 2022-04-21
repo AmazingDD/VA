@@ -13,7 +13,7 @@ navbar:
     - text: "Take-home Exercise"
       menu:
       - text: "Exercise 1"
-        href: "Exe1"
+        href: Exe1.html
       - text: "Exercise 2"
-        href: "Exe2"
+        href: Exe2.html
 output: distill::distill_article

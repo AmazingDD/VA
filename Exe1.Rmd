@@ -1,0 +1,39 @@
+---
+title: "Take Home Exercise 1"
+description: |
+  Take the data from VAST challenge and use the data collected from volunteers to evaluate the city's demographics.
+---
+
+
+## Task Description
+  
+  This exercise requires us to apply the skills you had learned in Lesson 1 and Hands-on Exercise 1 to reveal the demographic of the city of Engagement, Ohio USA by using appropriate static statistical graphics methods. The data should be processed by using appropriate tidyverse family of packages and the statistical graphics must be prepared using ggplot2 and its extensions.
+  
+## Load Data
+
+```{r load data, echo=TRUE}
+library(tidyverse)
+library(ggplot2)
+data <- read_csv('data/Participants.csv')
+glimpse(data)
+```
+
+## Graphics with ggplot2
+
+```{r age distribution, echo=TRUE}
+ggplot(data=data, aes(x=age)) +
+  geom_histogram(bins=20, boundary=60, color="black", fill="grey") +
+  ggtitle("Distribution of Participants' Age")
+
+ggplot(data=data, aes(x=age, fill=haveKids)) +
+  geom_histogram(bins=20, color='gray30')
+
+ggplot(data=data, aes(x=age, fill=educationLevel)) +
+  geom_histogram(bins=20, color='gray30')
+```
+
+From this histogram, we can find that the age distribution of participants are quite uniform, so there will not be any age bias problems in the future.(More details)
+
+
+
+
