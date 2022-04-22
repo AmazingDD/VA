@@ -20,8 +20,10 @@ glimpse(data)
 
 ## Graphics with ggplot2
 
+Now we can dive into the age atribute:
+
 ```{r age distribution, echo=TRUE}
-ggplot(data=data, aes(x=age)) +
+ggplot(data=data) + aes(x=age) +
   geom_histogram(bins=20, boundary=60, color="black", fill="grey") +
   ggtitle("Distribution of Participants' Age")
 
@@ -30,10 +32,30 @@ ggplot(data=data, aes(x=age, fill=haveKids)) +
 
 ggplot(data=data, aes(x=age, fill=educationLevel)) +
   geom_histogram(bins=20, color='gray30')
+
 ```
 
-From this histogram, we can find that the age distribution of participants are quite uniform, so there will not be any age bias problems in the future.(More details)
+To see more about joviality:
+
+```{r echo=TRUE}
+ggplot(data=data, aes(x = joviality, colour=haveKids)) + geom_density()
+
+ggplot(data=data, aes(y = joviality, x= haveKids)) + 
+  geom_violin(fill='light blue') + 
+  geom_boxplot(notch=TRUE) +
+  stat_summary(geom = "point", fun="mean", colour ="red", size=4)
+
+ggplot(data=data, aes(x= joviality)) + geom_histogram(bins=20) + 
+  facet_wrap(~ educationLevel)
+
+ggplot(data=data, aes(y = joviality, x= interestGroup)) + geom_boxplot() +
+  facet_grid(educationLevel ~.)
+```
 
 
+```{r}
+ggplot(data=data, aes(x=householdSize)) + geom_bar() + coord_flip()
+
+```
 
 
