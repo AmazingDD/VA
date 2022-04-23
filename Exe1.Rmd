@@ -4,10 +4,28 @@ description: |
   Take the data from VAST challenge and use the data collected from volunteers to evaluate the city's demographics.
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      warning = FALSE, 
+                      message = FALSE)
+```
 
 ## Task Description
   
   This exercise requires us to apply the skills you had learned in Lesson 1 and Hands-on Exercise 1 to reveal the demographic of the city of Engagement, Ohio USA by using appropriate static statistical graphics methods. The data should be processed by using appropriate tidyverse family of packages and the statistical graphics must be prepared using ggplot2 and its extensions.
+  
+
+```{r echo=FALSE}
+packages = c('tidyverse', 'ggplot2', 'dplyr')
+
+for(p in packages) {
+  if(!require(p, character.only = T)) {
+    install.packages(p)
+  }
+  library(p, character.only = T)
+}
+```
   
 ## Load Data
 
