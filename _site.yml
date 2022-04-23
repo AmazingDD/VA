@@ -16,4 +16,10 @@ navbar:
         href: Exe1.html
       - text: "Exercise 2"
         href: Exe2.html
+    - text: "DataVis Makeover"
+      menu: 
+      - text: "Makeover1"
+        href: "Makeover"
+      - text: "Makeover2"
+        href: "Makeover"
 output: distill::distill_article
