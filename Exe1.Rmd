@@ -1,5 +1,8 @@
 ---
 title: "Take Home Exercise 1"
+author:
+- name: "Yu Di"
+  affiliation: "Singapore Management University"
 description: |
   Take the data from VAST challenge and use the data collected from volunteers to evaluate the city's demographics.
 ---
@@ -16,7 +19,9 @@ knitr::opts_chunk$set(echo = TRUE,
   This exercise requires us to apply the skills you had learned in Lesson 1 and Hands-on Exercise 1 to reveal the demographic of the city of Engagement, Ohio USA by using appropriate static statistical graphics methods. The data should be processed by using appropriate tidyverse family of packages and the statistical graphics must be prepared using ggplot2 and its extensions.
   
 
-```{r echo=FALSE}
+## Check packages
+
+```{r echo=TRUE}
 packages = c('tidyverse', 'ggplot2', 'dplyr')
 
 for(p in packages) {
@@ -51,6 +56,15 @@ ggplot(data=data, aes(x=age, fill=haveKids)) +
 ggplot(data=data, aes(x=age, fill=educationLevel)) +
   geom_histogram(bins=20, color='gray30')
 
+
+d <- data
+d_bg <- d[, -5]
+ggplot(d, aes(x = age, fill = educationLevel)) + 
+  geom_histogram(data=d_bg, fill="grey", alpha=.5) +
+  geom_histogram(colour="black") + 
+  facet_wrap(~ educationLevel) + 
+  guides(fill = FALSE) + 
+  theme_bw()
 ```
 
 To see more about joviality:
@@ -68,12 +82,22 @@ ggplot(data=data, aes(x= joviality)) + geom_histogram(bins=20) +
 
 ggplot(data=data, aes(y = joviality, x= interestGroup)) + geom_boxplot() +
   facet_grid(educationLevel ~.)
+
+dpp <- data %>%
+  group_by(age) %>%
+  summarise(joviality = mean(joviality))
+ggplot(data=dpp, aes(x=age, y=joviality)) + geom_point() +
+  coord_cartesian(xlim=c(20, 60), ylim=c(0, 1)) + 
+  geom_hline(yintercept=0.5, linetype="dashed", color="grey60", size=1) +  
+  geom_vline(xintercept=40, linetype="dashed", color="grey60", size=1)
 ```
 
+
+Now, we can just find out the counts of householdSize types:
 
 ```{r}
 ggplot(data=data, aes(x=householdSize)) + geom_bar() + coord_flip()
-
 ```
+
 
 
