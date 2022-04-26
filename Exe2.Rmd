@@ -36,7 +36,7 @@ for(p in packages) {
 participants_data <- read_csv('data/Participants.csv')
 ```
 
-I choose Huang Anni's exercise to do this exercise 2.
+I choose **Huang Anni's exercise 1** to do this exercise 2.
 
 ## Charts to Modify
 
