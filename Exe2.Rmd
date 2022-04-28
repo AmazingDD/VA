@@ -74,17 +74,37 @@ geom_density(alpha=0.2) +
   scale_y_continuous(name="density", limits=c(0.0, 1.2)))
 ```
 
-The left part's meaning is the same as the right one, both want to compare the joviality of different age groups. So we just simplify this graph
+The left part's meaning is the same as the right one, both want to compare the joviality of different age groups, but we need to show what is the meaning of old and young. Also, the titles in the left part is redundant, so we need to eliminate them. hence we just simplify this graph
 
 ```{r}
-ggplot(data=participants_data,
+participants_data$age_state = ifelse(
+    test = participants_data$age > 30,
+    yes = "Old(age>30)",
+    no = "Young(age<=30)"
+)
+# Make it a factor
+participants_data$age_state = factor(
+    participants_data$age_state,
+    levels = c("Old(age>30)", "Young(age<=30)")
+)
+p1 = ggplot(data=subset(participants_data,age_state=='Young(age<=30)'), 
+       aes(x = joviality)) + 
+  geom_density() +
+  theme(plot.title = element_text(size = 10)) 
+p2 = ggplot(data=subset(participants_data,age_state=='Old(age>30)'), 
+       aes(x = joviality)) + 
+  geom_density() +
+  theme(plot.title = element_text(size = 10))
+p3 = ggplot(data=participants_data,
 aes(x= joviality,
 fill = age_state)) +
 geom_density(alpha=0.2) + coord_cartesian(ylim = c(0.3, 1.2)) +
-  annotate("text", x = 0.8, y = 1.15, label = "Young people are happier",size=5,color='#4682B4') +
-  ggtitle("Distribution of joviality (Old: Age>30, Young: Age<30)") +
-  theme_ipsum(grid = "Y", axis_title_size = 18) + 
-  theme(plot.title = element_text(size = 15), axis.title.y = element_blank())
+  ggtitle("Distribution of joviality with Different Age Group") +
+  theme_ipsum(grid = "Y", axis_title_size = 14) + 
+  theme(plot.title = element_text(size = 10), 
+        axis.title.y = element_blank(), legend.position = "top")
+(p1 / p2) | (p3+
+  scale_y_continuous(name="density", limits=c(0.0, 1.2)))
 ```
 
 For the second chart
@@ -139,7 +159,8 @@ agg_happy$joviality <- round(agg_happy$joviality, 3)
 ggplot(data=agg_happy, aes(x=householdSize, y=joviality)) + 
   geom_bar(stat = "identity", width = 0.5, fill="steelblue") +
   coord_cartesian(ylim = c(0.45, 0.51)) + 
-  ggtitle("Average Joviality for different HouseholdSize")+
+  ggtitle("Average Joviality for different HouseholdSize") +
+  scale_x_discrete(name ="householdSize", limits=c("1","2","3")) +
   geom_text(aes(label = joviality), vjust = 1.5, colour = "white")+
   theme_ipsum(grid = "Y", axis_title_size = 18) + 
   theme(plot.title = element_text(size = 15), axis.title.y = element_blank())
@@ -160,10 +181,10 @@ ggplot(participants_data, aes(x = joviality, y = educationLevel, fill = educatio
   theme(plot.title = element_text(size = 12))
 ```
 
-the expression is correct, but the legend takes almost half of the plot, which is not very reasonable, so I just simply modify it by:
+the expression is correct, but the legend takes almost half of the plot, which is not very reasonable. Also,we need to avoid using multiple colours if the y-axis label already clearly indicate the education level and edit the axis label properly.. So I just simply modify it by:
 
 ```{r}
-ggplot(participants_data, aes(x = joviality, y = educationLevel, fill = educationLevel)) +
+ggplot(participants_data, aes(x = joviality, y = educationLevel)) +
   geom_density_ridges(geom = "density_ridges_gradient", 
                       calc_ecdf = TRUE,
                       quantiles = 4, 
