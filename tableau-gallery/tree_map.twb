@@ -1,0 +1,909 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20221.22.0324.2209                               -->
+<workbook original-version='18.1' source-build='2022.1.0 (20221.22.0324.2209)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='GDP' inline='true' name='federated.0tln8h60e7p44z13m4uzs029gb4j' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='GDP' name='textscan.01xr0jz1f0c3ho1dqye7e01qkl3b'>
+            <connection class='textclean' cleaning='yes' compat='no' csvFile='/Users/diyu/Desktop/VA/data/GDP.csv' dataRefreshTime='' directory='/Users/diyu/Desktop/VA/data' filename='/var/folders/rr/39_bdgkn65x8s0hnd0959bpc0000gn/T/tableau-temp/18jhwdt11mawae1c6551k1jrer0s/GDP.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='date' date-parse-format='yyyy' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[2000]' />
+            <value name='[2001]' />
+            <value name='[2002]' />
+            <value name='[2003]' />
+            <value name='[2004]' />
+            <value name='[2005]' />
+            <value name='[2006]' />
+            <value name='[2007]' />
+            <value name='[2008]' />
+            <value name='[2009]' />
+            <value name='[2010]' />
+            <value name='[2011]' />
+            <value name='[2012]' />
+            <value name='[2013]' />
+            <value name='[2014]' />
+            <value name='[2015]' />
+            <value name='[2016]' />
+            <value name='[2017]' />
+            <value name='[2018]' />
+            <value name='[2019]' />
+            <value name='[2020]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[GDP.csv].[2000]' />
+              <field name='[GDP.csv].[2001]' />
+              <field name='[GDP.csv].[2002]' />
+              <field name='[GDP.csv].[2003]' />
+              <field name='[GDP.csv].[2004]' />
+              <field name='[GDP.csv].[2005]' />
+              <field name='[GDP.csv].[2006]' />
+              <field name='[GDP.csv].[2007]' />
+              <field name='[GDP.csv].[2008]' />
+              <field name='[GDP.csv].[2009]' />
+              <field name='[GDP.csv].[2010]' />
+              <field name='[GDP.csv].[2011]' />
+              <field name='[GDP.csv].[2012]' />
+              <field name='[GDP.csv].[2013]' />
+              <field name='[GDP.csv].[2014]' />
+              <field name='[GDP.csv].[2015]' />
+              <field name='[GDP.csv].[2016]' />
+              <field name='[GDP.csv].[2017]' />
+              <field name='[GDP.csv].[2018]' />
+              <field name='[GDP.csv].[2019]' />
+              <field name='[GDP.csv].[2020]' />
+            </group>
+          </groups>
+          <relation connection='textscan.01xr0jz1f0c3ho1dqye7e01qkl3b' name='GDP.csv' table='[GDP#csv$]' type='table'>
+            <columns character-set='UTF-8' gridOrigin='A1:Y649:no:A1:Y649:1' header='no' locale='en_US' separator=','>
+              <column datatype='string' name='Country Name' ordinal='0' />
+              <column datatype='string' name='Country Code' ordinal='1' />
+              <column datatype='string' name='Series Name' ordinal='2' />
+              <column datatype='string' name='Series Code' ordinal='3' />
+              <column datatype='real' name='2000' ordinal='4' />
+              <column datatype='real' name='2001' ordinal='5' />
+              <column datatype='real' name='2002' ordinal='6' />
+              <column datatype='real' name='2003' ordinal='7' />
+              <column datatype='real' name='2004' ordinal='8' />
+              <column datatype='real' name='2005' ordinal='9' />
+              <column datatype='real' name='2006' ordinal='10' />
+              <column datatype='real' name='2007' ordinal='11' />
+              <column datatype='real' name='2008' ordinal='12' />
+              <column datatype='real' name='2009' ordinal='13' />
+              <column datatype='real' name='2010' ordinal='14' />
+              <column datatype='real' name='2011' ordinal='15' />
+              <column datatype='real' name='2012' ordinal='16' />
+              <column datatype='real' name='2013' ordinal='17' />
+              <column datatype='real' name='2014' ordinal='18' />
+              <column datatype='real' name='2015' ordinal='19' />
+              <column datatype='real' name='2016' ordinal='20' />
+              <column datatype='real' name='2017' ordinal='21' />
+              <column datatype='real' name='2018' ordinal='22' />
+              <column datatype='real' name='2019' ordinal='23' />
+              <column datatype='real' name='2020' ordinal='24' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation name='Pivot' type='pivot'>
+            <columns>
+              <column datatype='date' date-parse-format='yyyy' name='Pivot Field Names' />
+              <column datatype='real' name='Pivot Field Values' />
+            </columns>
+            <tag name='Pivot Field Names'>
+              <value name='[2000]' />
+              <value name='[2001]' />
+              <value name='[2002]' />
+              <value name='[2003]' />
+              <value name='[2004]' />
+              <value name='[2005]' />
+              <value name='[2006]' />
+              <value name='[2007]' />
+              <value name='[2008]' />
+              <value name='[2009]' />
+              <value name='[2010]' />
+              <value name='[2011]' />
+              <value name='[2012]' />
+              <value name='[2013]' />
+              <value name='[2014]' />
+              <value name='[2015]' />
+              <value name='[2016]' />
+              <value name='[2017]' />
+              <value name='[2018]' />
+              <value name='[2019]' />
+              <value name='[2020]' />
+            </tag>
+            <groups>
+              <group name='Pivot Field Values'>
+                <field name='[GDP.csv].[2000]' />
+                <field name='[GDP.csv].[2001]' />
+                <field name='[GDP.csv].[2002]' />
+                <field name='[GDP.csv].[2003]' />
+                <field name='[GDP.csv].[2004]' />
+                <field name='[GDP.csv].[2005]' />
+                <field name='[GDP.csv].[2006]' />
+                <field name='[GDP.csv].[2007]' />
+                <field name='[GDP.csv].[2008]' />
+                <field name='[GDP.csv].[2009]' />
+                <field name='[GDP.csv].[2010]' />
+                <field name='[GDP.csv].[2011]' />
+                <field name='[GDP.csv].[2012]' />
+                <field name='[GDP.csv].[2013]' />
+                <field name='[GDP.csv].[2014]' />
+                <field name='[GDP.csv].[2015]' />
+                <field name='[GDP.csv].[2016]' />
+                <field name='[GDP.csv].[2017]' />
+                <field name='[GDP.csv].[2018]' />
+                <field name='[GDP.csv].[2019]' />
+                <field name='[GDP.csv].[2020]' />
+              </group>
+            </groups>
+            <relation connection='textscan.01xr0jz1f0c3ho1dqye7e01qkl3b' name='GDP.csv' table='[GDP#csv$]' type='table'>
+              <columns character-set='UTF-8' gridOrigin='A1:Y649:no:A1:Y649:1' header='no' locale='en_US' separator=','>
+                <column datatype='string' name='Country Name' ordinal='0' />
+                <column datatype='string' name='Country Code' ordinal='1' />
+                <column datatype='string' name='Series Name' ordinal='2' />
+                <column datatype='string' name='Series Code' ordinal='3' />
+                <column datatype='real' name='2000' ordinal='4' />
+                <column datatype='real' name='2001' ordinal='5' />
+                <column datatype='real' name='2002' ordinal='6' />
+                <column datatype='real' name='2003' ordinal='7' />
+                <column datatype='real' name='2004' ordinal='8' />
+                <column datatype='real' name='2005' ordinal='9' />
+                <column datatype='real' name='2006' ordinal='10' />
+                <column datatype='real' name='2007' ordinal='11' />
+                <column datatype='real' name='2008' ordinal='12' />
+                <column datatype='real' name='2009' ordinal='13' />
+                <column datatype='real' name='2010' ordinal='14' />
+                <column datatype='real' name='2011' ordinal='15' />
+                <column datatype='real' name='2012' ordinal='16' />
+                <column datatype='real' name='2013' ordinal='17' />
+                <column datatype='real' name='2014' ordinal='18' />
+                <column datatype='real' name='2015' ordinal='19' />
+                <column datatype='real' name='2016' ordinal='20' />
+                <column datatype='real' name='2017' ordinal='21' />
+                <column datatype='real' name='2018' ordinal='22' />
+                <column datatype='real' name='2019' ordinal='23' />
+                <column datatype='real' name='2020' ordinal='24' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.01xr0jz1f0c3ho1dqye7e01qkl3b' name='WorldCountry.csv' table='[WorldCountry#csv$]' type='table'>
+            <columns gridOrigin='A1:G251:no:A1:G251:1'>
+              <column datatype='integer' name='No' ordinal='0' />
+              <column datatype='string' name='Country or Area' ordinal='1' />
+              <column datatype='string' name='ISO-alpha3 Code' ordinal='2' />
+              <column datatype='integer' name='M49 Code' ordinal='3' />
+              <column datatype='string' name='Region 1' ordinal='4' />
+              <column datatype='string' name='Region 2' ordinal='5' />
+              <column datatype='string' name='Continent' ordinal='6' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[GDP.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Y649:no:A1:Y649:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>12678</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:G251:no:A1:G251:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>500</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country Name]</local-name>
+            <parent-name>[GDP.csv]</parent-name>
+            <remote-alias>Country Name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country Code</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country Code]</local-name>
+            <parent-name>[GDP.csv]</parent-name>
+            <remote-alias>Country Code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Series Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Series Name]</local-name>
+            <parent-name>[GDP.csv]</parent-name>
+            <remote-alias>Series Name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Series Code</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Series Code]</local-name>
+            <parent-name>[GDP.csv]</parent-name>
+            <remote-alias>Series Code</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>No</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[No]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>No</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country or Area</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country or Area]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>Country or Area</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ISO-alpha3 Code</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ISO-alpha3 Code]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>ISO-alpha3 Code</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M49 Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[M49 Code]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>M49 Code</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region 1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Region 1]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>Region 1</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region 2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Region 2]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>Region 2</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Continent</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Continent]</local-name>
+            <parent-name>[WorldCountry.csv]</parent-name>
+            <remote-alias>Continent</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='GDP' datatype='real' name='[Calculation_2891170252504555520]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Series Name] = &quot;GDP (current US$)&quot;&#10;THEN [Pivot Field Values]&#10;END' />
+      </column>
+      <column datatype='string' name='[Continent]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column datatype='string' name='[Country Code]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country Name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country or Area]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[M49 Code]' role='dimension' type='ordinal' />
+      <column caption='Year' datatype='date' name='[Pivot Field Names]' role='dimension' type='ordinal' />
+      <column caption='Values' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='GDP.csv' datatype='table' name='[__tableau_internal_object_id__].[GDP.csv_12AA7098E67B409BB1C9DABF0E335166]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='WorldCountry.csv' datatype='table' name='[__tableau_internal_object_id__].[WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F]' role='measure' type='quantitative' />
+      <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Continent:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Africa&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;North America&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Europe&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;South America&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Asia&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Oceania&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Antarctica&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='GDP.csv' id='GDP.csv_12AA7098E67B409BB1C9DABF0E335166'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='date' date-parse-format='yyyy' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[2000]' />
+                  <value name='[2001]' />
+                  <value name='[2002]' />
+                  <value name='[2003]' />
+                  <value name='[2004]' />
+                  <value name='[2005]' />
+                  <value name='[2006]' />
+                  <value name='[2007]' />
+                  <value name='[2008]' />
+                  <value name='[2009]' />
+                  <value name='[2010]' />
+                  <value name='[2011]' />
+                  <value name='[2012]' />
+                  <value name='[2013]' />
+                  <value name='[2014]' />
+                  <value name='[2015]' />
+                  <value name='[2016]' />
+                  <value name='[2017]' />
+                  <value name='[2018]' />
+                  <value name='[2019]' />
+                  <value name='[2020]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[GDP.csv].[2000]' />
+                    <field name='[GDP.csv].[2001]' />
+                    <field name='[GDP.csv].[2002]' />
+                    <field name='[GDP.csv].[2003]' />
+                    <field name='[GDP.csv].[2004]' />
+                    <field name='[GDP.csv].[2005]' />
+                    <field name='[GDP.csv].[2006]' />
+                    <field name='[GDP.csv].[2007]' />
+                    <field name='[GDP.csv].[2008]' />
+                    <field name='[GDP.csv].[2009]' />
+                    <field name='[GDP.csv].[2010]' />
+                    <field name='[GDP.csv].[2011]' />
+                    <field name='[GDP.csv].[2012]' />
+                    <field name='[GDP.csv].[2013]' />
+                    <field name='[GDP.csv].[2014]' />
+                    <field name='[GDP.csv].[2015]' />
+                    <field name='[GDP.csv].[2016]' />
+                    <field name='[GDP.csv].[2017]' />
+                    <field name='[GDP.csv].[2018]' />
+                    <field name='[GDP.csv].[2019]' />
+                    <field name='[GDP.csv].[2020]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.01xr0jz1f0c3ho1dqye7e01qkl3b' name='GDP.csv' table='[GDP#csv$]' type='table'>
+                  <columns character-set='UTF-8' gridOrigin='A1:Y649:no:A1:Y649:1' header='no' locale='en_US' separator=','>
+                    <column datatype='string' name='Country Name' ordinal='0' />
+                    <column datatype='string' name='Country Code' ordinal='1' />
+                    <column datatype='string' name='Series Name' ordinal='2' />
+                    <column datatype='string' name='Series Code' ordinal='3' />
+                    <column datatype='real' name='2000' ordinal='4' />
+                    <column datatype='real' name='2001' ordinal='5' />
+                    <column datatype='real' name='2002' ordinal='6' />
+                    <column datatype='real' name='2003' ordinal='7' />
+                    <column datatype='real' name='2004' ordinal='8' />
+                    <column datatype='real' name='2005' ordinal='9' />
+                    <column datatype='real' name='2006' ordinal='10' />
+                    <column datatype='real' name='2007' ordinal='11' />
+                    <column datatype='real' name='2008' ordinal='12' />
+                    <column datatype='real' name='2009' ordinal='13' />
+                    <column datatype='real' name='2010' ordinal='14' />
+                    <column datatype='real' name='2011' ordinal='15' />
+                    <column datatype='real' name='2012' ordinal='16' />
+                    <column datatype='real' name='2013' ordinal='17' />
+                    <column datatype='real' name='2014' ordinal='18' />
+                    <column datatype='real' name='2015' ordinal='19' />
+                    <column datatype='real' name='2016' ordinal='20' />
+                    <column datatype='real' name='2017' ordinal='21' />
+                    <column datatype='real' name='2018' ordinal='22' />
+                    <column datatype='real' name='2019' ordinal='23' />
+                    <column datatype='real' name='2020' ordinal='24' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+          <object caption='WorldCountry.csv' id='WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F'>
+            <properties context=''>
+              <relation connection='textscan.01xr0jz1f0c3ho1dqye7e01qkl3b' name='WorldCountry.csv' table='[WorldCountry#csv$]' type='table'>
+                <columns gridOrigin='A1:G251:no:A1:G251:1'>
+                  <column datatype='integer' name='No' ordinal='0' />
+                  <column datatype='string' name='Country or Area' ordinal='1' />
+                  <column datatype='string' name='ISO-alpha3 Code' ordinal='2' />
+                  <column datatype='integer' name='M49 Code' ordinal='3' />
+                  <column datatype='string' name='Region 1' ordinal='4' />
+                  <column datatype='string' name='Region 2' ordinal='5' />
+                  <column datatype='string' name='Continent' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Country Code]' />
+              <expression op='[ISO-alpha3 Code]' />
+            </expression>
+            <first-end-point object-id='GDP.csv_12AA7098E67B409BB1C9DABF0E335166' />
+            <second-end-point object-id='WorldCountry.csv_D3AB533CA5694741A85BDB0C63E10E1F' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='GDP' name='federated.0tln8h60e7p44z13m4uzs029gb4j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tln8h60e7p44z13m4uzs029gb4j'>
+            <column caption='GDP' datatype='real' name='[Calculation_2891170252504555520]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Series Name] = &quot;GDP (current US$)&quot;&#10;THEN [Pivot Field Values]&#10;END' />
+            </column>
+            <column datatype='string' name='[Continent]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column datatype='string' name='[Country or Area]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Year' datatype='date' name='[Pivot Field Names]' role='dimension' type='ordinal' />
+            <column caption='Values' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Series Name]' role='dimension' type='nominal' />
+            <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country or Area]' derivation='None' name='[none:Country or Area:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2891170252504555520]' derivation='Sum' name='[sum:Calculation_2891170252504555520:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Names]' derivation='Year' name='[yr:Pivot Field Names:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0tln8h60e7p44z13m4uzs029gb4j].[sum:Calculation_2891170252504555520:qk]' />
+              <color column='[federated.0tln8h60e7p44z13m4uzs029gb4j].[none:Continent:nk]' />
+              <text column='[federated.0tln8h60e7p44z13m4uzs029gb4j].[none:Country or Area:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <pages>
+          <column>[federated.0tln8h60e7p44z13m4uzs029gb4j].[yr:Pivot Field Names:ok]</column>
+        </pages>
+      </table>
+      <simple-id uuid='{BF6A74B5-1122-4DC3-B6FE-3C95001E3236}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0tln8h60e7p44z13m4uzs029gb4j].[none:Continent:nk]' type='color' />
+            <card type='currpage' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2020</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0tln8h60e7p44z13m4uzs029gb4j].[none:Continent:nk]</field>
+            <field>[federated.0tln8h60e7p44z13m4uzs029gb4j].[none:Country or Area:nk]</field>
+            <field>[federated.0tln8h60e7p44z13m4uzs029gb4j].[none:Series Name:nk]</field>
+            <field>[federated.0tln8h60e7p44z13m4uzs029gb4j].[yr:Pivot Field Names:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E304081A-0CFB-46C1-B405-410D29EE0F92}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      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
+      EUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBEx
+      lAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMp
+      AEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJA
+      RMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAERE
+      DKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQ
+      CgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUA
+      EBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAR
+      EUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBEx
+      lAJARMRQCgAREUMpAEREDKUAEBExlAJARMRQCgAREUMpAEREDKUAEBExlFPuAkTKKTipCTsc
+      LncZ8gU5jQ0EKisItrSUu5Qzwo5EJnReFQBitNjy5XjZTLnLOGs4tbXYVVUUtm0rdylj5mWz
+      1P/TfyezenW5Sxkh1N6Ol0pROnp0QvordfdQ88D95LdtnZD+FABitN6nnsY9fLjcZZw1wvPm
+      EZ7RTt+zz5W7lFMSbGkh9duHyl3GCJXXXUt+6zbyGzZMSH/huXMIz55N39PPTEh/OgYgImIo
+      BYCIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACKjsW2wrDE1DdTVjrntKU3f0VnacnopAERG
+      ETlvEeHZs8bUtvK667AmeGHtNE8itmL5hPYpciKtYoiMwo7G8HwfbJtAMokVieDU15Hf1Ilf
+      KADgNDcTSCaxI5Gh8UKzZmEFbPKbt4DrEqipwS8VCU2ZQvHgQdzDRwbbTZ+OFQmT79wMrosV
+      iRCaNg0vPUBx9x7cQ4fI9fYN1hKPE2xrw8ukKe7afea/DPnS0haAyGewY1Fqf/y3xJZeSLC1
+      lcobbwAgcfVVJL56GYHqKuyKBFgWyVtuJjxzBsGWFqrvuQssi8qbbqTyhhsIVFVTc//9YNsk
+      rrqS8Px5OI2NVN1+GwA1D3wPZ1ITkUWLcJqbcSY1E1u5AiyL+GWXEqipJr5yJfErrijn1yFf
+      MgoAkc9kUdi2jb5nn6P/hT8RqKzACocJtbWR+v3DZN56m9LhI1iRCIGqKvr/+DwDL7+CXygS
+      qKmGUoneRx4l/cYblA4cwAoGCc+eTfaDD8lv2IjT1DQ0HT+dIf3mKkr794MFlmWB75N5+x18
+      18Xt7SXU1lrWb0O+XBQAIp/H/+RfH3ywgg5ePj/4/hOWhe+6x0cpFCDgDI57rJ3v+2BZ2IkE
+      kfnziSxcQG5dB1gWPb/6NVgWVXfcTnjO7OPdhsNU3XM3Xk+Kwo4d+MXiGZhhMYWOAYicIi+T
+      JZBIEJ4/H9wSTkMDfi6H5ThEFszHyxdwmppwT3IHyMLOnXi5LMWdO4ksWgS2TfSiZeTXb8Cu
+      SBCob8DbM7iv33IcrGAQt7+f6AVLsHTraplA2gIQGUV+61aKu/fg5XKk335ncKDvM/DX18Hz
+      6Pn1bwi1teI0NdH33HP4hQI9v/4NzqRmQjPa6fn1b8B1Sb/5Jn6pBEBm1Vv4hQK9jz0OxRLh
+      efPIdawH16W4Zy/RpRfi53JkVq3CPXyE7Mfr8NJp+l98keiSxeQ3dTLw6mvl+1LkS0dbACKj
+      cA8dGnpd3LFj6HVhyxaAwQXzC38aNo5fKDDw8svDhn36vvpDrz2PzDvvDG+3eTOFzZuH3nvp
+      NF46DUC+Yz35jvXjmBuR0WkLQETEUAoAERFDKQBERAylABARMZQCQETEUAoAERFD6TRQETn3
+      WTbRC5aUu4oRnJbJ5Ldu+/yGZaIAEJFznmVBoLa23GWMYMdi5S7hMykAROSc53seAy+9/PkN
+      z7BP3yr8bKRjACIihlIAiIgYSruARGSYQEMD4Tlzyl3GKTnb97WfrRQAIjKMU18/7JkE5wIF
+      wBejABCRYfLr19P37HPlLuOUhOeeW1ssZwsdAxARMZQCQETEUNoFJCJyGjmNDXgDAxPUVyOB
+      qiTBtraJ6W9CehERkVFFFi4k2Nw8IX3FLlpG5t3VxC+5eNx9hdrbFQAiIqfTwCt/Jr9hw4T0
+      FWxrJfXQf05IXxXXXatjACIiplIAiMiYWaHQhPbnNDVBUDsiykUBICJj4zgkb7l5QruMX3oJ
+      gUTFhPYpY6foFaPFV67A7e8vdxlnjWBzM15f3+gfWmAnEoMvYzEic+fgZbLkOzuxnAB2RSW+
+      6+JUVVE8cIDQzBnY4TC5jRvxM1kIBIjMm4cVCpL9aC247hmcMxmNAkCM5mUyeOl0ucs4a3jZ
+      7JjaVd93L7k1a3AqK/HSA/iFIsnbbgVg4JVXCM+ahV1ZiV8sUPv9BznyLz+l8obrcbu78fN5
+      qm67ldTvHz6dsyJjoAAQo2U/Wot7+HC5yzhreP0DhGe0f247P5fDrqwkt24dpf0HcJqasEIh
+      jv7L/8UvFLBiMaKLzydQU4OdSGBFIoTaWulb8xHgE73gAqxw+PTPkHwmHQMQkVOW+t1DFHfv
+      oeKqq4guvRCAwubN+IUCAMmbbsQbSJN9731Khw5jWRZWOILT2IDT2Ejm7bfxS6VyzoKgABCR
+      UxUIkLjicvxCgeKBA0PHBfxPNbFjMayATXj2bIItLfjFIsXdu7GiUdyeHpyGBrDt4SPJGacA
+      EJGxKbn0v/giuC7ZdesItrXhdveQ/uvruD09ZN9dPdS097HHsauqcHtTdP/iP/CLRVKPPobb
+      3UOgro7M6vegWCT95pu4E3SbBDl1OgYgImPj+xR37QagtG8/pX37j3+Uz1Pq6hp67/b0kP7L
+      q8PHL5XIffTR8EEHDpy+euVzaQtARMRQ2gIQkXOeZdtUfOub5S5jhPCc2eS3bit3GSelABA5
+      UTBIoGL41anewMDQGS6fJTx/Pvn1609XZXISvg/FffvKXcYIwdbWcpfwmRQAIidwqquJXXIx
+      waYmrFCQwu49ZN9dTXHv3s8e0bKIr1yhACgH3yO39uNyVzFCaMqUcpfwmXQMQOQEpUOH6Hvi
+      SdKrVpFZ/R59TzxJcd8+QrNmDTawLMKzBx+aHpo1i0B1NfHLLh12YZNdVUVoxgywLCKLF1Px
+      7W8PvnccIgsWDLULz5494TdYExkrbQGIjIVlEf/KSgpbtkAgQOySr5Dv7KTiyq8BFulVq4Yu
+      bLJiMapuu4W+Z54jsnABoalTyLz1NpU3XEfvo48Rv+JyCjt34uVyJK66kqM//dfyztsJrGiU
+      QHVVucs4JZYTLHcJ5yQFgMh4BBxSv3948HYSloXT1ETNfffS//LLlLq6SFz5dUoHDhCaNhU/
+      nyc4ZQrZ998nesESCrt3U9yzZ3AH9lkkct4iAtXV5S7jlDgN9eUu4ZykABAZK8saMcjr68NL
+      pY6/7x+gePAgoSlTKGzZil8s4vb34x45SunQYUpdXfjFIjUPPkCwuZmBV18d0We5Zd95l75n
+      nyt3Gaek/p//qdwlnJN0DEDkZD69Yu772NEoia99jeRNN+LU1IzazEsP0Pf0M9gVFcQvvYTM
+      W28TW7aUYFsr0QsvIFBbi18oUNi5E6e5mdLBLkTKRVsAIieR37Tp+Fq/79Pzm98SbGsju3bt
+      0CmhvU8+BcXiUJvUo4+B59H37HMEkknc7m56fvsQTn09uY71uEeOAOD29pJZ9VY5ZktkiAJA
+      5CT8fH7Ye6+/f8Qpnic+PMXr7R184bq43d1DwwqfDAfil3+V0NQppH43MQ/3lrNb1V134g2M
+      /5kTVtDBaWqi/p//x6mPGwjge96w401ObY0CQORMS7/6GnoEjTlSD/2e/IYN4+6n7h//G/v/
+      /h+Ob3GeguTtt5Fd/R6FHTuGDdcxABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQ
+      ETGUAkBExFC6EEyMVv3du/FzuXKXcdawk1XkOzrKXYacIQoAMVrfk09TOnq03GWcNcKzZxGc
+      NKncZchp4DRPwve94cPKVIvIWcEdGBhxPx+TeelMuUuQz1D57WvAdU95vPCsmQRqqgm2tQ0b
+      rgAQETlHFLZtH3ry3KkItrUy8KeXRtwLSAEgIuc+yyayZHG5qxjBmTwZbBsrEv78xp8jUJUk
+      t3HjF7oZXGThglGHKwBE5JxnWeDUn32PhbTjcQLJ5ITUZoXGHyInUgCIyDDxy79KeP78cpdx
+      SoItLQz8z/9V7jJGsMNh8lu3TcjtoCMLRl+LHw8FgIgMk371NT0T2BC6EExExFAKAJFRWJEI
+      sZUrSXz9awSnTv3C/cRWLMeuSBCorx88IHiCYOvgw+JPReLKr48YFqirI9jS8oXrFDMpAERO
+      ZFlU3XkHfqFAcc9eIosWYoW/2AG4YEvL8YN3J1yEA5C46kpiK1ZgRaNj7jM0bdqow0+8yEfk
+      8+gYgMiJbBs7mSTX0YGfy5Hv7AQgsmgR0aUXggWZN94k37mZ+GWXkn7jTfB94l+9jPSrr2FF
+      IlR88xsEamsJTZ3KwF9exQ6HsWLDF/JWLAZAbt06wrNnkftoLaEZMwCILj6f/ObN+Pk8sZUr
+      sQIBMu+8Q25dB5YTJHnnHQQqK8m+/z7ZDz7EDoexE3FKtk3iyq8TbG3FLxToe+bZ4w+qF6NV
+      /819eNnssGEKAJETuS7pP/+Zur//MYWt2xn4859xUymK+/aSW78eOx6n+t57yHduJtTeTvrN
+      VQCEZswg/eprVFx9FcXdu+l76mmSd9wOQKCqCjtZSWHzlqHJhOfMJt+5mfz69VRefx25j9bi
+      1NeT+MZV9D7yKPlNnQSSSXp+81usgE3tj35Ibv0GfN+j/w9/xM/lqHnwAfKdm7GrkgRqamDz
+      FrIffMjAiy8RWbiQ+KWX0P/cH8ryNcrEiy2/CEqnfiVwsGUyPb/8lS4EExmL3LoOcus3EJ4z
+      m+oH76f7335GaHo7kXlz8Usl7IrKk44bqK2l/4U/Db75jMv2Y8uW4mWyOHV1hGbOxE4kAJ/+
+      5/9EfsNGAIKtLVQuWYJfLGJHY1iOA66L198PQGH3bgLVVcc7tW3iK1dgJ5PYkTBub/+4vws5
+      e1ihENinfiWwFQiMOlwBIHIi2yZQXY179Cj5DRuJnHcegepqYsuW0v3zX+D7PrXffxA49sOy
+      LSzswYUzgOdhJxK43d3gjP4TsysqwPPof/4FAPxCntCsmeCDnzl2Px7LIn7ZZXT/7N/xXZea
+      +783vJNAgOCkSaRffwO7cjCQnIYG7ESC1O8eItjSQnTZ0on/fqRs0q+/8YWuBHaamkYfPt6C
+      RL50bJuKb1yNXVGBXyrhpVIU9+/H7e2l6jt3DrY5tmB3e3upvvdeLAuscAiAzNtvU3X3Xbip
+      FKG2Nga8P+GXiviFwtAkgm2t5NZvwD1yZHCc994nftmlFHfsxC8d+4H7PsUDB6i6+zvgHztm
+      4Pv4+TxVd9+FHY+T37gRr68Pv1TCzxfw+vpwGhuouus72LEYxYNdZ+57k1HFViw/6YH7U+E0
+      NU5ANSf0OeE9ipzrSiVSD/0nOA6WZeEfW+NK/e4h7HgcL5MB3weg97HHsRMJvHQavMGzcPKd
+      myls3wHB4NDavNuTGjaJ/PrhV4a6hw/T9/gTI0rpe/yJ4/0fm2bPr3+DFQrhex4cuzFYoXPz
+      0DhH/uWnWOHw8S0JKatSVxfF3bvH3Y+fyX5+o89iWSMGKQBETqZUwj9hkJdODx/g+0P744cN
+      Lha/0Kb6aLyBgZH9f2prYgTX1cL/LFLYvmNCbgWRuOrKcY1ffd938TI6C0hExDg9v/y1zgIS
+      ETlXOTU1Q7skT4V9kgsNFQAiIueIyhtvGDrWdCpC06eT/uvrI4YrAEREzhHd//H/vtCxpeTt
+      t406XAEgImIA3QpCRMRQo90KQncDFRExlAJARMRQCgAREUNZvu+feLHjqLx0esQBBJFzmR1P
+      4GUzX+i0ui8rKxjEcpxz7rceqKzE7esrdxkj2NHo4H2aJuCqcLuiYtSrzsc0biyGXyjgl4bf
+      SXTMASAiIl8u2gUkImKoMZ8G+sia3/Fsx8i7FYqIyGdb0rKU2ng9L3c+X+5ShhlzAPi+j/YW
+      iYicusHlp3fWLUO1C0hExFAKABERQykAREQMpQAQETGUAkBExFAKgAlgjfKwZRGRs924A6Au
+      Xk9jxaSh99Nq24mH4qO2rYwkmde0EADHDo55GpWRJJe0Xz5s2PTaGdy46DaunP1NamK1AAQD
+      n99n8BSmOxaXz7yS+y/6IZOTLcOGL2o+nyUtF07YdCJOhMWTJ64/ETl7VIQruHL2t7h2/k1M
+      qpw8Yf3ObZxPe+3Mk34+7gCYnGylve74BBY1LyYZqRq1bckt0ptNAXDL+XcSDcbGNI1gIERD
+      onHofVPFJK6c/U3e2vE6+3r3Mr12BrZl850L7vvcfm5fcs+YpjkWESdKe+1Mfrn6Z+zr3Ts0
+      3LZslk+9mBVTLx1TKI2F67v0ZLsnpC8ROXvEgnEeXPF37E3t4qN9H1AZqZywvpORKuLhxEk/
+      P20PhFkw6TzmNS6gMpIkEozy87f/lUgwxuSqVhLhBIuaFxMPxTmaPsIz6x7nillX01Y9hXwp
+      x9MfP0ammOGS6Zczu2EuwUCQQwNdQ33HQnH6830cTR+hq/8gAJe2X8H8poXcu+xBthzexIaD
+      HVy/4GaCgSBHM0f5w/qn+Mbcb7Ng0iLuXfYg7+9+lz09O7l+4S2EnBCdhzaxavtfuaT9cuY2
+      zqdQyvNMxxN0Z44CkAhXcOPCW4kGYxzo28cf1j/NtQtuor1uJndf+D1e6XxhKAQaEo10Z7op
+      ugUmJ1vZ2b2dGXWzWD71YqLBKJZlc6j/IM2Vk9nZs53nNzzL7IZ5XDz9MsDnpU0vsL93L1fM
+      uoqeTDdzGufzh/VPMaVmGju7tzOlehpXzLwK27Z5cdMfSUaquGjKSmw7wMf7PmT17rdP159V
+      RCbYktalvLXjdTZ2rR8a1lQxiW/OvZaA7bC/bx8vbHiWpW3LaaueSnWsFvD51eqfEw/FuXb+
+      jYScMH25Xp5Y+zABO8A3515LfaKRungDL2x8lrp4A9fMv56gHeTQwEH+sP5pPN87fQFQE6vl
+      QN8+Hl/7e66a/S3aqqeSzg/QkGhk9a632HBwHU+ufZhMMcOkysnUJxr45bs/4/zJS1g+9WI2
+      dW1get0Mfrn6Z9TG6obtAtrVs4N5TQv58aX/yNp9a3hz+2u8uf2vzKyfza9X/xwYXNt/4uNH
+      yJfy3LH4Hpoqmnlx4x+oi9UPtblh4a2s2vE6O7q38d2lD7D50CYWNS/m39/6KQE7gOu5Q9P8
+      2syreX/Pu2zs2sANC29hVsMcnt/wDKFAkIc++NWweV/cupQ1e9/D9VzOm7yEnd3bqYwkOdC3
+      j79sfom7LryPjgMf88y6x/nBV/4LESfKZTOu4Ffv/jvRYIybz7uD37z3Cy5sW05n1waeWPsw
+      Qduh+dim4bfn38hDH/ySgXw/jh0kle1h65FOQoEQDyz/Eat3vwOcXVccisjoGhKNvLNr1bBh
+      qVyKR9b8Dtd3ufvC71EXr6e+opGtRzazdt+HXL/wFpoqJtHVf4CnPn6MgpvnlvO/Q2vVFFqr
+      p9CX6+PZjidZOe1SAPrzvTz+0e8pugXuXfYgNbFajqQPjz8APN8jYB3fk2RbNt6xy527+rvw
+      fI90IT2szYmak5OZVDGJ2xffTdiJ0JtNMa22nQ/2rMb1XFzfHdbe9Vz+sP4pQoEQF7dfzs3n
+      3cEja343rE11tJprF9xEb66Xxoomwk4Yn+GLxdbqKUSCEZa2LacmVkswEOSDPe/yveU/IJXp
+      4bn1T1Fw8wAko0l29ewEfDoOrGVKzTT2pvaMmJeAHeCClmXUxeuxsJheO4M/rn8agFS2Bx+f
+      dCE99LpQyhMLxWhINHLjosEHN8fDCSzLpjt9hKc+fhQfn2B4cLMwGoyRLvSTyvYAUPJKLG1e
+      wbzG+aQLaRKRCiy0+Bc5V+RKOWIn7A6vjzdw9ZxrSOVSg8smJwRAV/9BfHwyhTS2ZZOMVnHt
+      /Jvoz/fRVNFENBilOTmZlztfAMA7thJbF6/n6rnX0pfrpTZeT9iJABOwC+jQQBdLWpfyxvbX
+      CNgOzckWUmPYV+16JSLBKJlihiMDh9nbu4cn1z6CZdnEQ3FaqtporWqj48BawoHwsHGTkSo8
+      36M/38fqXW9x1wV/g8/gQWALCx+fpW3LeX3bq2w5vInrF9x8bEyfYOD4LB/u7+KtnW+wN7Wb
+      eChBwS3Qk+3mnZ2rWNK6lIumrOQvW14CIFPIUB9vYFdhB9NrZ3Cgb/+o89VUMYnNhzfyzLrB
+      G+ddM+962qqnfuZ3kS/lOJI+zFMfP0bJK5KMVuP7HvlSHv+ERXm2mCERriDiRMiVcgRshwtb
+      l/HLd3+G67lMSk7cASQROf06Dqzl6jnfZvvRbXi+O7RH4Jl1j3MkfZjbFt910nEvmrKSN7a/
+      ypbDnVwz73oAsoUs9fEGejLdhJwwmWKGi6Z8hVc6X2B3z07uWHz8OOj4A6D/IELYQ6wAAAjt
+      SURBVKlsivuX/xDHDtKxfy25Uo5MIU2+lAMgU0yTL+UpekX684MPbXh/z7vcfeH32NWzg+c6
+      nmRJ61LuWXo/tm3z3q53WH/wYy6aspL7ln0fx3bY1XP8YcbxUILrF95MvpQnGAjySucL+L5H
+      Z9dGfrDyx3y8fw2dhzbyrXnXs2LqxcSCMdbs+4CSW+Jo+gj3L/8h7+5axSubX+Sm824nW0hj
+      2wGe7XiSb8y5BtuyqYgkh9399C9bXuKW8+4kW8zg4/PK5j8Nbq3kUsO+jyk10/hg9+qheX9/
+      z7u0182kq+8AHDtdtD/Xh+sNPpghle0mW8zy3u53+JuLvk+ulOPwQBcvbvrj0Fo+gOt7pI4d
+      QH91y8t8d9kDuJ7Lq1teZlfPDu5e+j0KpQIld/wPnhCRM2dPzy42dnXwg5V/R8lzWbd/DR/v
+      /4jbl9xNf66PSDBKyS0ykO+neOz3PVAYoOAW2HBwPdfMv54VUy8hEoyy4WAHb+74K3cuvocV
+      0y6hMlzJi53Ps+nQBq5bcDP9+T7ioTglb7CfMT8Q5uEPf/uZt4OOOBE83x/aZTIWg6eC+pSO
+      LQwdO4jnu3j+8Sc0RYNRcsXciDVhgFAgRNEtDvssHAhT9Ip4vkcoEML1vaGF7VAbJ0LhU2vX
+      oUCIglv41LxEKbqFEbuebMsm7ETIFjNjnsdTYVs2tmUPfR+n0jbiREbdYhCR8hu8HXTd0K6Z
+      0Zz4mw47YYpucdjycDShQAjP94YtN2zLJuSEyRWzn2oXxvVKw5ZrE3YQOHdsjfdUfJJCJ3sP
+      kC2e/NF0n15ofyL/qQAa7XNgaO38ZO1ypdGn6fneaVv4f9L/5/2xT9b2i3z/InL2OPE3nS+N
+      bWV6tOWc53vDFv6D7Ub2pyuBRUQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAK
+      ABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQ
+      ETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAKABER
+      QykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGU
+      AkBExFAKABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAKABERQykA
+      REQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBExFAKABERQykAREQMpQAQETGUAkBE
+      xFAKABERQznlLkBExARNlc3MbZxf7jKGUQCIiJwBDYlGZtbPKXcZwygARETOgI/3r+HlzhfK
+      XcYwOgYgImIoBYCIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACIiZRSwAkSDseHDbIeIEx1z
+      H47tEAqET3naCgARkTKa1TCHn3zjfxMPJYaGXT3nGn508X8lYI/tUq3WqiksbD7/lKetABAR
+      KaNgIMi2I5u5sO0iYHBtvq16Kv35PiwGtwYWTjqfC1qXDW0ZNFU0AxBxIjQkGjnYf4BtRzYD
+      YFs2s+rnsKh5McFAEAuLuY0LuGjKSuKh+LBpKwBERMpsQ1cHsxvmYls2kyons793D77vA3D9
+      gpupjdcRtIPcdv5deL7LjYtupT7ewC3n30k8nKClqpXFLRcCcMt5d9JeN4t4KE5zZQvfmHst
+      7XUzKbpFHljxtwSswNB0FQAiImXmeR49mW5qYrWcP3kJH+55DwDHDtJaPYU9Pbs4NNBFbbwW
+      27J5/KPf86NL/oGDfQfYcXTbUD9BO0hVtJoXNj7L2zvfZFfPDtqqp/DCxuf4cO97bD3cSUt1
+      21B73QtIROQs8NHeD7iw7SJq4nXs79sHgGVB2AlTn2jAx+ftHW9S9EqEnBD5Ym7YcYPBEcDH
+      H6V3f+i/FtbQUG0BiIiU0SeL621Ht7KkZRm7e3YO7f4pukV2d+8kForTm+ulsaKJeCjOt+ff
+      yL+t+j/EQnHmNS4Y6qvoFkkXBvjqjK9z/uQLaEm2sr93H5fPvJK5jfOZWT+bvandQ+0t/5Mp
+      fY6HP/wtz3Y8MXFzLSJiiCUtS6mN1416N9CKcCWO7dCT7WZK9VQODxwiU8zQWjWFvandBOwA
+      85sWEg9XsPnQRvKlHPFwBQf79hN2IjRVTOJw+hBRJ8rRzBEc22HBpPOIOBHW7l9DvpTjvMkX
+      kIxUsmbv+/TmeoemrV1AIiJl1J/vG3q9q2fn0Os9qV0AlLwSa/evOWGcfgDypRy7enYAkCmk
+      h9p/tO+DYe3X7H1v1GlrF5CIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACIihlIAiIgYSgEg
+      ImIoBYCIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACIi
+      hlIAiIgYSgEgImIoBYCIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACIihlIAiIgYSgEgImIo
+      BYCIiKEUACIihlIAiIgYSgEgImIoBYCIiKEUACIihnLKXYCIiAmumv0tLmhZNq4+wsEIYSdM
+      X7Z33PVURpIKABGRM+Glzud5ufOFcfUxp3E+s+vn8EzHE+Ou59r5N2oXkIiIqRQAIiKGUgCI
+      iBhKASAiYigFgIiIoRQAIiKGUgCIiBhKASAiYigFgIiIoXQlsIjIOaS1egoXTVk5Af1MVQCI
+      iJxLgoEg0WBsQvpRAIiInEO2H9nKa1tfGXc/FeEKHQMQETGVAkBExFDaBSQicgZMxPMA4uEE
+      7+9+Z4IqUgCIiJwRE/k8gImiXUAiIoZSAIiIGEoBICJiKAWAiIihdBBYROQcMq9pIZY1/nX3
+      OY3zFAAiIueSQwNdbOzqGHc/NbFaBYCIyLnkyMAhOg9tHHc/s+rn6BiAiIipFAAiIoZSAIiI
+      GEoBICJiKAWAiIihxnwW0KLmxcQm4Ck0IiKmaaycRDQYozZWN65+auN11MRqJ+SJYDPqZ2H5
+      vu+PuycRETnnaBeQiIih/j8prjokKZOkDQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
