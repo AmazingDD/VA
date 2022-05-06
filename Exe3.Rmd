@@ -65,7 +65,14 @@ total$date <- paste(total$year, total$month, sep='-')
 plot_ly(total, x = ~date, y = ~coef, type = 'scatter',mode = 'lines+markers') %>%
   layout(title="Trend of Living Standards", 
         xaxis = list(title = "Date"),
-        yaxis = list (title = "Coefficient\n(outcome/income)"))            
+        yaxis = list (title = "Coefficient\n(outcome/income)"))  
+
+ts_consum <- financial %>%
+  filter(!category %in% c('RentAdjustment', 'Wage')) %>%
+  group_by(year, month, category) %>%
+  summarise(outcome = sum(-amount))
+ts_consum$ym <- paste(ts_consum$year, ts_consum$month, sep = '-')
+plot_ly(x = ~ts_consum$ym, y = ~ts_consum$outcome, color = ~ts_consum$category)  
 ```
 
 During the given period, this ratio is stable and increase as a whole, so we conclude that the financial health of the residents should be healthy.
@@ -139,6 +146,8 @@ ggplot(comparison, aes(x = ratio, y = Wage_Group)) +
 
 From the above chart, we concluded that the first 2 group(low-income groups) tend to spend most of the money on daily consumption, while the other 3 groups(high-income groups) could save substantial money and save. Combined with previous charts, participants with different incomes distribute uniformly in this data, so we might imply that the consumption views are related to the amount of income.
 
+## Consumption Preference
+
 Now, we can go deeper to find out the consumption preference of these groups of people given specific periods.
 
 ```{r}
@@ -156,26 +165,53 @@ pie_data$ratio <- pie_data$outcome / pie_data$total
 ggplot(data=pie_data, aes(x="", y=ratio, fill=category)) +
   geom_bar(width=1, stat="identity") +
   coord_polar("y", start=0) +
-  facet_grid(.~ Wage_Group) +
+  facet_grid(~ Wage_Group) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
-        axis.title.x=element_blank())
+        axis.title.y=element_blank())
 ```
+It is easy to find that food and shelter are major parts of the total consumption, and with the increase of wage, people will tend to spend more on recreation and education. In other words, high-income people are likely to pursue spiritual pleasure.
 
 
+## Constitution of Participants
 
 ```{r}
-outcome_different_cats <- financial %>%
-  filter(!category %in% c('Wage', 'RentAdjustment')) %>%
-  group_by(participantId, category) %>%
-  summarise(outcome = mean(abs(amount))) %>%
-  merge(wage, by='participantId')
-outcome_different_cats$ratio <- outcome_different_cats$outcome / outcome_different_cats$wage
+participants <- read_csv('data/Attributes/Participants.csv')
+wage_by_edu <- merge(participants[,c(1, 5)], wage, by='participantId')
 
-ggplot(data=outcome_different_cats, aes(x= ratio)) + 
-  geom_histogram() +
-  facet_grid(Wage_Group ~ category)
+p1 <- ggplot(data=wage_by_edu, aes(x= wage)) + 
+  geom_density() +
+  ggtitle("Wage Distribution for different Education Level") +
+  facet_grid(educationLevel~.) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5), 
+        axis.title.y = element_blank(), axis.title.x = element_blank())
+
+edu_info <- wage_by_edu %>%
+  group_by(educationLevel) %>%
+  count()
+
+p2 <- ggplot(data=edu_info, aes(x=educationLevel, y=n)) +
+  geom_bar(stat = "identity", width = 0.5, fill="steelblue") + 
+  theme_ipsum(grid = "Y", axis_title_size = 14) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5), 
+        axis.title.y = element_blank(), axis.title.x = element_blank())
+
+p1 | p2
+```
+
+Combined with participants attributes, higher education level means higher income, and the participants are formed mainly by people with high school or college degree, which means the wage tend to be relatively high and stable. Therefore, the financial health is well.
+
+```{r}
+wage_by_age <- merge(participants[,c(1, 4, 5)], wage, by='participantId')
+plot_ly(data = wage_by_age, 
+        x = ~wage_by_age$age, 
+        y = ~wage_by_age$wage, 
+        color =  ~wage_by_age$educationLevel)
 
 ```
+
+This scatter plot shows that the age distribution of the participants is uniform, and no matter how old the participants are, the wage depends mainly on education instead of experience(age).
+
+
 
