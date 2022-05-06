@@ -35,6 +35,7 @@ for (p in packages){
 
 ```{r}
 financial <- read_csv('data/Journals/FinancialJournal.csv')
+participants <- read_csv('data/Attributes/Participants.csv')
 paged_table(financial)
 ```
 
@@ -146,6 +147,33 @@ ggplot(comparison, aes(x = ratio, y = Wage_Group)) +
 
 From the above chart, we concluded that the first 2 group(low-income groups) tend to spend most of the money on daily consumption, while the other 3 groups(high-income groups) could save substantial money and save. Combined with previous charts, participants with different incomes distribute uniformly in this data, so we might imply that the consumption views are related to the amount of income.
 
+```{r}
+comparison <- merge(comparison, participants[, c(1,3)], by='participantId')
+p1 <- ggplot(comparison, aes(x = ratio, y = haveKids)) +
+  geom_density_ridges(calc_ecdf = TRUE,
+                      quantiles = 4, 
+                      quantile_lines = TRUE,
+                      alpha = .2) +
+  theme_ridges() + 
+  scale_fill_viridis_d(name = "Quartiles") +
+  ggtitle("Distribution of outcome/income Ratio with/without Kids")+
+  theme(plot.title = element_text(size = 12), legend.position = "top")
+
+kid_info <- comparison %>%
+  group_by(haveKids) %>%
+  count()
+
+p2 <- ggplot(data=kid_info, aes(x=haveKids, y=n)) +
+  geom_bar(stat = "identity", width = 0.5, fill="steelblue") + 
+  theme_ipsum(grid = "Y", axis_title_size = 14) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5), 
+        axis.title.y = element_blank(), axis.title.x = element_blank())
+
+p1 | p2
+```
+
+Another interesting found is that participants with kids tend to cut more expense than those without kids. And most of the participants are without kids, so the whole group tend to consume more frequently, which means the cash flow operates well and the finance is healthy.
+
 ## Consumption Preference
 
 Now, we can go deeper to find out the consumption preference of these groups of people given specific periods.
@@ -177,7 +205,6 @@ It is easy to find that food and shelter are major parts of the total consumptio
 ## Constitution of Participants
 
 ```{r}
-participants <- read_csv('data/Attributes/Participants.csv')
 wage_by_edu <- merge(participants[,c(1, 5)], wage, by='participantId')
 
 p1 <- ggplot(data=wage_by_edu, aes(x= wage)) + 
