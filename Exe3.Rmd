@@ -14,7 +14,13 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Task Description
+Over time, are businesses growing or shrinking? How are people changing jobs? Are standards of living improving or declining over time? 
 
+How does the financial health of the residents change over the period covered by the dataset? How do wages compare to the overall cost of living in Engagement? Are there groups that appear to exhibit similar patterns? Describe your rationale for your answers. Limit your response to 10 images and 500 words.
+
+
+# Load Packages
 ```{r}
 packages = c('ggiraph', 'plotly', 'DT', 'patchwork', 'gganimate', 'tidyverse', 
              'readxl', 'gifski', 'gapminder', 'tidyverse', 'rmarkdown', 
@@ -31,6 +37,12 @@ for (p in packages){
 financial <- read_csv('data/Journals/FinancialJournal.csv')
 paged_table(financial)
 ```
+
+# Ways to Measure Financial Health
+
+## Payment-to-Income Ratio
+
+To measure the residents' financial health, we need to calculate the average level of different metrics. This ratio metric indicates the proportion of expense a citizen spend on different engagements. Generaly, if people lack money, they tend to save money to the bank instead of consuming.
 
 ```{r}
 y <- as.POSIXct(financial$timestamp, format="%Y-%m-%d %H:%M:%S")
@@ -50,10 +62,17 @@ outcome <- financial %>%
 total <- merge(income, outcome, by=c('year', 'month'))
 total$coef <- total$outcome / total$income
 total$date <- paste(total$year, total$month, sep='-')
-plot_ly(total, x = ~date, y = ~coef, type = 'scatter',mode = 'lines+markers') %>% layout(title="Trend of Living Standards", 
-       xaxis = list(title = "Date"),
-       yaxis = list (title = "Coefficient\n(outcome/income)"))            
+plot_ly(total, x = ~date, y = ~coef, type = 'scatter',mode = 'lines+markers') %>%
+  layout(title="Trend of Living Standards", 
+        xaxis = list(title = "Date"),
+        yaxis = list (title = "Coefficient\n(outcome/income)"))            
 ```
+
+During the given period, this ratio is stable and increase as a whole, so we conclude that the financial health of the residents should be healthy.
+
+## Net Worth
+
+Net worth is the value of all the income assets minus all the liabilities. This is one of my favorite financial items to track. To measure the residents' financial health, we need to calculate the average net worth for each month and draw a plot to see the trend. If every month the net worth is great than 0 or just stay stability, it means the financial health is good.
 
 ```{r}
 total$remain <- (total$income - total$outcome)
@@ -73,6 +92,10 @@ ggplot(data=total, aes(x=date, y=remain)) +
         panel.grid.major.y = element_line(color = "grey",size = 0.5,linetype = 2))
 ```
 
+## Income
+
+For each participant, we can evaluate wage as the source of income. Since income is a intuitive way to show the cash flow and inspect the health of finance. We then just draw the distribution of the participants' wage and split the wage into 5 bins to indicate different group of people. We will then explore the data by this grouping method and try to find some similar patterns among these groups.
+
 ```{r}
 wage <- financial %>%
   filter(category == 'Wage') %>%
@@ -81,7 +104,6 @@ wage <- financial %>%
 brks <- c(0, 100, 200, 300, 400, Inf)
 grps <- c('<=100', '101-200', '201-300', '301-400', '>400')
 wage$Wage_Group <- cut(wage$wage, breaks=brks, labels = grps, right = FALSE)
-
 #plot_ly(wage, x = ~wage, type = "histogram")
 p <- ggplot(data=wage, aes(x=wage, fill=Wage_Group)) +
     geom_histogram(aes(y = ..density..)) + 
@@ -110,10 +132,37 @@ ggplot(comparison, aes(x = ratio, y = Wage_Group)) +
                       quantile_lines = TRUE,
                       alpha = .2) +
   theme_ridges() + 
-  scale_fill_viridis_d(name = "Quartiles")+
+  scale_fill_viridis_d(name = "Quartiles") +
   ggtitle("Distribution of outcome/income Ratio in Different Wage Group")+
   theme(plot.title = element_text(size = 12), legend.position = "top")
 ```
+
+From the above chart, we concluded that the first 2 group(low-income groups) tend to spend most of the money on daily consumption, while the other 3 groups(high-income groups) could save substantial money and save. Combined with previous charts, participants with different incomes distribute uniformly in this data, so we might imply that the consumption views are related to the amount of income.
+
+Now, we can go deeper to find out the consumption preference of these groups of people given specific periods.
+
+```{r}
+pie_data <- financial %>%
+  merge(wage[,-2], by='participantId') %>%
+  filter(!category %in% c('Wage', 'RentAdjustment')) %>%
+  group_by(Wage_Group, category) %>%
+  summarise(outcome = sum(-amount))
+total_pie_data <- pie_data %>%
+  group_by(Wage_Group) %>%
+  summarise(total = sum(outcome))
+pie_data <- merge(pie_data, total_pie_data, by='Wage_Group')
+pie_data$ratio <- pie_data$outcome / pie_data$total
+
+ggplot(data=pie_data, aes(x="", y=ratio, fill=category)) +
+  geom_bar(width=1, stat="identity") +
+  coord_polar("y", start=0) +
+  facet_grid(.~ Wage_Group) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.x=element_blank())
+```
+
 
 
 ```{r}
@@ -125,7 +174,7 @@ outcome_different_cats <- financial %>%
 outcome_different_cats$ratio <- outcome_different_cats$outcome / outcome_different_cats$wage
 
 ggplot(data=outcome_different_cats, aes(x= ratio)) + 
-  geom_density() +
+  geom_histogram() +
   facet_grid(Wage_Group ~ category)
 
 ```
