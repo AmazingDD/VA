@@ -40,7 +40,7 @@ exam <- read_csv('data/Exam_data.csv')
 ### ANOVA test
 set seed when you want to use `bayes`
 
-```{r fig.width=6, fig.height=5}
+```{r fig.width=10, fig.height=8}
 set.seed(1234)
 
 ggbetweenstats(

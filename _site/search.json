@@ -59,7 +59,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\nGetting Started\nSetting up R packages\nTo start with, ggstatsplot and\ntidyverse packages will be launched using library().\n\n\npackages = c('ggstatsplot', 'tidyverse')\nfor (p in packages){\n  if(!require(p, character.only = T)){\n    install.packages(p)\n  }\n}\n\n\n\nimporting data\n\n\nexam <- read_csv('data/Exam_data.csv')\n\n\n\nWorking with ggstatsplot\nANOVA test\nset seed when you want to use bayes\n\n\nset.seed(1234)\n\nggbetweenstats(\n  data = exam, \n  x = RACE,\n  y = ENGLISH,\n  type = \"bayes\",\n  mean.ci = TRUE, \n  pairwise.comparisons = TRUE, \n  pairwise.display = \"s\",\n  p.adjust.method = \"fdr\",\n  messages = FALSE\n)\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-05-07T15:40:44+08:00"
+      "last_modified": "2022-05-07T15:56:36+08:00"
     },
     {
       "path": "index.html",
