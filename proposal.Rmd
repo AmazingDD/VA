@@ -32,13 +32,13 @@ Anticipating rapid growth, the city of Engagement, Ohio USA is doing a participa
 
 Our project is motivated by providing financial insights for individuals and guidance for fiscal policy making. We will integrate various related data sources and inspect the information provided by participants over time to help answer the following questions: 
 
-  - **consumption preference:** Is there any pattern for people’s consumption behavior?  
+  - **Consumption Preference:** Is there any pattern for people’s consumption behavior?  
 
-  - **business development:** which businesses appear to be more prosperous or struggling? 
+  - **Business Development:** Which businesses appear to be more prosperous or struggling? 
 
-  - **Financial health:** How does the financial health of the residents change over time? Are there groups that appear to exhibit similar patterns?
+  - **Financial Health:** How does the financial health of the residents change over time? Are there groups that appear to exhibit similar patterns?
 
-  - **Employer health:** What employment patterns can be observed within the city limits? Are there any areas of particularly high or low turnover? 
+  - **Employer Health:** What employment patterns can be observed within the city limits? Are there any areas of particularly high or low turnover? 
 
 # Data Description 
 
@@ -59,22 +59,22 @@ Over the period covered by the dataset, which businesses appear to be more prosp
 
  - For each business area, plot their total employment and average hourly wage for different period. And observe whether the business is growing or decaying. 
  
- ![Relationship of Wage and Employee Number](images/fig_example1.jpg){height="65%" width="65%"}
+![Relationship of Wage and Employee Number](images/fig_example1.jpg){height="85%" width="85%"}
 
 ## Problem 2
 
 How does the financial health of the residents change over the period covered by the dataset? How do wages compare to the overall cost of living in Engagement? Are there groups that appear to exhibit similar patterns? Describe your rationale for your answers.
 
-![Trend of Wage and Consumption](images/fig_example3.jpg){height="65%" width="65%"}
+![Trend of Wage and Consumption](images/fig_example3.jpg){height="85%" width="85%"}
 
  - Financial health: including the amount of savings you have, how much you're putting away for retirement, and how much of your income you are spending on fixed or non-discretionary expenses.
  - The wage and overall cost of living can be obtained from the log tables. Engel's index can be calculated from these statistics. We plot these statistics for all participants with demographic attributes as facets and observe the patterns. 
  
- ![Income Patterns with Certain Group Method](images/fig_example4.jpg){height="65%" width="65%"}
+ ![Income Patterns with Certain Group Method](images/fig_example4.jpg){height="85%" width="85%"}
  
  - Try to group the data according to one-dimensional bins, as well as n-dimensional clusters. 
  
-  ![Some Group Methods to Find Paterns](images/fig_example2.jpg){height="65%" width="65%"}
+  ![Some Group Methods to Find Paterns](images/fig_example2.jpg){height="85%" width="85%"}
 
 ## Problem 3
 
