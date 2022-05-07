@@ -2158,7 +2158,6 @@ University)
 <ul>
 <li><a href="#background">Background</a></li>
 <li><a href="#project-motivation">Project Motivation</a></li>
-<li><a href="#limitations">Limitations</a></li>
 <li><a href="#data-description">Data Description</a></li>
 <li><a href="#proposed-visualizations">Proposed Visualizations</a></li>
 <li><a href="#project-timeline">Project Timeline</a></li>
@@ -2171,11 +2170,39 @@ Packages</a></li>
 </nav>
 </div>
 <h1 id="background">Background</h1>
+<p>Anticipating rapid growth, the city of Engagement, Ohio USA is doing
+a participatory urban planning exercise to understand the current state
+of the city and identify opportunities for future growth. About 1000
+representative residents in this modest-sized city have agreed to
+provide data using the city’s urban planning app, which records the
+places they visit, their spending, and their purchases, among other
+things. From these volunteers, the city will have data to assist with
+their major community revitalization efforts, including how to allocate
+a very large city renewal grant they have recently received. Considering
+the financial status of Engagement’s businesses and residents, we need
+to use visual analytic techniques to address the financial health of the
+city.</p>
 <h1 id="project-motivation">Project Motivation</h1>
-<h1 id="limitations">Limitations</h1>
+<p>Our project is motivated by individual insights and fiscal policies.
+We will integrate various related data sources and inspect the
+information provided by participants over time to help answer the
+following questions:</p>
+<ul>
+<li><p><strong>consumption preference:</strong> Is there any similar
+pattern for people’s consumption behavior?</p></li>
+<li><p><strong>business development:</strong> Which businesses appear to
+be more prosperous or struggling?</p></li>
+<li><p><strong>Financial health:</strong> How does the financial health
+of the residents change over the period? Are there groups that appear to
+exhibit similar patterns?</p></li>
+<li><p><strong>Employer health:</strong> What employment patterns can be
+observed within the city limits? Are there any areas of particularly
+high or low turnover?</p></li>
+</ul>
 <h1 id="data-description">Data Description</h1>
 <h1 id="proposed-visualizations">Proposed Visualizations</h1>
 <h1 id="project-timeline">Project Timeline</h1>
+<p><img src="images/timeline.png" /></p>
 <h1 id="software-tools-r-packages">Software Tools &amp; R Packages</h1>
 <p>Our project will be done as an R Shiny application using RStudio as
 the IDE. We envision the use of the following packages:</p>
@@ -2185,6 +2212,14 @@ application</li>
 <li>tidyverse - The tidyverse collection of apps will provide the
 foundational packages for plotting(ggplot2), data cleaning and
 manipulation(dplyr, tidyr)</li>
+<li>ggiraph: For making “ggplot” graphics interactive.</li>
+<li>plotly: The R library for plotting interactive statistical
+graphs.</li>
+<li>DT: Provides an R interface to the JavaScript library DataTables
+that create interactive table on html page.</li>
+<li>ggdist: An R package that provides a flexible set of ggplot2 geoms
+and stats designed especially for visualising distributions and
+uncertainty.</li>
 </ul>
 <h1 id="github-repository">Github Repository</h1>
 <p>The code for our project can be found at <a

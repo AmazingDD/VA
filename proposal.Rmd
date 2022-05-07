@@ -26,15 +26,19 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Background 
 
- 
+Anticipating rapid growth, the city of Engagement, Ohio USA is doing a participatory urban planning exercise to understand the current state of the city and identify opportunities for future growth. About 1000 representative residents in this modest-sized city have agreed to provide data using the city’s urban planning app, which records the places they visit, their spending, and their purchases, among other things. From these volunteers, the city will have data to assist with their major community revitalization efforts, including how to allocate a very large city renewal grant they have recently received. Considering the financial status of Engagement’s businesses and residents, we need to use visual analytic techniques to address the financial health of the city. 
 
 # Project Motivation 
 
- 
+Our project is motivated by individual insights and fiscal policies. We will integrate various related data sources and inspect the information provided by participants over time to help answer the following questions: 
 
-# Limitations 
+  - **consumption preference:** Is there any similar pattern for people’s consumption behavior? 
 
- 
+  - **business development:** Which businesses appear to be more prosperous or struggling? 
+
+  - **Financial health:** How does the financial health of the residents change over the period? Are there groups that appear to exhibit similar patterns? 
+
+  - **Employer health:** What employment patterns can be observed within the city limits? Are there any areas of particularly high or low turnover? 
 
 # Data Description 
 
@@ -46,7 +50,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Project Timeline 
 
- 
+![](images/timeline.png)
 
 # Software Tools & R Packages 
 
@@ -54,6 +58,10 @@ Our project will be done as an R Shiny application using RStudio as the IDE. We 
  
  - Shiny – For creating an interactive R Shiny web-based application
  - tidyverse - The tidyverse collection of apps will provide the foundational packages for plotting(ggplot2), data cleaning and manipulation(dplyr, tidyr)
+ - ggiraph: For making “ggplot” graphics interactive. 
+ - plotly: The R library for plotting interactive statistical graphs. 
+ - DT: Provides an R interface to the JavaScript library DataTables that create interactive table on html page.
+ - ggdist: An R package that provides a flexible set of ggplot2 geoms and stats designed especially for visualising distributions and uncertainty. 
 
 # Github Repository 
 
