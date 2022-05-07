@@ -2159,7 +2159,12 @@ University)
 <li><a href="#background">Background</a></li>
 <li><a href="#project-motivation">Project Motivation</a></li>
 <li><a href="#data-description">Data Description</a></li>
-<li><a href="#proposed-visualizations">Proposed Visualizations</a></li>
+<li><a href="#proposed-visualizations">Proposed Visualizations</a>
+<ul>
+<li><a href="#problem-1">Problem 1</a></li>
+<li><a href="#problem-2">Problem 2</a></li>
+<li><a href="#problem-3">Problem 3</a></li>
+</ul></li>
 <li><a href="#project-timeline">Project Timeline</a></li>
 <li><a href="#software-tools-r-packages">Software Tools &amp; R
 Packages</a></li>
@@ -2183,24 +2188,86 @@ the financial status of Engagement’s businesses and residents, we need
 to use visual analytic techniques to address the financial health of the
 city.</p>
 <h1 id="project-motivation">Project Motivation</h1>
-<p>Our project is motivated by individual insights and fiscal policies.
-We will integrate various related data sources and inspect the
-information provided by participants over time to help answer the
-following questions:</p>
+<p>Our project is motivated by providing financial insights for
+individuals and guidance for fiscal policy making. We will integrate
+various related data sources and inspect the information provided by
+participants over time to help answer the following questions:</p>
 <ul>
-<li><p><strong>consumption preference:</strong> Is there any similar
-pattern for people’s consumption behavior?</p></li>
-<li><p><strong>business development:</strong> Which businesses appear to
+<li><p><strong>consumption preference:</strong> Is there any pattern for
+people’s consumption behavior?</p></li>
+<li><p><strong>business development:</strong> which businesses appear to
 be more prosperous or struggling?</p></li>
 <li><p><strong>Financial health:</strong> How does the financial health
-of the residents change over the period? Are there groups that appear to
+of the residents change over time? Are there groups that appear to
 exhibit similar patterns?</p></li>
 <li><p><strong>Employer health:</strong> What employment patterns can be
 observed within the city limits? Are there any areas of particularly
 high or low turnover?</p></li>
 </ul>
 <h1 id="data-description">Data Description</h1>
+<p>The data of our group project is the project dataset provided by the
+official 2022 VAST challenge. Here is the data download link: <a
+href="https://bit.ly/VAST-Challenge-2022-data">https://bit.ly/VAST-Challenge-2022-data</a></p>
+<ul>
+<li><strong><code>ParticipantStatusLogs&lt;n&gt;.csv</code></strong>:
+record the living status of 1000 participants at every timestamp from
+March 1, 2022 to May 24, 2023.</li>
+<li><strong><code>Jobs.csv</code></strong>: contains information about
+employment opportunities available in the city at the start of the
+study. Some of these jobs are held by participants at the start of the
+study, while others are open positions.</li>
+<li><strong><code>Participants.csv</code></strong>: contains information
+about the residents of Engagement and Happiness index that have agreed
+to participate in this study.</li>
+<li><strong><code>Employers.csv</code></strong>: records information
+about the companies and businesses within the city limits that either
+employ study participants, or which have available job openings.</li>
+<li><strong><code>Buildings.csv</code></strong>: Contains information
+about the buildings in the city that were involved in this study; this
+includes commercial, residential and school properties.</li>
+<li><strong><code>Pubs.csv</code></strong>: contains information about
+the pubs within the city limits.</li>
+</ul>
 <h1 id="proposed-visualizations">Proposed Visualizations</h1>
+<h2 id="problem-1">Problem 1</h2>
+<p>Over the period covered by the dataset, which businesses appear to be
+more prosperous? Which appear to be struggling? Describe your rationale
+for your answers.</p>
+<ul>
+<li>For each business area, plot their total employment and average
+hourly wage for different period. And observe whether the business is
+growing or decaying.</li>
+</ul>
+<h2 id="problem-2">Problem 2</h2>
+<p>How does the financial health of the residents change over the period
+covered by the dataset? How do wages compare to the overall cost of
+living in Engagement? Are there groups that appear to exhibit similar
+patterns? Describe your rationale for your answers.</p>
+<ul>
+<li>Financial health: including the amount of savings you have, how much
+you’re putting away for retirement, and how much of your income you are
+spending on fixed or non-discretionary expenses.</li>
+<li>The wage and overall cost of living can be obtained from the log
+tables. Engel’s index can be calculated from these statistics. We plot
+these statistics for all participants with demographic attributes as
+facets and observe the patterns.</li>
+<li>Try to group the data according to one-dimensional bins, as well as
+n-dimensional clusters.</li>
+</ul>
+<h2 id="problem-3">Problem 3</h2>
+<p>Describe the health of the various employers within the city limits.
+What employment patterns do you observe? Do you notice any areas of
+particularly high or low turnover?</p>
+<ul>
+<li>Revenue serves as an indicator of employer health, it can be
+calculated according to employers’ locations. Plot the revenue for
+different employers.</li>
+<li>Turnover: the number of transactions of a business. Plot the
+turnover for different employers<br />
+</li>
+<li>Plot the revenue and turnover in the city map, and observe
+geospatial patterns.</li>
+</ul>
 <h1 id="project-timeline">Project Timeline</h1>
 <p><img src="images/timeline.png" /></p>
 <h1 id="software-tools-r-packages">Software Tools &amp; R Packages</h1>

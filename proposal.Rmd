@@ -30,23 +30,50 @@ Anticipating rapid growth, the city of Engagement, Ohio USA is doing a participa
 
 # Project Motivation 
 
-Our project is motivated by individual insights and fiscal policies. We will integrate various related data sources and inspect the information provided by participants over time to help answer the following questions: 
+Our project is motivated by providing financial insights for individuals and guidance for fiscal policy making. We will integrate various related data sources and inspect the information provided by participants over time to help answer the following questions: 
 
-  - **consumption preference:** Is there any similar pattern for people’s consumption behavior? 
+  - **consumption preference:** Is there any pattern for people’s consumption behavior?  
 
-  - **business development:** Which businesses appear to be more prosperous or struggling? 
+  - **business development:** which businesses appear to be more prosperous or struggling? 
 
-  - **Financial health:** How does the financial health of the residents change over the period? Are there groups that appear to exhibit similar patterns? 
+  - **Financial health:** How does the financial health of the residents change over time? Are there groups that appear to exhibit similar patterns?
 
   - **Employer health:** What employment patterns can be observed within the city limits? Are there any areas of particularly high or low turnover? 
 
 # Data Description 
 
- 
+The data of our group project is the project dataset provided by the official 2022 VAST challenge. Here is the data download link: [https://bit.ly/VAST-Challenge-2022-data](https://bit.ly/VAST-Challenge-2022-data)
+
+ - **`ParticipantStatusLogs<n>.csv`**: record the living status of 1000 participants at every timestamp from March 1, 2022 to May 24, 2023.
+ - **`Jobs.csv`**: contains information about employment opportunities available in the city at the start of the study. Some of these jobs are held by participants at the start of the study, while others are open positions. 
+ - **`Participants.csv`**: contains information about the residents of Engagement and Happiness index that have agreed to participate in this study. 
+ - **`Employers.csv`**: records information about the companies and businesses within the city limits that either employ study participants, or which have available job openings. 
+ - **`Buildings.csv`**: Contains information about the buildings in the city that were involved in this study; this includes commercial, residential and school properties. 
+ - **`Pubs.csv`**: contains information about the pubs within the city limits.
 
 # Proposed Visualizations 
 
- 
+## Problem 1
+
+Over the period covered by the dataset, which businesses appear to be more prosperous? Which appear to be struggling? Describe your rationale for your answers.
+
+ - For each business area, plot their total employment and average hourly wage for different period. And observe whether the business is growing or decaying. 
+
+## Problem 2
+
+How does the financial health of the residents change over the period covered by the dataset? How do wages compare to the overall cost of living in Engagement? Are there groups that appear to exhibit similar patterns? Describe your rationale for your answers. 
+
+ - Financial health: including the amount of savings you have, how much you're putting away for retirement, and how much of your income you are spending on fixed or non-discretionary expenses.
+ - The wage and overall cost of living can be obtained from the log tables. Engel's index can be calculated from these statistics. We plot these statistics for all participants with demographic attributes as facets and observe the patterns. 
+ - Try to group the data according to one-dimensional bins, as well as n-dimensional clusters. 
+
+## Problem 3
+
+Describe the health of the various employers within the city limits. What employment patterns do you observe? Do you notice any areas of particularly high or low turnover? 
+
+ -  Revenue serves as an indicator of employer health, it can be calculated according to employers’ locations. Plot the revenue for different employers.
+ - Turnover: the number of transactions of a business. Plot the turnover for different employers  
+ - Plot the revenue and turnover in the city map, and observe geospatial patterns. 
 
 # Project Timeline 
 
