@@ -5,11 +5,15 @@ description: |
 output_dir: "_site"
 navbar:
   right:
-    - text: "Home"
-      href: index.html
+    - text: "Project"
+      menu:
+      - text: "Proposal"
+        href: proposal.html
     - text: "About"
       href: about.html
   left:
+    - text: "Home"
+      href: index.html
     - text: "Take-home Exercise"
       menu:
       - text: "Exercise 1"

@@ -67,7 +67,29 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-07T15:41:00+08:00"
+      "last_modified": "2022-05-07T17:51:17+08:00"
+    },
+    {
+      "path": "proposal.html",
+      "title": "Proposal",
+      "description": "A proposal created for Vast Challenge 2022 - Challenge 3 (Economics)\n",
+      "author": [
+        {
+          "name": "Ding Yanmu",
+          "url": "https://dingyanmu.netlify.app/"
+        },
+        {
+          "name": "Rao Ningzhen",
+          "url": "https://jeanrao.netlify.app/"
+        },
+        {
+          "name": "Yu Di",
+          "url": "https://yudiva.netlify.app/"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\n\nContents\nBackground\nProject Motivation\nLimitations\nData Description\nProposed Visualizations\nProject Timeline\nSoftware Tools & R\nPackages\nGithub Repository\nTeam Members\nReferences\n\nBackground\nProject Motivation\nLimitations\nData Description\nProposed Visualizations\nProject Timeline\nSoftware Tools & R Packages\nOur project will be done as an R Shiny application using RStudio as\nthe IDE. We envision the use of the following packages:\nShiny – For creating an interactive R Shiny web-based\napplication\ntidyverse - The tidyverse collection of apps will provide the\nfoundational packages for plotting(ggplot2), data cleaning and\nmanipulation(dplyr, tidyr)\nGithub Repository\nThe code for our project can be found at github\nTeam Members\nDing Yanmu\nRao Ningzhen\nYu Di\nReferences\n\n\n\n",
+      "last_modified": "2022-05-07T18:20:13+08:00"
     }
   ],
   "collections": []

@@ -1,0 +1,74 @@
+---
+title: "Proposal"
+description: |
+  A proposal created for Vast Challenge 2022 - Challenge 3 (Economics)
+author:
+  - name: Ding Yanmu
+    url: https://dingyanmu.netlify.app/
+    affiliation: Singapore Management University
+  - name: Rao Ningzhen
+    url: https://jeanrao.netlify.app/
+    affiliation: Singapore Management University
+  - name: Yu Di
+    url: https://yudiva.netlify.app/
+    affiliation: Singapore Management University
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Background 
+
+ 
+
+# Project Motivation 
+
+ 
+
+# Limitations 
+
+ 
+
+# Data Description 
+
+ 
+
+# Proposed Visualizations 
+
+ 
+
+# Project Timeline 
+
+ 
+
+# Software Tools & R Packages 
+
+Our project will be done as an R Shiny application using RStudio as the IDE. We envision the use of the following packages:
+ 
+ - Shiny – For creating an interactive R Shiny web-based application
+ - tidyverse - The tidyverse collection of apps will provide the foundational packages for plotting(ggplot2), data cleaning and manipulation(dplyr, tidyr)
+
+# Github Repository 
+
+The code for our project can be found at [github](https://github.com/AmazingDD/VA-Gallery)
+
+# Team Members 
+
+  - [Ding Yanmu](https://dingyanmu.netlify.app/) 
+  - [Rao Ningzhen](https://jeanrao.netlify.app/) 
+  - [Yu Di](https://yudiva.netlify.app/) 
+
+# References 
+
+
+
+
+
+
