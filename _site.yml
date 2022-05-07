@@ -18,6 +18,10 @@ navbar:
         href: Exe2.html
       - text: "Exercise 3"
         href: Exe3.html
+    - text: "In-class Exercise"
+      menu:
+      - text: "Exercise 4"
+        href: in_exe4.html
     - text: "DataVis Makeover"
       menu: 
       - text: "Makeover1"
