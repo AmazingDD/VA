@@ -1,5 +1,5 @@
 ---
-title: "Proposal"
+title: "ISSS 608 Project Proposal"
 description: |
   A proposal created for Vast Challenge 2022 - Challenge 3 (Economics)
 author:
@@ -30,7 +30,7 @@ Anticipating rapid growth, the city of Engagement, Ohio USA is doing a participa
 
 # Project Motivation 
 
-Our project is motivated by providing financial insights for individuals and guidance for fiscal policy making. We will integrate various related data sources and inspect the information provided by participants over time to help answer the following questions: 
+Our project is motivated by providing financial insights for individuals and guidance for fiscal policy making of state Ohio. We will integrate various related data sources and inspect the information provided by participants over time to help answer the following questions: 
 
   - **Consumption Preference:** Is there any pattern for people’s consumption behavior?  
 
@@ -44,12 +44,12 @@ Our project is motivated by providing financial insights for individuals and gui
 
 The data of our group project is the project dataset provided by the official 2022 VAST challenge. Here is the data download link: [https://bit.ly/VAST-Challenge-2022-data](https://bit.ly/VAST-Challenge-2022-data)
 
- - **`ParticipantStatusLogs<n>.csv`**: record the living status of 1000 participants at every timestamp from March 1, 2022 to May 24, 2023.
- - **`Jobs.csv`**: contains information about employment opportunities available in the city at the start of the study. Some of these jobs are held by participants at the start of the study, while others are open positions. 
- - **`Participants.csv`**: contains information about the residents of Engagement and Happiness index that have agreed to participate in this study. 
- - **`Employers.csv`**: records information about the companies and businesses within the city limits that either employ study participants, or which have available job openings. 
- - **`Buildings.csv`**: Contains information about the buildings in the city that were involved in this study; this includes commercial, residential and school properties. 
- - **`Pubs.csv`**: contains information about the pubs within the city limits.
+ - **`ParticipantStatusLogs<n>.csv`**: Record the living status of 1000 participants at every timestamp from March 1, 2022 to May 24, 2023.
+ - **`Jobs.csv`**: Contains information about employment opportunities available in the city at the start of the study. Some of these jobs are held by participants at the start of the study, while others are open positions. 
+ - **`Participants.csv`**: Contains geographical features and happiness index of the participants. 
+ - **`Employers.csv`**: Records information about the companies within the city limits that either employ the participants, or have available job openings. 
+ - **`Buildings.csv`**: Contains information about the commercial, residential and school buildings involved in this study. 
+ - **`Pubs.csv`**: Contains locations and charging rates of the pubs within the city limits.
 
 # Proposed Visualizations 
 
@@ -57,49 +57,62 @@ The data of our group project is the project dataset provided by the official 20
 
 Over the period covered by the dataset, which businesses appear to be more prosperous? Which appear to be struggling? Describe your rationale for your answers.
 
- - For each business area, plot their total employment and average hourly wage for different period. And observe whether the business is growing or decaying. 
- 
-![Relationship of Wage and Employee Number](images/fig_example1.jpg){height="85%" width="85%"}
+ - For each business(employer), plot its total employment and average hourly wage for different periods, and observe whether the business is growing or shrinking. 
+
+<center>
+  ![Relationship of Wage and Employee Number](images/fig_example1.jpg){height="100%" width="100%"}
+</center>
 
 ## Problem 2
 
 How does the financial health of the residents change over the period covered by the dataset? How do wages compare to the overall cost of living in Engagement? Are there groups that appear to exhibit similar patterns? Describe your rationale for your answers.
 
-![Trend of Wage and Consumption](images/fig_example3.jpg){height="85%" width="85%"}
+ - Financial health of a population can be evaluated by their saving rates, and the percentage of income they spend on fixed or non-discretionary expenses.
+ - The wage and overall cost of living can be obtained from the daily activity logs. Engel's index can be calculated from these statistics. We plot these statistics for all participants with demographic attributes as facets and observe the patterns. 
 
- - Financial health: including the amount of savings you have, how much you're putting away for retirement, and how much of your income you are spending on fixed or non-discretionary expenses.
- - The wage and overall cost of living can be obtained from the log tables. Engel's index can be calculated from these statistics. We plot these statistics for all participants with demographic attributes as facets and observe the patterns. 
+<center>
+  ![Trend of Wage and Consumption](images/fig_example3.jpg){height="100%" width="100%"}
+</center>
+
  
- ![Income Patterns with Certain Group Method](images/fig_example4.jpg){height="85%" width="85%"}
- 
- - Try to group the data according to one-dimensional bins, as well as n-dimensional clusters. 
- 
-  ![Some Group Methods to Find Paterns](images/fig_example2.jpg){height="85%" width="85%"}
+
+<center>
+  ![Density distribution and average income for different demographical groups ](images/fig_example4.jpg){height="100%" width="100%"}
+</center>
+
+
+<center>
+  ![Find Consumption Patterns for different Education Groups](images/fig_example2.jpg){height="100%" width="100%"}
+</center>
 
 ## Problem 3
 
 Describe the health of the various employers within the city limits. What employment patterns do you observe? Do you notice any areas of particularly high or low turnover? 
 
- -  Revenue serves as an indicator of employer health, it can be calculated according to employers’ locations. Plot the revenue for different employers.
- - Turnover: the number of transactions of a business. Plot the turnover for different employers  
+ -  Revenue serves as an indicator of the employer health, it can be calculated according to the daily activity logs of the participants and the hourly charging rate of the business.
+ - Turnover is the number of transactions of a business. Plot the turnover for different employers  
  - Plot the revenue and turnover in the city map, and observe geospatial patterns. 
- 
-![Ohio Turnover/Revenue Heatmap](images/fig_example5.jpeg){height="80%" width="80%"}
+
+<center>
+  ![Ohio Turnover/Revenue Heatmap](images/fig_example5.jpeg){height="100%" width="100%"}
+</center>
 
 # Project Timeline 
 
-![](images/timeline.png)
+<center>
+  ![](images/timeline.png){height="100%" width="100%"}
+</center>
 
 # Software Tools & R Packages 
 
 Our project will be done as an R Shiny application using RStudio as the IDE. We envision the use of the following packages:
- 
+
  - Shiny – For creating an interactive R Shiny web-based application
- - tidyverse - The tidyverse collection of apps will provide the foundational packages for plotting(ggplot2), data cleaning and manipulation(dplyr, tidyr)
+ - tidyverse - Provides the fundamental packages for plotting(ggplot2), data cleaning and manipulation(dplyr, tidyr)
  - ggiraph: For making “ggplot” graphics interactive. 
- - plotly: The R library for plotting interactive statistical graphs. 
- - DT: Provides an R interface to the JavaScript library DataTables that create interactive table on html page.
- - ggdist: An R package that provides a flexible set of ggplot2 geoms and stats designed especially for visualising distributions and uncertainty. 
+ - plotly: For plotting interactive statistical graphs. 
+ - DT: For creating interactive data table on html webpages.
+ - ggdist: Provides a flexible set of ggplot2 geoms and stats designed especially for visualising distributions and uncertainty. 
 
 # Github Repository 
 
@@ -116,7 +129,3 @@ The code for our project can be found at [github](https://github.com/AmazingDD/V
  - Lyle, D. (2021, July 17). The 6 Best Ways to Measure Your Financial Health. Retrieved May 7, 2022 from [https://www.fool.com/the-ascent/banks/articles/the-6-best-ways-to-measure-your-financial-health/](https://www.fool.com/the-ascent/banks/articles/the-6-best-ways-to-measure-your-financial-health/)
  - Julia, K. (2022, April 10). Financial Health. Retrieved May 7, 2022 from [https://www.investopedia.com/terms/f/financial-health.asp](https://www.investopedia.com/terms/f/financial-health.asp)
  - The Consumer Financial Protection Bureau. (2015). 4 elements define personal financial well-being. Retrieved from: [https://www.consumerfinance.gov/about-us/blog/4-elements-define-personal-financial-well-being/](https://www.consumerfinance.gov/about-us/blog/4-elements-define-personal-financial-well-being/)
-
-
-
-
