@@ -62,12 +62,26 @@
       "last_modified": "2022-05-07T15:56:36+08:00"
     },
     {
+      "path": "in_exe5.html",
+      "title": "In CLass Exercise 5",
+      "description": "A new article created using the Distill format.\n",
+      "author": [
+        {
+          "name": "Yu Di",
+          "url": {}
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\n\n\n\n\ntimestamp\nsource_country\ntz\n2015-03-12 15:59:16\nCN\nAsia/Shanghai\n2015-03-12 16:00:48\nFR\nEurope/Paris\n2015-03-12 16:02:26\nCN\nAsia/Shanghai\n2015-03-12 16:02:38\nUS\nAmerica/Chicago\n2015-03-12 16:03:22\nCN\nAsia/Shanghai\n2015-03-12 16:03:45\nCN\nAsia/Shanghai\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2022-05-14T15:36:58+08:00"
+    },
+    {
       "path": "index.html",
       "title": "VA Exercises",
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-07T19:35:40+08:00"
+      "last_modified": "2022-05-14T14:42:28+08:00"
     },
     {
       "path": "proposal.html",

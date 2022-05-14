@@ -1,0 +1,145 @@
+---
+title: "In CLass Exercise 5"
+description: |
+  A new article created using the Distill format.
+author:
+  - name: Yu Di 
+    affiliation: Singapore Management University
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+packages = c('scales', 'viridis', 
+             'lubridate', 'ggthemes', 
+             'gridExtra', 'tidyverse', 
+             'readxl', 'knitr',
+             'data.table', 'ViSiElse')
+for (p in packages){
+  if(!require(p, character.only = T)){
+    install.packages(p)
+  }
+  library(p,character.only = T)
+}
+```
+
+```{r include=FALSE}
+attacks <- read_csv("data/eventlog.csv")
+```
+
+```{r}
+kable(head(attacks))
+```
+
+```{r}
+make_hr_wkday <- function(ts, sc, tz) {
+  real_times <- ymd_hms(ts, 
+                        tz = tz[1], 
+                        quiet = TRUE)
+  dt <- data.table(source_country = sc,
+                   wkday = weekdays(real_times),
+                   hour = hour(real_times))
+  return(dt)
+}
+
+wkday_levels <- c('Saturday', 'Friday', 
+                  'Thursday', 'Wednesday', 
+                  'Tuesday', 'Monday', 
+                  'Sunday')
+attacks <- attacks %>%
+  group_by(tz) %>%
+  do(make_hr_wkday(.$timestamp, 
+                   .$source_country, 
+                   .$tz)) %>% 
+  ungroup() %>% 
+  mutate(wkday = factor(wkday, levels = wkday_levels),
+         hour = factor(hour, levels = 0:23))
+
+grouped <- attacks %>% 
+  count(wkday, hour) %>% 
+  ungroup() %>%
+  na.omit()
+```
+
+```{r}
+ggplot(grouped, 
+       aes(hour, 
+           wkday, 
+           fill = n)) + 
+geom_tile(color = "white", 
+          size = 0.1) + 
+theme_tufte(base_family = "Helvetica") + # remove the boundary
+coord_equal() +
+scale_fill_gradient(name = "# of attacks",
+                    low = "sky blue", 
+                    high = "dark blue") +
+labs(x = NULL, 
+     y = NULL, 
+     title = "Attacks by weekday and time of day") +
+theme(axis.ticks = element_blank(),
+      plot.title = element_text(hjust = 0.5),
+      legend.title = element_text(size = 8),
+      legend.text = element_text(size = 6) )
+```
+
+```{r fig.width=15, fig.height=10}
+attackes_by_country <- count(attacks, source_country) %>%
+  mutate(percent = percent(n/sum(n))) %>%
+  arrange(desc(n))
+
+top4 <- attackes_by_country$source_country[1:4]
+top4_attacks <- attacks %>%
+  filter(source_country %in% top4) %>%
+  count(source_country, wkday, hour) %>%
+  na.omit()
+
+ggplot(top4_attacks, 
+       aes(hour, 
+           wkday, 
+           fill = n)) + 
+geom_tile(color = "white", 
+          size = 0.1) + 
+theme_tufte(base_family = "Helvetica") + # remove the boundary
+facet_wrap(~source_country, ncol = 2) +
+coord_equal() +
+scale_fill_gradient(name = "# of attacks",
+                    low = "sky blue", 
+                    high = "dark blue") +
+labs(x = NULL, 
+     y = NULL, 
+     title = "Attacks by weekday and time of day") +
+theme(axis.ticks = element_blank(),
+      plot.title = element_text(hjust = 0.5),
+      legend.title = element_text(size = 8),
+      legend.text = element_text(size = 6) )
+```
+
+```{r}
+data("typDay")
+p1 <- visielse(typDay, informer = NULL)
+b1 <- ConvertFromViSibook(p1@book)
+```
+
+```{r}
+b1 <- b1[order(as.numeric(b1$showorder)), ] # order the data.frame 
+b1$label <- c("Sleep", "Stop sleeping", "Wake up", "Take a shower", "Eat breakfast", 
+              "Start working", "Start eating lunch", "End of lunch", 
+              "Stop working", "Pick up the kids", "Start cooking", 
+              "End of dinner", "Go to sleep", "First coffee")
+b1[15,] <- c("sleep", "Sleeping", "l", 1, "start_sleep", "stop_sleep")
+b1[16,] <- c("work", "Working", "l", 5, "start_work", "stop_work")
+b1[17,] <- c("lunch", "Lunch break", "l", 6, "start_lunch", "stop_lunch")
+b1[18,] <- c("cook", "Cook and eat dinner", "l", 8, "start_cook", "stop_cook")
+b1$showorder <- c(NA, NA, 2, 3, 4, 5, NA, NA, 7, 9, NA, NA, 11, 12, 1, 6, 8, 10) 
+b1 <- b1[order(as.numeric(b1$showorder)), ]
+```
+
+```{r}
+v2 <- visielse(typDay, book = b1, informer = NULL, doplot = F, pixel = 30)
+plot(v2, vp0w = 0.7, unit.tps = "min", scal.unit.tps = 30, main = "Typical day")
+```
+
