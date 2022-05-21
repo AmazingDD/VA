@@ -1,0 +1,131 @@
+---
+title: "In-class Exercise 6"
+description: |
+  A new article created using the Distill format.
+author:
+  - name: Yu Di 
+    url: https://example.com/norajones
+    affiliation: Singapore Management University
+    affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+
+```{r}
+packages = c('sf', 'tmap', 
+             'lubridate', 'clock', 
+             'sftime', 'tidyverse', 'rmarkdown')
+for (p in packages){
+  if(!require(p, character.only = T)){
+    install.packages(p)
+  }
+  library(p,character.only = T)
+}
+```
+
+
+
+```{r}
+schools <- read_sf('data/Attributes/Schools.csv', 
+                   options = "GEOM_POSSIBLE_NAMES=location")
+pubs <- read_sf('data/Attributes/Pubs.csv', 
+                   options = "GEOM_POSSIBLE_NAMES=location")
+apartments <- read_sf('data/Attributes/Apartments.csv', 
+                   options = "GEOM_POSSIBLE_NAMES=location")
+employers <- read_sf('data/Attributes/Employers.csv', 
+                   options = "GEOM_POSSIBLE_NAMES=location")
+restaurants <- read_sf('data/Attributes/Restaurants.csv', 
+                   options = "GEOM_POSSIBLE_NAMES=location")
+buildings <- read_sf('data/Attributes/Buildings.csv', 
+                   options = "GEOM_POSSIBLE_NAMES=location")
+```
+
+```{r}
+tmap_mode("view")
+tm_shape(buildings) +
+  tm_polygons(col="grey60", size=1, border.col = "black", border.lwd=1)
+tmap_mode("plot")
+```
+
+
+```{r}
+tmap_mode("plot")
+tm_shape(buildings) +
+  tm_polygons(col="grey60", size=1, border.col = "black", border.lwd=1)+
+  tm_shape(employers) +
+  tm_dots(col = "red")
+```
+
+
+```{r}
+logs <- read_sf("data/Activity_Logs/ParticipantStatusLogs1.csv", 
+                options = "GEOM_POSSIBLE_NAMES=currentLocation")
+logs_selected <- logs %>%
+  mutate(Timestamp = date_time_parse(timestamp, zone="", format = "%Y-%m-%dT%H:%M:%S")) %>%
+  mutate(day = get_day(Timestamp)) %>%
+  filter(currentMode == "Transport")
+write_rds(logs_selected, 'data/log_selected.rds')
+```
+
+
+```{r}
+# log_selected <- read_rds(logs_selected, 'data/log_selected.rds')
+```
+
+```{r}
+hex <- st_make_grid(buildings, 
+                    cellsize=100, 
+                    square=FALSE) %>%  # False to be hexegons
+  st_sf() %>%
+  rowid_to_column('hex_id')
+plot(hex)
+```
+
+```{r}
+points_in_hex <- st_join(logs_selected, 
+                         hex, 
+                         join=st_within)
+plot(points_in_hex, pch='.')
+```
+```{r}
+points_in_hex <- st_join(logs_selected, 
+                        hex, 
+                        join=st_within) %>%
+  st_set_geometry(NULL) %>%
+  count(name='pointCount', hex_id)
+head(points_in_hex)
+```
+```{r}
+hex_combined <- hex %>%
+  left_join(points_in_hex, 
+            by = 'hex_id') %>%
+  replace(is.na(.), 0)
+
+tm_shape(hex_combined %>%
+           filter(pointCount > 0)) +
+  tm_fill("pointCount",
+          n = 8,
+          style = "quantile") +
+  tm_borders(alpha = 0.1)
+```
+
+```{r}
+logs_path <- logs_selected %>%
+  group_by(participantId, day) %>%
+  summarize(m = mean(Timestamp), 
+            do_union=FALSE) %>%
+  st_cast("LINESTRING")
+```
+
+```{r}
+logs_path_selected <- logs_path %>%
+  filter(participantId==0)
+tmap_mode("plot")
+tm_shape(buildings) + 
+  tm_polygons(col = "grey60", size=1, border.col = "black", border.lwd = 1) +
+  tm_shape(logs_path_selected) + 
+  tm_lines(col="blue")
+tmap_mode("plot")
+```
+

@@ -1,0 +1,109 @@
+---
+title: "Take Home Exercise 4"
+author:
+- name: "Yu Di"
+  affiliation: "Singapore Management University"
+description: |
+  VAST Challenge 2: Patterns of Life
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+packages = c('scales', 'viridis', 
+             'lubridate', 'ggthemes', 
+             'gridExtra', 'tidyverse', 
+             'readxl', 'knitr',
+             'data.table', 'ViSiElse')
+for (p in packages){
+  if(!require(p, character.only = T)){
+    install.packages(p)
+  }
+  library(p,character.only = T)
+}
+```
+
+
+```{r}
+all_fs <- list.files('./data/Activity_Logs/')
+
+selected_ids <- c(0, 1)
+df <- data.frame()
+for (f in all_fs) {
+  tmp <- read_csv(paste0('./data/Activity_Logs/', f)) %>%
+    filter(participantId %in% selected_ids)
+  df <- rbind(df, tmp)
+}
+rm(tmp)
+write_csv(df, './data/01behaviors.csv')
+
+swap <- function(DF, n, m) {
+ if (class(n)=="character") n <- which(colnames(DF)==n)
+ if (class(m)=="character") m <- which(colnames(DF)==m)
+ p <- NCOL(DF)
+ if (!(1<=n & n<=p)) stop("`n` represents invalid index!")
+ if (!(1<=m & m<=p)) stop("`m` represents invalid index!")
+ index <- 1:p
+ index[n] <- m; index[m] <- n
+ DF0 <- DF %>% select(all_of(index))
+ return(DF0)
+}
+```
+
+
+
+```{r}
+coffee <- c(58, 11, 5, 53, 53, 59, 24, 59, 46, 20)
+fill_coffee <- c(162, 57, 103, 154, 165, 132, 74, 107, 104,  93)
+fill_water <- c(66, 92, 54, 78, 74, 114, 91, 129, 71, 56)
+push_B <- c(74, 99, 62, 84, 83, 120, 95, 129, 80, 63)
+drink <- c(472, 176, 475, 283, 265, 207, 234, 184, 490, 520)
+X <- data.frame(id = seq(1,10), coffee, fill_coffee, fill_water, push_B, drink)
+head(X)
+```
+
+
+```{r}
+df <- read_csv('./data/01behaviors.csv')
+tmp <- df %>%
+  group_by(date(timestamp),participantId, currentMode) %>% 
+  tally(name = "timespan")
+tmp$timespan <- round(tmp$timespan * 5, -1)
+tmp <- tmp %>% pivot_wider(names_from = currentMode, values_from = timespan) 
+grp <- tmp$participantId
+tmp$id <- seq(1,nrow(tmp))
+tmp <- swap(tmp, "participantId",'id')
+tmp = subset(tmp, select = -c(`date(timestamp)`, `participantId`))
+tmp[is.na(tmp)] <- 0
+
+
+view(tmp)
+
+p1 <- visielse(tmp, informer=NULL,pixel = 100, method = 'cut', group = factor(grp)) #
+b1 <-ConvertFromViSibook(p1@book)
+b1 <- b1[order(as.numeric(b1$showorder)),]
+b1$label <- c("Home","Recreation",'Restaurant
+','Work','Transport') 
+
+SleepStatus_start_end_per_day <- two_par_log %>%
+  group_by(date(timestamp),sleepStatus) %>%
+  summarise(start = min(timestamp), end = max(timestamp))
+
+HungerStatus_start_end_per_day <- two_par_log %>%
+  group_by(date(timestamp),hungerStatus) %>%
+  summarise(start = min(timestamp), end = max(timestamp))
+
+calc_min <- function(datetime_obj) {
+  x<- hour(datetime_obj)*60 + minute(datetime_obj) + second(datetime_obj)/60
+  return(x)
+}
+```
+
+
+
