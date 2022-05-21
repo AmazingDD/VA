@@ -129,3 +129,13 @@ tm_shape(buildings) +
 tmap_mode("plot")
 ```
 
+```{r}
+tmap_mode('plot')
+tm_shape(buildings)+
+  tm_polygons(col = "grey60",
+              size=1,
+              border.col="black",
+              border.lwd = 1)+
+  tm_shape(logs_selected)+
+  tm_dots(col = "red")
+```
