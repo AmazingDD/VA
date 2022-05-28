@@ -24,6 +24,8 @@ navbar:
         href: Exe3.html
       - text: "Exercise 4"
         href: Exe4.html
+      - text: "Exercise 5"
+        href: Exe5.html
     - text: "In-class Exercise"
       menu:
       - text: "Exercise 4"
