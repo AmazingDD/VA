@@ -40,6 +40,8 @@ navbar:
         href: in_exe7.html
       - text: "Exercise 8"
         href: in_exe8.html
+      - text: "Exercise 9"
+        href: in_exe9.html
     - text: "DataVis Makeover"
       menu: 
       - text: "Makeover1"

@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>VA Exercises: In-class Exercise 9</title>
+
+  <meta property="description" itemprop="description" content="Finance Time Series"/>
+
+
+  <meta name="article:author" content="Yu Di"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="VA Exercises: In-class Exercise 9"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Finance Time Series"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="VA Exercises"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="VA Exercises: In-class Exercise 9"/>
+  <meta property="twitter:description" content="Finance Time Series"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output"]}},"value":[{"type":"character","attributes":{},"value":["In-class Exercise 9"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Yu Di"]},{"type":"character","attributes":{},"value":["Singapore Management University"]}]}]},{"type":"character","attributes":{},"value":["Finance Time Series\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"In-class Exercise 9","description":"Finance Time Series","authors":[{"author":"Yu Di","authorURL":"#","affiliation":"Singapore Management University","affiliationURL":"#","orcidID":""}]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="index.html" class="title">VA Exercises</a>
+<a href="index.html">Home</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Take-home Exercise
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="Exe1.html">Exercise 1</a>
+<a href="Exe2.html">Exercise 2</a>
+<a href="Exe3.html">Exercise 3</a>
+<a href="Exe4.html">Exercise 4</a>
+<a href="Exe5.html">Exercise 5</a>
+<a href="Exe6.html">Exercise 6</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+In-class Exercise
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="in_exe4.html">Exercise 4</a>
+<a href="in_exe5.html">Exercise 5</a>
+<a href="in_exe6.html">Exercise 6</a>
+<a href="in_exe7.html">Exercise 7</a>
+<a href="in_exe8.html">Exercise 8</a>
+<a href="in_exe9.html">Exercise 9</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+DataVis Makeover
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="Makeover">Makeover1</a>
+<a href="Makeover">Makeover2</a>
+</div>
+</div>
+</div>
+<div class="nav-right">
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Project
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="proposal.html">Proposal</a>
+</div>
+</div>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>In-class Exercise 9</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Finance Time Series</p></p>
+</div>
+
+<div class="d-byline">
+  Yu Di  (Singapore Management University)
+  
+
+</div>
+
+<div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>packages</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'tidyverse'</span>, <span class='st'>'lubridate'</span>, 
+             <span class='st'>'tidyquant'</span>, <span class='st'>'ggHoriPlot'</span>,
+             <span class='st'>'timetk'</span>, <span class='st'>'ggthemes'</span>,
+             <span class='st'>'plotly'</span><span class='op'>)</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>p</span> <span class='kw'>in</span> <span class='va'>packages</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
+  <span class='op'>}</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>p</span>,character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>company</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/companySG.csv"</span><span class='op'>)</span>
+<span class='va'>Top40</span> <span class='op'>&lt;-</span> <span class='va'>company</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>slice_max</span><span class='op'>(</span><span class='va'>`marketcap`</span>, n<span class='op'>=</span><span class='fl'>40</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>symbol</span><span class='op'>)</span>
+
+<span class='va'>Stock40_daily</span> <span class='op'>&lt;-</span> <span class='va'>Top40</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>tq_get</span><span class='op'>(</span>get <span class='op'>=</span> <span class='st'>"stock.prices"</span>, 
+         from <span class='op'>=</span> <span class='st'>"2020-01-01"</span>, 
+         to <span class='op'>=</span> <span class='st'>"2022-03-31"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>symbol</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>tq_transmute</span><span class='op'>(</span>select <span class='op'>=</span> <span class='cn'>NULL</span>, 
+               mutate_fun <span class='op'>=</span> <span class='va'>to.period</span>, 
+               period  <span class='op'>=</span> <span class='st'>"days"</span><span class='op'>)</span>
+
+
+<span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_horizon</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y<span class='op'>=</span><span class='va'>adjusted</span><span class='op'>)</span>, origin <span class='op'>=</span> <span class='st'>"midpoint"</span>, horizonscale <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>facet_grid</span><span class='op'>(</span><span class='va'>symbol</span><span class='op'>~</span><span class='va'>.</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>theme_few</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_fill_hcl</span><span class='op'>(</span>palette <span class='op'>=</span> <span class='st'>'RdBu'</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme</span><span class='op'>(</span>panel.spacing.y<span class='op'>=</span><span class='fu'>unit</span><span class='op'>(</span><span class='fl'>0</span>, <span class='st'>"lines"</span><span class='op'>)</span>, strip.text.y <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>
+    size <span class='op'>=</span> <span class='fl'>5</span>, angle <span class='op'>=</span> <span class='fl'>0</span>, hjust <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>,
+    legend.position <span class='op'>=</span> <span class='st'>'none'</span>,
+    axis.text.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    axis.text.x <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>size<span class='op'>=</span><span class='fl'>7</span><span class='op'>)</span>,
+    axis.title.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    axis.title.x <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    axis.ticks.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    panel.border <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>
+    <span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_x_date</span><span class='op'>(</span>expand<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>0</span><span class='op'>)</span>, date_breaks <span class='op'>=</span> <span class='st'>"1 month"</span>, date_labels <span class='op'>=</span> <span class='st'>"%b%y"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>ggtitle</span><span class='op'>(</span><span class='st'>'Daily Adjusted Prices (Jan 2020 to Mar 2022)'</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="in_exe9_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Stock40_daily</span> <span class='op'>&lt;-</span> <span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>left_join</span><span class='op'>(</span><span class='va'>company</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>8</span>, <span class='fl'>11</span><span class='op'>:</span><span class='fl'>12</span><span class='op'>)</span>
+
+<span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_horizon</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y<span class='op'>=</span><span class='va'>adjusted</span><span class='op'>)</span>, origin <span class='op'>=</span> <span class='st'>"midpoint"</span>, horizonscale <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>facet_grid</span><span class='op'>(</span><span class='va'>Name</span><span class='op'>~</span><span class='va'>.</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>geom_vline</span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span><span class='op'>(</span><span class='st'>"2020-03-11"</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>"grey15"</span>, linetype <span class='op'>=</span> <span class='st'>"dashed"</span>, size <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>geom_vline</span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span><span class='op'>(</span><span class='st'>"2020-12-14"</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>"grey15"</span>, linetype <span class='op'>=</span> <span class='st'>"dashed"</span>, size <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>theme_few</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_fill_hcl</span><span class='op'>(</span>palette <span class='op'>=</span> <span class='st'>'RdBu'</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme</span><span class='op'>(</span>panel.spacing.y<span class='op'>=</span><span class='fu'>unit</span><span class='op'>(</span><span class='fl'>0</span>, <span class='st'>"lines"</span><span class='op'>)</span>,
+        strip.text.y <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>5</span>, angle <span class='op'>=</span> <span class='fl'>0</span>, hjust <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>,
+    legend.position <span class='op'>=</span> <span class='st'>'none'</span>,
+    axis.text.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    axis.text.x <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>size<span class='op'>=</span><span class='fl'>5</span><span class='op'>)</span>,
+    axis.title.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    axis.title.x <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    axis.ticks.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+    panel.border <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>
+    <span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_x_date</span><span class='op'>(</span>expand<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>0</span><span class='op'>)</span>, date_breaks <span class='op'>=</span> <span class='st'>"1 month"</span>, date_labels <span class='op'>=</span> <span class='st'>"%b%y"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>ggtitle</span><span class='op'>(</span><span class='st'>'Daily Adjusted Prices (Jan 2020 to Mar 2022)'</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="in_exe9_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>symbol</span> <span class='op'>==</span> <span class='st'>"DBSDF"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>close</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"DBS Group Holdings Ltd (DBSDF) Daily Stock Price"</span>, 
+         y <span class='op'>=</span> <span class='st'>"Closing Price"</span>, x <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>+</span> 
+    <span class='fu'>theme_tq</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="in_exe9_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>selected_stocks</span> <span class='op'>&lt;-</span>  <span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span> <span class='op'>(</span><span class='va'>`symbol`</span> <span class='op'>==</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"C09.SI"</span>, <span class='st'>"SINGF"</span>, <span class='st'>"SNGNF"</span>, <span class='st'>"C52.SI"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>selected_stocks</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>adjusted</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+        <span class='fu'>scale_y_continuous</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+        <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+        <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span><span class='va'>Name</span>, scales <span class='op'>=</span> <span class='st'>"free_y"</span>,<span class='op'>)</span> <span class='op'>+</span>
+        <span class='fu'>theme_tq</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+        <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Daily stock prices of selected weak stocks"</span>, x <span class='op'>=</span> <span class='st'>""</span>, y <span class='op'>=</span> <span class='st'>"Adjusted Price"</span><span class='op'>)</span> <span class='op'>+</span>
+        <span class='fu'>theme</span><span class='op'>(</span>axis.text.x <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span>, axis.text.y <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>6</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>ggplotly</span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="htmlwidget-18a03efcc56ddec834ce" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18a03efcc56ddec834ce">{"x":{"data":[{"x":[18263,18269,18275,18281,18285,18292,18298,18304,18310,18316,18320,18326,18332,18338,18344,18348,18354,18360,18367,18373,18379,18386,18393,18397,18403,18410,18416,18422,18428,18432,18438,18444,18450,18457,18463,18467,18473,18480,18487,18493,18499,18505,18509,18515,18521,18527,18533,18537,18543,18549,18555,18561,18565,18571,18577,18583,18589,18593,18599,18605,18611,18617,18624,18631,18635,18641,18647,18653,18659,18663,18669,18676,18682,18688,18694,18698,18704,18710,18716,18723,18729,18733,18739,18745,18751,18757,18764,18768,18775,18781,18787,18793,18799,18803,18809,18815,18821,18827,18834,18838,18844,18851,18857,18863,18869,18873,18879,18885,18891,18897,18901,18907,18913,18919,18925,18929,18936,18942,18948,18954,18960,18964,18970,18976,18982,18988,18992,18998,19004,19010,19016,19020,19030,19034,19040,19046,19052,19058,19062,19068,19074,19080],"y":[10.902344,10.999861,11.136383,11.058371,10.648801,10.336749,10.726814,10.980357,10.658553,10.22948,9.527363,9.566369,8.708224,7.460012,6.075277,7.255227,6.816402,7.577032,7.294234,7.352744,7.401503,7.614927,7.880222,7.418413,7.467541,7.536321,8.518891,8.852966,8.184819,8.351855,8.233947,8.381332,8.667097,8.182294,8.231763,8.1724,8.093248,8.122931,8.370279,7.934946,7.964627,7.944839,7.865687,7.865687,7.934946,7.727172,7.628232,7.628232,7.717278,7.786535,7.549081,6.797141,6.272762,6.530005,7.113748,7.361096,7.816218,7.786535,7.598551,7.737066,7.865687,7.875581,7.954733,7.717278,7.272051,7.46993,7.558975,7.291839,7.113748,7.153323,7.103853,7.044489,7.252263,7.37099,7.341309,7.390778,7.529293,7.74696,7.895369,8.083355,7.964627,7.954733,7.855793,7.875581,7.737066,7.597839,7.279605,7.388998,7.587894,7.78679,7.617728,7.587894,7.309439,7.309439,7.150322,6.971315,6.921591,6.73264,6.782364,6.812198,6.722695,6.722695,7.00115,6.91169,6.961629,6.851762,6.602062,7.051521,7.171377,7.051521,6.801822,7.071497,7.351161,7.381125,7.441053,7.31121,7.221317,7.221317,7.241293,7.051521,6.991593,6.821798,7.021558,7.06151,6.642014,6.71193,6.801822,6.871738,6.891714,7.121438,7.111449,6.961629,7.091474,7.231305,7.301221,7.231305,7.161389,7.001582,7.281245,7.331185,7.441053,7.870537],"text":["date: 2020-01-02<br />adjusted: 10.902344","date: 2020-01-08<br />adjusted: 10.999861","date: 2020-01-14<br />adjusted: 11.136383","date: 2020-01-20<br />adjusted: 11.058371","date: 2020-01-24<br />adjusted: 10.648801","date: 2020-01-31<br />adjusted: 10.336749","date: 2020-02-06<br />adjusted: 10.726814","date: 2020-02-12<br />adjusted: 10.980357","date: 2020-02-18<br />adjusted: 10.658553","date: 2020-02-24<br />adjusted: 10.229480","date: 2020-02-28<br />adjusted:  9.527363","date: 2020-03-05<br />adjusted:  9.566369","date: 2020-03-11<br />adjusted:  8.708224","date: 2020-03-17<br />adjusted:  7.460012","date: 2020-03-23<br />adjusted:  6.075277","date: 2020-03-27<br />adjusted:  7.255227","date: 2020-04-02<br />adjusted:  6.816402","date: 2020-04-08<br />adjusted:  7.577032","date: 2020-04-15<br />adjusted:  7.294234","date: 2020-04-21<br />adjusted:  7.352744","date: 2020-04-27<br />adjusted:  7.401503","date: 2020-05-04<br />adjusted:  7.614927","date: 2020-05-11<br />adjusted:  7.880222","date: 2020-05-15<br />adjusted:  7.418413","date: 2020-05-21<br />adjusted:  7.467541","date: 2020-05-28<br />adjusted:  7.536321","date: 2020-06-03<br />adjusted:  8.518891","date: 2020-06-09<br />adjusted:  8.852966","date: 2020-06-15<br />adjusted:  8.184819","date: 2020-06-19<br />adjusted:  8.351855","date: 2020-06-25<br />adjusted:  8.233947","date: 2020-07-01<br />adjusted:  8.381332","date: 2020-07-07<br />adjusted:  8.667097","date: 2020-07-14<br />adjusted:  8.182294","date: 2020-07-20<br />adjusted:  8.231763","date: 2020-07-24<br />adjusted:  8.172400","date: 2020-07-30<br />adjusted:  8.093248","date: 2020-08-06<br />adjusted:  8.122931","date: 2020-08-13<br />adjusted:  8.370279","date: 2020-08-19<br />adjusted:  7.934946","date: 2020-08-25<br />adjusted:  7.964627","date: 2020-08-31<br />adjusted:  7.944839","date: 2020-09-04<br />adjusted:  7.865687","date: 2020-09-10<br />adjusted:  7.865687","date: 2020-09-16<br />adjusted:  7.934946","date: 2020-09-22<br />adjusted:  7.727172","date: 2020-09-28<br />adjusted:  7.628232","date: 2020-10-02<br />adjusted:  7.628232","date: 2020-10-08<br />adjusted:  7.717278","date: 2020-10-14<br />adjusted:  7.786535","date: 2020-10-20<br />adjusted:  7.549081","date: 2020-10-26<br />adjusted:  6.797141","date: 2020-10-30<br />adjusted:  6.272762","date: 2020-11-05<br />adjusted:  6.530005","date: 2020-11-11<br />adjusted:  7.113748","date: 2020-11-17<br />adjusted:  7.361096","date: 2020-11-23<br />adjusted:  7.816218","date: 2020-11-27<br />adjusted:  7.786535","date: 2020-12-03<br />adjusted:  7.598551","date: 2020-12-09<br />adjusted:  7.737066","date: 2020-12-15<br />adjusted:  7.865687","date: 2020-12-21<br />adjusted:  7.875581","date: 2020-12-28<br />adjusted:  7.954733","date: 2021-01-04<br />adjusted:  7.717278","date: 2021-01-08<br />adjusted:  7.272051","date: 2021-01-14<br />adjusted:  7.469930","date: 2021-01-20<br />adjusted:  7.558975","date: 2021-01-26<br />adjusted:  7.291839","date: 2021-02-01<br />adjusted:  7.113748","date: 2021-02-05<br />adjusted:  7.153323","date: 2021-02-11<br />adjusted:  7.103853","date: 2021-02-18<br />adjusted:  7.044489","date: 2021-02-24<br />adjusted:  7.252263","date: 2021-03-02<br />adjusted:  7.370990","date: 2021-03-08<br />adjusted:  7.341309","date: 2021-03-12<br />adjusted:  7.390778","date: 2021-03-18<br />adjusted:  7.529293","date: 2021-03-24<br />adjusted:  7.746960","date: 2021-03-30<br />adjusted:  7.895369","date: 2021-04-06<br />adjusted:  8.083355","date: 2021-04-12<br />adjusted:  7.964627","date: 2021-04-16<br />adjusted:  7.954733","date: 2021-04-22<br />adjusted:  7.855793","date: 2021-04-28<br />adjusted:  7.875581","date: 2021-05-04<br />adjusted:  7.737066","date: 2021-05-10<br />adjusted:  7.597839","date: 2021-05-17<br />adjusted:  7.279605","date: 2021-05-21<br />adjusted:  7.388998","date: 2021-05-28<br />adjusted:  7.587894","date: 2021-06-03<br />adjusted:  7.786790","date: 2021-06-09<br />adjusted:  7.617728","date: 2021-06-15<br />adjusted:  7.587894","date: 2021-06-21<br />adjusted:  7.309439","date: 2021-06-25<br />adjusted:  7.309439","date: 2021-07-01<br />adjusted:  7.150322","date: 2021-07-07<br />adjusted:  6.971315","date: 2021-07-13<br />adjusted:  6.921591","date: 2021-07-19<br />adjusted:  6.732640","date: 2021-07-26<br />adjusted:  6.782364","date: 2021-07-30<br />adjusted:  6.812198","date: 2021-08-05<br />adjusted:  6.722695","date: 2021-08-12<br />adjusted:  6.722695","date: 2021-08-18<br />adjusted:  7.001150","date: 2021-08-24<br />adjusted:  6.911690","date: 2021-08-30<br />adjusted:  6.961629","date: 2021-09-03<br />adjusted:  6.851762","date: 2021-09-09<br />adjusted:  6.602062","date: 2021-09-15<br />adjusted:  7.051521","date: 2021-09-21<br />adjusted:  7.171377","date: 2021-09-27<br />adjusted:  7.051521","date: 2021-10-01<br />adjusted:  6.801822","date: 2021-10-07<br />adjusted:  7.071497","date: 2021-10-13<br />adjusted:  7.351161","date: 2021-10-19<br />adjusted:  7.381125","date: 2021-10-25<br />adjusted:  7.441053","date: 2021-10-29<br />adjusted:  7.311210","date: 2021-11-05<br />adjusted:  7.221317","date: 2021-11-11<br />adjusted:  7.221317","date: 2021-11-17<br />adjusted:  7.241293","date: 2021-11-23<br />adjusted:  7.051521","date: 2021-11-29<br />adjusted:  6.991593","date: 2021-12-03<br />adjusted:  6.821798","date: 2021-12-09<br />adjusted:  7.021558","date: 2021-12-15<br />adjusted:  7.061510","date: 2021-12-21<br />adjusted:  6.642014","date: 2021-12-27<br />adjusted:  6.711930","date: 2021-12-31<br />adjusted:  6.801822","date: 2022-01-06<br />adjusted:  6.871738","date: 2022-01-12<br />adjusted:  6.891714","date: 2022-01-18<br />adjusted:  7.121438","date: 2022-01-24<br />adjusted:  7.111449","date: 2022-01-28<br />adjusted:  6.961629","date: 2022-02-07<br />adjusted:  7.091474","date: 2022-02-11<br />adjusted:  7.231305","date: 2022-02-17<br />adjusted:  7.301221","date: 2022-02-23<br />adjusted:  7.231305","date: 2022-03-01<br />adjusted:  7.161389","date: 2022-03-07<br />adjusted:  7.001582","date: 2022-03-11<br />adjusted:  7.281245","date: 2022-03-17<br />adjusted:  7.331185","date: 2022-03-23<br />adjusted:  7.441053","date: 2022-03-29<br />adjusted:  7.870537"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18268,18274,18278,18284,18291,18297,18303,18309,18313,18319,18325,18331,18337,18341,18347,18353,18359,18366,18372,18376,18382,18390,18396,18402,18409,18415,18421,18425,18431,18437,18443,18449,18456,18460,18466,18472,18479,18486,18492,18498,18502,18508,18514,18520,18526,18530,18536,18542,18548,18554,18558,18564,18570,18576,18582,18586,18592,18598,18604,18610,18614,18620,18627,18634,18640,18646,18652,18656,18662,18668,18675,18681,18687,18691,18697,18703,18709,18715,18722,18726,18732,18738,18744,18750,18754,18761,18767,18774,18780,18786,18792,18796,18802,18808,18814,18820,18824,18831,18837,18843,18850,18856,18862,18866,18872,18878,18884,18890,18894,18900,18906,18912,18918,18922,18928,18934,18941,18947,18953,18957,18963,18969,18975,18981,18985,18991,18997,19003,19009,19013,19019,19027,19033,19039,19045,19051,19055,19061,19067,19073,19079],"y":[2.105219,2.051239,2.015252,1.979265,1.952276,1.925285,1.961272,1.880302,1.817326,1.808329,1.772342,1.682376,1.439466,1.313512,1.358496,1.322509,1.367493,1.412476,1.367493,1.286523,1.484449,1.47785,1.394198,1.440671,1.422082,1.43772,1.601755,1.553509,1.563158,1.495614,1.399123,1.466667,1.418421,1.379825,1.350878,1.302632,1.341228,1.360527,1.360527,1.370176,1.466667,1.457018,1.466667,1.43772,1.408772,1.389474,1.379825,1.389474,1.428071,1.428071,1.389474,1.341228,1.341228,1.457018,1.524562,1.592106,1.669299,1.563158,1.572807,1.65,1.65,1.601755,1.611404,1.621053,1.65,1.630702,1.572807,1.524562,1.534211,1.524562,1.534211,1.524562,1.572807,1.553509,1.630702,1.611404,1.601755,1.678948,1.727193,1.688597,1.717544,1.688597,1.707895,1.630702,1.635139,1.537809,1.576741,1.615673,1.635139,1.625406,1.635139,1.60594,1.596207,1.596207,1.615673,1.576741,1.537809,1.537809,1.557275,1.537809,1.567008,1.576741,1.58746,1.60718,1.58746,1.56774,1.53816,1.48886,1.53816,1.48886,1.48886,1.53816,1.55788,1.53816,1.54802,1.5776,1.58746,1.48886,1.49872,1.44942,1.35082,1.3804,1.36068,1.3311,1.35082,1.3804,1.37054,1.3311,1.37054,1.36068,1.34096,1.3804,1.4297,1.44942,1.44942,1.39026,1.39026,1.37054,1.3804,1.40012,1.45928],"text":["date: 2020-01-07<br />adjusted:  2.105219","date: 2020-01-13<br />adjusted:  2.051239","date: 2020-01-17<br />adjusted:  2.015252","date: 2020-01-23<br />adjusted:  1.979265","date: 2020-01-30<br />adjusted:  1.952276","date: 2020-02-05<br />adjusted:  1.925285","date: 2020-02-11<br />adjusted:  1.961272","date: 2020-02-17<br />adjusted:  1.880302","date: 2020-02-21<br />adjusted:  1.817326","date: 2020-02-27<br />adjusted:  1.808329","date: 2020-03-04<br />adjusted:  1.772342","date: 2020-03-10<br />adjusted:  1.682376","date: 2020-03-16<br />adjusted:  1.439466","date: 2020-03-20<br />adjusted:  1.313512","date: 2020-03-26<br />adjusted:  1.358496","date: 2020-04-01<br />adjusted:  1.322509","date: 2020-04-07<br />adjusted:  1.367493","date: 2020-04-14<br />adjusted:  1.412476","date: 2020-04-20<br />adjusted:  1.367493","date: 2020-04-24<br />adjusted:  1.286523","date: 2020-04-30<br />adjusted:  1.484449","date: 2020-05-08<br />adjusted:  1.477850","date: 2020-05-14<br />adjusted:  1.394198","date: 2020-05-20<br />adjusted:  1.440671","date: 2020-05-27<br />adjusted:  1.422082","date: 2020-06-02<br />adjusted:  1.437720","date: 2020-06-08<br />adjusted:  1.601755","date: 2020-06-12<br />adjusted:  1.553509","date: 2020-06-18<br />adjusted:  1.563158","date: 2020-06-24<br />adjusted:  1.495614","date: 2020-06-30<br />adjusted:  1.399123","date: 2020-07-06<br />adjusted:  1.466667","date: 2020-07-13<br />adjusted:  1.418421","date: 2020-07-17<br />adjusted:  1.379825","date: 2020-07-23<br />adjusted:  1.350878","date: 2020-07-29<br />adjusted:  1.302632","date: 2020-08-05<br />adjusted:  1.341228","date: 2020-08-12<br />adjusted:  1.360527","date: 2020-08-18<br />adjusted:  1.360527","date: 2020-08-24<br />adjusted:  1.370176","date: 2020-08-28<br />adjusted:  1.466667","date: 2020-09-03<br />adjusted:  1.457018","date: 2020-09-09<br />adjusted:  1.466667","date: 2020-09-15<br />adjusted:  1.437720","date: 2020-09-21<br />adjusted:  1.408772","date: 2020-09-25<br />adjusted:  1.389474","date: 2020-10-01<br />adjusted:  1.379825","date: 2020-10-07<br />adjusted:  1.389474","date: 2020-10-13<br />adjusted:  1.428071","date: 2020-10-19<br />adjusted:  1.428071","date: 2020-10-23<br />adjusted:  1.389474","date: 2020-10-29<br />adjusted:  1.341228","date: 2020-11-04<br />adjusted:  1.341228","date: 2020-11-10<br />adjusted:  1.457018","date: 2020-11-16<br />adjusted:  1.524562","date: 2020-11-20<br />adjusted:  1.592106","date: 2020-11-26<br />adjusted:  1.669299","date: 2020-12-02<br />adjusted:  1.563158","date: 2020-12-08<br />adjusted:  1.572807","date: 2020-12-14<br />adjusted:  1.650000","date: 2020-12-18<br />adjusted:  1.650000","date: 2020-12-24<br />adjusted:  1.601755","date: 2020-12-31<br />adjusted:  1.611404","date: 2021-01-07<br />adjusted:  1.621053","date: 2021-01-13<br />adjusted:  1.650000","date: 2021-01-19<br />adjusted:  1.630702","date: 2021-01-25<br />adjusted:  1.572807","date: 2021-01-29<br />adjusted:  1.524562","date: 2021-02-04<br />adjusted:  1.534211","date: 2021-02-10<br />adjusted:  1.524562","date: 2021-02-17<br />adjusted:  1.534211","date: 2021-02-23<br />adjusted:  1.524562","date: 2021-03-01<br />adjusted:  1.572807","date: 2021-03-05<br />adjusted:  1.553509","date: 2021-03-11<br />adjusted:  1.630702","date: 2021-03-17<br />adjusted:  1.611404","date: 2021-03-23<br />adjusted:  1.601755","date: 2021-03-29<br />adjusted:  1.678948","date: 2021-04-05<br />adjusted:  1.727193","date: 2021-04-09<br />adjusted:  1.688597","date: 2021-04-15<br />adjusted:  1.717544","date: 2021-04-21<br />adjusted:  1.688597","date: 2021-04-27<br />adjusted:  1.707895","date: 2021-05-03<br />adjusted:  1.630702","date: 2021-05-07<br />adjusted:  1.635139","date: 2021-05-14<br />adjusted:  1.537809","date: 2021-05-20<br />adjusted:  1.576741","date: 2021-05-27<br />adjusted:  1.615673","date: 2021-06-02<br />adjusted:  1.635139","date: 2021-06-08<br />adjusted:  1.625406","date: 2021-06-14<br />adjusted:  1.635139","date: 2021-06-18<br />adjusted:  1.605940","date: 2021-06-24<br />adjusted:  1.596207","date: 2021-06-30<br />adjusted:  1.596207","date: 2021-07-06<br />adjusted:  1.615673","date: 2021-07-12<br />adjusted:  1.576741","date: 2021-07-16<br />adjusted:  1.537809","date: 2021-07-23<br />adjusted:  1.537809","date: 2021-07-29<br />adjusted:  1.557275","date: 2021-08-04<br />adjusted:  1.537809","date: 2021-08-11<br />adjusted:  1.567008","date: 2021-08-17<br />adjusted:  1.576741","date: 2021-08-23<br />adjusted:  1.587460","date: 2021-08-27<br />adjusted:  1.607180","date: 2021-09-02<br />adjusted:  1.587460","date: 2021-09-08<br />adjusted:  1.567740","date: 2021-09-14<br />adjusted:  1.538160","date: 2021-09-20<br />adjusted:  1.488860","date: 2021-09-24<br />adjusted:  1.538160","date: 2021-09-30<br />adjusted:  1.488860","date: 2021-10-06<br />adjusted:  1.488860","date: 2021-10-12<br />adjusted:  1.538160","date: 2021-10-18<br />adjusted:  1.557880","date: 2021-10-22<br />adjusted:  1.538160","date: 2021-10-28<br />adjusted:  1.548020","date: 2021-11-03<br />adjusted:  1.577600","date: 2021-11-10<br />adjusted:  1.587460","date: 2021-11-16<br />adjusted:  1.488860","date: 2021-11-22<br />adjusted:  1.498720","date: 2021-11-26<br />adjusted:  1.449420","date: 2021-12-02<br />adjusted:  1.350820","date: 2021-12-08<br />adjusted:  1.380400","date: 2021-12-14<br />adjusted:  1.360680","date: 2021-12-20<br />adjusted:  1.331100","date: 2021-12-24<br />adjusted:  1.350820","date: 2021-12-30<br />adjusted:  1.380400","date: 2022-01-05<br />adjusted:  1.370540","date: 2022-01-11<br />adjusted:  1.331100","date: 2022-01-17<br />adjusted:  1.370540","date: 2022-01-21<br />adjusted:  1.360680","date: 2022-01-27<br />adjusted:  1.340960","date: 2022-02-04<br />adjusted:  1.380400","date: 2022-02-10<br />adjusted:  1.429700","date: 2022-02-16<br />adjusted:  1.449420","date: 2022-02-22<br />adjusted:  1.449420","date: 2022-02-28<br />adjusted:  1.390260","date: 2022-03-04<br />adjusted:  1.390260","date: 2022-03-10<br />adjusted:  1.370540","date: 2022-03-16<br />adjusted:  1.380400","date: 2022-03-22<br />adjusted:  1.400120","date: 2022-03-28<br />adjusted:  1.459280"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[18264,18270,18276,18283,18289,18295,18299,18305,18312,18318,18324,18330,18334,18340,18346,18352,18358,18365,18369,18375,18381,18387,18393,18397,18403,18410,18416,18422,18428,18432,18438,18444,18451,18457,18463,18467,18473,18479,18485,18491,18495,18501,18507,18514,18520,18526,18530,18536,18542,18548,18554,18558,18564,18570,18576,18582,18586,18593,18599,18605,18611,18617,18624,18631,18635,18641,18648,18654,18660,18666,18670,18677,18683,18689,18695,18701,18705,18711,18717,18724,18730,18736,18740,18746,18752,18758,18764,18768,18774,18781,18787,18793,18799,18803,18809,18816,18822,18828,18834,18838,18844,18850,18856,18862,18866,18872,18879,18885,18891,18897,18901,18907,18913,18919,18925,18929,18935,18941,18947,18953,18960,18964,18970,18976,18982,18989,18995,18999,19005,19012,19018,19024,19030,19034,19040,19047,19053,19059,19065,19069,19075,19081],"y":[6.72,6.72,6.72,6.72,6,6.19,6.21,6.21,6.13,5.91,5.71,5.13,5.08,4.49,4.7,4.09,4.06,4.33,4.34,4.32,4.39,4.23,3.3,2.88,2.6,2.77,3.15,3.18,2.95,2.88,2.78,2.71,2.78,2.73,2.63,2.65,2.53,2.59,2.63,2.74,2.64,2.67,2.62,2.62,2.6,2.51,2.46,2.52,2.62,2.61,2.57,2.64,2.54,2.6,2.86,2.95,3.03,3.41,3.32,3.27,3.33,3.23,3.25,3.24,3.2,3.24,3.21,3.13,3.14,3.28,3.3,3.26,3.9,3.9,3.93,4.15,4.24,4.05,4.13,4.16,4.15,3.9,3.83,3.85,3.6,3.7,3.48,3.57,3.76,3.82,3.75,3.8,3.8,3.65,3.69,3.7,3.69,3.58,3.72,3.71,3.64,3.75,3.69,3.59,3.7,3.71,3.69,3.72,3.6,3.71,3.69,3.7,4.06,4.1,3.9,3.83,3.87,4.03,3.96,3.9,3.6,3.45,3.67,3.48,3.58,3.66,3.7,3.66,3.72,3.69,3.65,3.65,3.9,3.91,4,3.65,3.74,3.56,3.58,3.92,4.04,4.08],"text":["date: 2020-01-03<br />adjusted:  6.720000","date: 2020-01-09<br />adjusted:  6.720000","date: 2020-01-15<br />adjusted:  6.720000","date: 2020-01-22<br />adjusted:  6.720000","date: 2020-01-28<br />adjusted:  6.000000","date: 2020-02-03<br />adjusted:  6.190000","date: 2020-02-07<br />adjusted:  6.210000","date: 2020-02-13<br />adjusted:  6.210000","date: 2020-02-20<br />adjusted:  6.130000","date: 2020-02-26<br />adjusted:  5.910000","date: 2020-03-03<br />adjusted:  5.710000","date: 2020-03-09<br />adjusted:  5.130000","date: 2020-03-13<br />adjusted:  5.080000","date: 2020-03-19<br />adjusted:  4.490000","date: 2020-03-25<br />adjusted:  4.700000","date: 2020-03-31<br />adjusted:  4.090000","date: 2020-04-06<br />adjusted:  4.060000","date: 2020-04-13<br />adjusted:  4.330000","date: 2020-04-17<br />adjusted:  4.340000","date: 2020-04-23<br />adjusted:  4.320000","date: 2020-04-29<br />adjusted:  4.390000","date: 2020-05-05<br />adjusted:  4.230000","date: 2020-05-11<br />adjusted:  3.300000","date: 2020-05-15<br />adjusted:  2.880000","date: 2020-05-21<br />adjusted:  2.600000","date: 2020-05-28<br />adjusted:  2.770000","date: 2020-06-03<br />adjusted:  3.150000","date: 2020-06-09<br />adjusted:  3.180000","date: 2020-06-15<br />adjusted:  2.950000","date: 2020-06-19<br />adjusted:  2.880000","date: 2020-06-25<br />adjusted:  2.780000","date: 2020-07-01<br />adjusted:  2.710000","date: 2020-07-08<br />adjusted:  2.780000","date: 2020-07-14<br />adjusted:  2.730000","date: 2020-07-20<br />adjusted:  2.630000","date: 2020-07-24<br />adjusted:  2.650000","date: 2020-07-30<br />adjusted:  2.530000","date: 2020-08-05<br />adjusted:  2.590000","date: 2020-08-11<br />adjusted:  2.630000","date: 2020-08-17<br />adjusted:  2.740000","date: 2020-08-21<br />adjusted:  2.640000","date: 2020-08-27<br />adjusted:  2.670000","date: 2020-09-02<br />adjusted:  2.620000","date: 2020-09-09<br />adjusted:  2.620000","date: 2020-09-15<br />adjusted:  2.600000","date: 2020-09-21<br />adjusted:  2.510000","date: 2020-09-25<br />adjusted:  2.460000","date: 2020-10-01<br />adjusted:  2.520000","date: 2020-10-07<br />adjusted:  2.620000","date: 2020-10-13<br />adjusted:  2.610000","date: 2020-10-19<br />adjusted:  2.570000","date: 2020-10-23<br />adjusted:  2.640000","date: 2020-10-29<br />adjusted:  2.540000","date: 2020-11-04<br />adjusted:  2.600000","date: 2020-11-10<br />adjusted:  2.860000","date: 2020-11-16<br />adjusted:  2.950000","date: 2020-11-20<br />adjusted:  3.030000","date: 2020-11-27<br />adjusted:  3.410000","date: 2020-12-03<br />adjusted:  3.320000","date: 2020-12-09<br />adjusted:  3.270000","date: 2020-12-15<br />adjusted:  3.330000","date: 2020-12-21<br />adjusted:  3.230000","date: 2020-12-28<br />adjusted:  3.250000","date: 2021-01-04<br />adjusted:  3.240000","date: 2021-01-08<br />adjusted:  3.200000","date: 2021-01-14<br />adjusted:  3.240000","date: 2021-01-21<br />adjusted:  3.210000","date: 2021-01-27<br />adjusted:  3.130000","date: 2021-02-02<br />adjusted:  3.140000","date: 2021-02-08<br />adjusted:  3.280000","date: 2021-02-12<br />adjusted:  3.300000","date: 2021-02-19<br />adjusted:  3.260000","date: 2021-02-25<br />adjusted:  3.900000","date: 2021-03-03<br />adjusted:  3.900000","date: 2021-03-09<br />adjusted:  3.930000","date: 2021-03-15<br />adjusted:  4.150000","date: 2021-03-19<br />adjusted:  4.240000","date: 2021-03-25<br />adjusted:  4.050000","date: 2021-03-31<br />adjusted:  4.130000","date: 2021-04-07<br />adjusted:  4.160000","date: 2021-04-13<br />adjusted:  4.150000","date: 2021-04-19<br />adjusted:  3.900000","date: 2021-04-23<br />adjusted:  3.830000","date: 2021-04-29<br />adjusted:  3.850000","date: 2021-05-05<br />adjusted:  3.600000","date: 2021-05-11<br />adjusted:  3.700000","date: 2021-05-17<br />adjusted:  3.480000","date: 2021-05-21<br />adjusted:  3.570000","date: 2021-05-27<br />adjusted:  3.760000","date: 2021-06-03<br />adjusted:  3.820000","date: 2021-06-09<br />adjusted:  3.750000","date: 2021-06-15<br />adjusted:  3.800000","date: 2021-06-21<br />adjusted:  3.800000","date: 2021-06-25<br />adjusted:  3.650000","date: 2021-07-01<br />adjusted:  3.690000","date: 2021-07-08<br />adjusted:  3.700000","date: 2021-07-14<br />adjusted:  3.690000","date: 2021-07-20<br />adjusted:  3.580000","date: 2021-07-26<br />adjusted:  3.720000","date: 2021-07-30<br />adjusted:  3.710000","date: 2021-08-05<br />adjusted:  3.640000","date: 2021-08-11<br />adjusted:  3.750000","date: 2021-08-17<br />adjusted:  3.690000","date: 2021-08-23<br />adjusted:  3.590000","date: 2021-08-27<br />adjusted:  3.700000","date: 2021-09-02<br />adjusted:  3.710000","date: 2021-09-09<br />adjusted:  3.690000","date: 2021-09-15<br />adjusted:  3.720000","date: 2021-09-21<br />adjusted:  3.600000","date: 2021-09-27<br />adjusted:  3.710000","date: 2021-10-01<br />adjusted:  3.690000","date: 2021-10-07<br />adjusted:  3.700000","date: 2021-10-13<br />adjusted:  4.060000","date: 2021-10-19<br />adjusted:  4.100000","date: 2021-10-25<br />adjusted:  3.900000","date: 2021-10-29<br />adjusted:  3.830000","date: 2021-11-04<br />adjusted:  3.870000","date: 2021-11-10<br />adjusted:  4.030000","date: 2021-11-16<br />adjusted:  3.960000","date: 2021-11-22<br />adjusted:  3.900000","date: 2021-11-29<br />adjusted:  3.600000","date: 2021-12-03<br />adjusted:  3.450000","date: 2021-12-09<br />adjusted:  3.670000","date: 2021-12-15<br />adjusted:  3.480000","date: 2021-12-21<br />adjusted:  3.580000","date: 2021-12-28<br />adjusted:  3.660000","date: 2022-01-03<br />adjusted:  3.700000","date: 2022-01-07<br />adjusted:  3.660000","date: 2022-01-13<br />adjusted:  3.720000","date: 2022-01-20<br />adjusted:  3.690000","date: 2022-01-26<br />adjusted:  3.650000","date: 2022-02-01<br />adjusted:  3.650000","date: 2022-02-07<br />adjusted:  3.900000","date: 2022-02-11<br />adjusted:  3.910000","date: 2022-02-17<br />adjusted:  4.000000","date: 2022-02-24<br />adjusted:  3.650000","date: 2022-03-02<br />adjusted:  3.740000","date: 2022-03-08<br />adjusted:  3.560000","date: 2022-03-14<br />adjusted:  3.580000","date: 2022-03-18<br />adjusted:  3.920000","date: 2022-03-24<br />adjusted:  4.040000","date: 2022-03-30<br />adjusted:  4.080000"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[18267,18271,18277,18284,18290,18296,18302,18306,18313,18319,18325,18331,18337,18341,18347,18353,18359,18366,18372,18376,18382,18388,18394,18400,18404,18411,18417,18423,18429,18435,18439,18445,18452,18458,18464,18470,18474,18480,18486,18492,18498,18502,18508,18515,18521,18527,18533,18537,18543,18549,18555,18561,18565,18571,18577,18583,18589,18596,18600,18606,18612,18618,18625,18632,18638,18642,18649,18655,18661,18667,18674,18680,18684,18690,18696,18702,18708,18712,18718,18725,18731,18737,18743,18747,18753,18759,18765,18771,18775,18782,18788,18794,18800,18806,18810,18817,18823,18829,18835,18841,18845,18851,18857,18863,18869,18873,18880,18886,18892,18898,18904,18908,18914,18920,18926,18932,18936,18942,18948,18954,18961,18967,18971,18977,18983,18990,18996,19002,19006,19013,19019,19025,19031,19037,19041,19048,19054,19060,19066,19072,19076],"y":[2.333439,2.27766,2.296253,2.24977,2.268363,2.268363,2.268363,2.147508,2.138211,2.035949,1.998763,1.998763,1.664086,1.524638,1.645493,1.673383,1.729162,1.877907,1.803535,1.775645,1.859314,1.803535,1.794238,1.729162,1.729162,1.6269,1.729162,1.757052,1.719866,1.691976,1.65479,1.719866,1.65479,1.682679,1.691976,1.673383,1.673383,1.654367,1.654367,1.616336,1.616336,1.568796,1.549781,1.568796,1.540273,1.502241,1.473718,1.502241,1.511749,1.540273,1.492734,1.483225,1.435686,1.549781,1.559288,1.644859,1.711414,1.718183,1.698768,1.718183,1.72789,1.698768,1.650232,1.72789,1.824963,1.805548,1.786134,1.747305,1.708476,1.786134,1.795841,1.698768,1.708476,1.679354,1.669647,1.708476,1.698768,1.65994,1.737597,1.747305,1.737597,1.786134,1.786134,1.844377,1.766719,1.708476,1.718183,1.747305,1.747305,1.757012,1.698768,1.72789,1.669647,1.65994,1.640525,1.679354,1.543453,1.572574,1.601696,1.582282,1.639212,1.658844,1.717737,1.707922,1.668659,1.68829,1.717737,1.727553,1.766816,1.776631,1.707922,1.757,1.757,1.757,1.855156,1.855156,1.855156,1.815894,1.825709,1.786447,1.717737,1.737369,1.757,1.757,1.74,1.72,1.72,1.68,1.79,1.78,1.78,1.76,1.76,1.89,1.84,1.93,1.83,1.81,1.87,1.9,1.92],"text":["date: 2020-01-06<br />adjusted:  2.333439","date: 2020-01-10<br />adjusted:  2.277660","date: 2020-01-16<br />adjusted:  2.296253","date: 2020-01-23<br />adjusted:  2.249770","date: 2020-01-29<br />adjusted:  2.268363","date: 2020-02-04<br />adjusted:  2.268363","date: 2020-02-10<br />adjusted:  2.268363","date: 2020-02-14<br />adjusted:  2.147508","date: 2020-02-21<br />adjusted:  2.138211","date: 2020-02-27<br />adjusted:  2.035949","date: 2020-03-04<br />adjusted:  1.998763","date: 2020-03-10<br />adjusted:  1.998763","date: 2020-03-16<br />adjusted:  1.664086","date: 2020-03-20<br />adjusted:  1.524638","date: 2020-03-26<br />adjusted:  1.645493","date: 2020-04-01<br />adjusted:  1.673383","date: 2020-04-07<br />adjusted:  1.729162","date: 2020-04-14<br />adjusted:  1.877907","date: 2020-04-20<br />adjusted:  1.803535","date: 2020-04-24<br />adjusted:  1.775645","date: 2020-04-30<br />adjusted:  1.859314","date: 2020-05-06<br />adjusted:  1.803535","date: 2020-05-12<br />adjusted:  1.794238","date: 2020-05-18<br />adjusted:  1.729162","date: 2020-05-22<br />adjusted:  1.729162","date: 2020-05-29<br />adjusted:  1.626900","date: 2020-06-04<br />adjusted:  1.729162","date: 2020-06-10<br />adjusted:  1.757052","date: 2020-06-16<br />adjusted:  1.719866","date: 2020-06-22<br />adjusted:  1.691976","date: 2020-06-26<br />adjusted:  1.654790","date: 2020-07-02<br />adjusted:  1.719866","date: 2020-07-09<br />adjusted:  1.654790","date: 2020-07-15<br />adjusted:  1.682679","date: 2020-07-21<br />adjusted:  1.691976","date: 2020-07-27<br />adjusted:  1.673383","date: 2020-07-31<br />adjusted:  1.673383","date: 2020-08-06<br />adjusted:  1.654367","date: 2020-08-12<br />adjusted:  1.654367","date: 2020-08-18<br />adjusted:  1.616336","date: 2020-08-24<br />adjusted:  1.616336","date: 2020-08-28<br />adjusted:  1.568796","date: 2020-09-03<br />adjusted:  1.549781","date: 2020-09-10<br />adjusted:  1.568796","date: 2020-09-16<br />adjusted:  1.540273","date: 2020-09-22<br />adjusted:  1.502241","date: 2020-09-28<br />adjusted:  1.473718","date: 2020-10-02<br />adjusted:  1.502241","date: 2020-10-08<br />adjusted:  1.511749","date: 2020-10-14<br />adjusted:  1.540273","date: 2020-10-20<br />adjusted:  1.492734","date: 2020-10-26<br />adjusted:  1.483225","date: 2020-10-30<br />adjusted:  1.435686","date: 2020-11-05<br />adjusted:  1.549781","date: 2020-11-11<br />adjusted:  1.559288","date: 2020-11-17<br />adjusted:  1.644859","date: 2020-11-23<br />adjusted:  1.711414","date: 2020-11-30<br />adjusted:  1.718183","date: 2020-12-04<br />adjusted:  1.698768","date: 2020-12-10<br />adjusted:  1.718183","date: 2020-12-16<br />adjusted:  1.727890","date: 2020-12-22<br />adjusted:  1.698768","date: 2020-12-29<br />adjusted:  1.650232","date: 2021-01-05<br />adjusted:  1.727890","date: 2021-01-11<br />adjusted:  1.824963","date: 2021-01-15<br />adjusted:  1.805548","date: 2021-01-22<br />adjusted:  1.786134","date: 2021-01-28<br />adjusted:  1.747305","date: 2021-02-03<br />adjusted:  1.708476","date: 2021-02-09<br />adjusted:  1.786134","date: 2021-02-16<br />adjusted:  1.795841","date: 2021-02-22<br />adjusted:  1.698768","date: 2021-02-26<br />adjusted:  1.708476","date: 2021-03-04<br />adjusted:  1.679354","date: 2021-03-10<br />adjusted:  1.669647","date: 2021-03-16<br />adjusted:  1.708476","date: 2021-03-22<br />adjusted:  1.698768","date: 2021-03-26<br />adjusted:  1.659940","date: 2021-04-01<br />adjusted:  1.737597","date: 2021-04-08<br />adjusted:  1.747305","date: 2021-04-14<br />adjusted:  1.737597","date: 2021-04-20<br />adjusted:  1.786134","date: 2021-04-26<br />adjusted:  1.786134","date: 2021-04-30<br />adjusted:  1.844377","date: 2021-05-06<br />adjusted:  1.766719","date: 2021-05-12<br />adjusted:  1.708476","date: 2021-05-18<br />adjusted:  1.718183","date: 2021-05-24<br />adjusted:  1.747305","date: 2021-05-28<br />adjusted:  1.747305","date: 2021-06-04<br />adjusted:  1.757012","date: 2021-06-10<br />adjusted:  1.698768","date: 2021-06-16<br />adjusted:  1.727890","date: 2021-06-22<br />adjusted:  1.669647","date: 2021-06-28<br />adjusted:  1.659940","date: 2021-07-02<br />adjusted:  1.640525","date: 2021-07-09<br />adjusted:  1.679354","date: 2021-07-15<br />adjusted:  1.543453","date: 2021-07-21<br />adjusted:  1.572574","date: 2021-07-27<br />adjusted:  1.601696","date: 2021-08-02<br />adjusted:  1.582282","date: 2021-08-06<br />adjusted:  1.639212","date: 2021-08-12<br />adjusted:  1.658844","date: 2021-08-18<br />adjusted:  1.717737","date: 2021-08-24<br />adjusted:  1.707922","date: 2021-08-30<br />adjusted:  1.668659","date: 2021-09-03<br />adjusted:  1.688290","date: 2021-09-10<br />adjusted:  1.717737","date: 2021-09-16<br />adjusted:  1.727553","date: 2021-09-22<br />adjusted:  1.766816","date: 2021-09-28<br />adjusted:  1.776631","date: 2021-10-04<br />adjusted:  1.707922","date: 2021-10-08<br />adjusted:  1.757000","date: 2021-10-14<br />adjusted:  1.757000","date: 2021-10-20<br />adjusted:  1.757000","date: 2021-10-26<br />adjusted:  1.855156","date: 2021-11-01<br />adjusted:  1.855156","date: 2021-11-05<br />adjusted:  1.855156","date: 2021-11-11<br />adjusted:  1.815894","date: 2021-11-17<br />adjusted:  1.825709","date: 2021-11-23<br />adjusted:  1.786447","date: 2021-11-30<br />adjusted:  1.717737","date: 2021-12-06<br />adjusted:  1.737369","date: 2021-12-10<br />adjusted:  1.757000","date: 2021-12-16<br />adjusted:  1.757000","date: 2021-12-22<br />adjusted:  1.740000","date: 2021-12-29<br />adjusted:  1.720000","date: 2022-01-04<br />adjusted:  1.720000","date: 2022-01-10<br />adjusted:  1.680000","date: 2022-01-14<br />adjusted:  1.790000","date: 2022-01-21<br />adjusted:  1.780000","date: 2022-01-27<br />adjusted:  1.780000","date: 2022-02-02<br />adjusted:  1.760000","date: 2022-02-08<br />adjusted:  1.760000","date: 2022-02-14<br />adjusted:  1.890000","date: 2022-02-18<br />adjusted:  1.840000","date: 2022-02-25<br />adjusted:  1.930000","date: 2022-03-03<br />adjusted:  1.830000","date: 2022-03-09<br />adjusted:  1.810000","date: 2022-03-15<br />adjusted:  1.870000","date: 2022-03-21<br />adjusted:  1.900000","date: 2022-03-25<br />adjusted:  1.920000"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x2","yaxis":"y4","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":57.0958904109589,"r":7.30593607305936,"b":23.4952262349523,"l":33.5408883354089},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(44,62,80,1)","family":"","size":14.6118721461187},"title":{"text":"Daily stock prices of selected weak stocks","font":{"color":"rgba(44,62,80,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,0.428672960169023],"automargin":true,"type":"linear","autorange":false,"range":[18222.1,19121.9],"tickmode":"array","ticktext":["2020-01","2020-07","2021-01","2021-07","2022-01"],"tickvals":[18262,18444,18628,18809,18993],"categoryorder":"array","categoryarray":["2020-01","2020-07","2021-01","2021-07","2022-01"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":7.97011207970112},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"y3","title":"","hoverformat":".2f"},"yaxis":{"domain":[0.604260297942209,1],"automargin":true,"type":"linear","autorange":false,"range":[5.8222217,11.3894383],"tickmode":"array","ticktext":["6","7","8","9","10","11"],"tickvals":[6,7,8,9,10,11],"categoryorder":"array","categoryarray":["6","7","8","9","10","11"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":7.97011207970112},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"annotations":[{"text":"Adjusted Price","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(44,62,80,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-18.1984225819842},{"text":"City Developments","x":0.214336480084512,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(255,255,255,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"ComfortDelGro","x":0.785663519915488,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(255,255,255,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Singapore Airlines","x":0.214336480084512,"y":0.395739702057791,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(255,255,255,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Singtel","x":0.785663519915488,"y":0.395739702057791,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(255,255,255,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(44,62,80,1)","width":0.33208800332088,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.428672960169023,"y0":0.604260297942209,"y1":1},{"type":"rect","fillcolor":"rgba(44,62,80,1)","line":{"color":"rgba(44,62,80,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.428672960169023,"y0":0,"y1":24.9730178497302,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(44,62,80,1)","width":0.33208800332088,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.571327039830977,"x1":1,"y0":0.604260297942209,"y1":1},{"type":"rect","fillcolor":"rgba(44,62,80,1)","line":{"color":"rgba(44,62,80,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.571327039830977,"x1":1,"y0":0,"y1":24.9730178497302,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(44,62,80,1)","width":0.33208800332088,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.428672960169023,"y0":0,"y1":0.395739702057791},{"type":"rect","fillcolor":"rgba(44,62,80,1)","line":{"color":"rgba(44,62,80,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.428672960169023,"y0":0,"y1":24.9730178497302,"yanchor":0.395739702057791,"ysizemode":"pixel"},{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(44,62,80,1)","width":0.33208800332088,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.571327039830977,"x1":1,"y0":0,"y1":0.395739702057791},{"type":"rect","fillcolor":"rgba(44,62,80,1)","line":{"color":"rgba(44,62,80,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.571327039830977,"x1":1,"y0":0,"y1":24.9730178497302,"yanchor":0.395739702057791,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[18222.1,19121.9],"tickmode":"array","ticktext":["2020-01","2020-07","2021-01","2021-07","2022-01"],"tickvals":[18262,18444,18628,18809,18993],"categoryorder":"array","categoryarray":["2020-01","2020-07","2021-01","2021-07","2022-01"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":7.97011207970112},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.571327039830977,1],"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"y4","title":"","hoverformat":".2f"},"yaxis2":{"type":"linear","autorange":false,"range":[1.2455882,2.1461538],"tickmode":"array","ticktext":["1.25","1.50","1.75","2.00"],"tickvals":[1.25,1.5,1.75,2],"categoryorder":"array","categoryarray":["1.25","1.50","1.75","2.00"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":7.97011207970112},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.604260297942209,1],"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"x2","title":"","hoverformat":".2f"},"yaxis3":{"type":"linear","autorange":false,"range":[2.247,6.933],"tickmode":"array","ticktext":["3","4","5","6"],"tickvals":[3,4,5,6],"categoryorder":"array","categoryarray":["3","4","5","6"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":7.97011207970112},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.395739702057791],"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"yaxis4":{"type":"linear","autorange":false,"range":[1.39079835,2.37832665],"tickmode":"array","ticktext":["1.4","1.6","1.8","2.0","2.2"],"tickvals":[1.4,1.6,1.8,2,2.2],"categoryorder":"array","categoryarray":["1.4","1.6","1.8","2.0","2.2"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":7.97011207970112},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.395739702057791],"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"x2","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(44,62,80,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"5cb18a08ebf":{"x":{},"y":{},"type":"scatter"}},"cur_data":"5cb18a08ebf","visdat":{"5cb18a08ebf":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>end</span> <span class='op'>&lt;-</span> <span class='fu'>as_date</span><span class='op'>(</span><span class='st'>"2022-03-31"</span><span class='op'>)</span>
+<span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>symbol</span> <span class='op'>==</span> <span class='st'>"DBSDF"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>
+    x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>close</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_candlestick</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>
+    open <span class='op'>=</span> <span class='va'>open</span>, high <span class='op'>=</span> <span class='va'>high</span>, 
+    low <span class='op'>=</span> <span class='va'>low</span>, close <span class='op'>=</span> <span class='va'>close</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>coord_x_date</span><span class='op'>(</span>xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>end</span> <span class='op'>-</span> <span class='fu'>weeks</span><span class='op'>(</span><span class='fl'>12</span><span class='op'>)</span>, 
+                          <span class='va'>end</span><span class='op'>)</span>,
+                 ylim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>20</span>, <span class='fl'>35</span><span class='op'>)</span>,
+                 expand <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"DBS Group Holdings Ltd (DBSDF) Daily Stock Price"</span>, 
+       y <span class='op'>=</span> <span class='st'>"Closing Price"</span>, x <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'>theme_tq</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="in_exe9_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>symbol</span> <span class='op'>==</span> <span class='st'>"DBSDF"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>
+    x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>close</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_candlestick</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>
+    open <span class='op'>=</span> <span class='va'>open</span>, high <span class='op'>=</span> <span class='va'>high</span>, 
+    low <span class='op'>=</span> <span class='va'>low</span>, close <span class='op'>=</span> <span class='va'>close</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>geom_ma</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"darkgreen"</span>, n<span class='op'>=</span><span class='fl'>20</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_ma</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"lightgreen"</span>, n <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span> <span class='op'>+</span> 
+    <span class='fu'>coord_x_date</span><span class='op'>(</span>xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>end</span> <span class='op'>-</span> <span class='fu'>weeks</span><span class='op'>(</span><span class='fl'>12</span><span class='op'>)</span>, 
+                          <span class='va'>end</span><span class='op'>)</span>,
+                 ylim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>20</span>, <span class='fl'>35</span><span class='op'>)</span>,
+                 expand <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"DBS Group Holdings Ltd (DBSDF) Daily Stock Price"</span>,
+       subtitle <span class='op'>=</span> <span class='st'>"darkgreen = 1-day MA, lightgreen = 5-day MA"</span>,
+       y <span class='op'>=</span> <span class='st'>"Closing Price"</span>, x <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'>theme_tq</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="in_exe9_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Stock40_daily</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>symbol</span> <span class='op'>==</span> <span class='st'>"DBSDF"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>date</span>, y<span class='op'>=</span><span class='va'>close</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span>size<span class='op'>=</span><span class='fl'>0.5</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>geom_bbands</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>
+    high <span class='op'>=</span> <span class='va'>high</span>, low <span class='op'>=</span> <span class='va'>low</span>, close <span class='op'>=</span> <span class='va'>close</span><span class='op'>)</span>, 
+    ma_fun <span class='op'>=</span> <span class='va'>SMA</span>, sd <span class='op'>=</span> <span class='fl'>2</span>, n <span class='op'>=</span> <span class='fl'>20</span>,
+    size <span class='op'>=</span> <span class='fl'>0.75</span>, color_ma <span class='op'>=</span> <span class='st'>"royalblue4"</span>, 
+    color_bands <span class='op'>=</span> <span class='st'>"red1"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>coord_x_date</span><span class='op'>(</span>xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2020-02-01"</span>, 
+                          <span class='st'>"2022-03-31"</span><span class='op'>)</span>, 
+                 expand <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"DBS Group Holdings Ltd (DBSDF) Daily Stock Price"</span>,
+         subtitle <span class='op'>=</span> <span class='st'>"dotted red lines = bollinger bands"</span>,
+         x <span class='op'>=</span> <span class='st'>"Date"</span>, y <span class='op'>=</span><span class='st'>"Price"</span><span class='op'>)</span> <span class='op'>+</span>
+<span class='fu'>theme</span><span class='op'>(</span>legend.position<span class='op'>=</span><span class='st'>"none"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="in_exe9_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>candleStick_plot</span><span class='op'>&lt;-</span><span class='kw'>function</span><span class='op'>(</span><span class='va'>symbol</span>, <span class='va'>from</span>, <span class='va'>to</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='fu'>tq_get</span><span class='op'>(</span><span class='va'>symbol</span>, from <span class='op'>=</span> <span class='va'>from</span>, to <span class='op'>=</span> <span class='va'>to</span>, warnings <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'>mutate</span><span class='op'>(</span>greenRed<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>open</span><span class='op'>-</span><span class='va'>close</span><span class='op'>&gt;</span><span class='fl'>0</span>, <span class='st'>"Red"</span>, <span class='st'>"Green"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>geom_segment</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, xend<span class='op'>=</span><span class='va'>date</span>, y <span class='op'>=</span><span class='va'>open</span>, yend <span class='op'>=</span><span class='va'>close</span>, colour<span class='op'>=</span><span class='va'>greenRed</span><span class='op'>)</span>, size<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>theme_tq</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>geom_segment</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, xend<span class='op'>=</span><span class='va'>date</span>, y <span class='op'>=</span><span class='va'>high</span>, yend <span class='op'>=</span><span class='va'>low</span>, colour<span class='op'>=</span><span class='va'>greenRed</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>scale_color_manual</span><span class='op'>(</span>values<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ForestGreen"</span>,<span class='st'>"Red"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>ggtitle</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>symbol</span>,<span class='st'>" ("</span>,<span class='va'>from</span>,<span class='st'>" - "</span>,<span class='va'>to</span>,<span class='st'>")"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>theme</span><span class='op'>(</span>legend.position <span class='op'>=</span><span class='st'>"none"</span>,
+          axis.title.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+          axis.title.x<span class='op'>=</span><span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+          axis.text.x <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>angle <span class='op'>=</span> <span class='fl'>0</span>, vjust <span class='op'>=</span> <span class='fl'>0.5</span>, hjust<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>,
+          plot.title<span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>hjust<span class='op'>=</span><span class='fl'>0.5</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'>candleStick_plot</span><span class='op'>(</span><span class='st'>"DBSDF"</span>,
+                      from <span class='op'>=</span> <span class='st'>'2022-01-01'</span>,
+                      to <span class='op'>=</span> <span class='fu'>today</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>ggplotly</span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="htmlwidget-fb7291535020ce69c357" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fb7291535020ce69c357">{"x":{"data":[{"x":[18995,18995,null,18997,18997,null,18998,18998,null,19003,19003,null,19012,19012,null,19013,19013,null,19023,19023,null,19024,19024,null,19025,19025,null,19030,19030,null,19031,19031,null,19033,19033,null,19037,19037,null,19038,19038,null,19039,19039,null,19047,19047,null,19053,19053,null,19054,19054,null,19062,19062,null,19066,19066,null,19067,19067,null,19069,19069,null,19072,19072,null,19074,19074,null,19075,19075,null,19080,19080,null,19083,19083,null,19086,19086,null,19088,19088,null,19090,19090,null,19093,19093,null,19094,19094,null,19111,19111,null,19123,19123,null,19124,19124,null,19125,19125,null,19128,19128,null,19129,19129,null,19137,19137,null,19144,19144,null,19146,19146,null,19150,19150,null,19151,19151,null,19153,19153,null,19158,19158,null,19160,19160,null,19164,19164,null,19165,19165,null,19166,19166],"y":[24.459999,24.540001,null,25.030001,25.1,null,25.02,25.15,null,25.82,26.440001,null,27.030001,27.1,null,26.450001,26.51,null,25.959999,26.43,null,27.370001,27.450001,null,26.83,26.91,null,27.950001,27.950001,null,26.639999,27.82,null,27.030001,27.4,null,27.059999,28.15,null,27.709999,27.75,null,27.389999,27.48,null,25.389999,26.24,null,24.82,24.959999,null,24.42,24.42,null,24.25,24.440001,null,25.27,25.35,null,25.280001,25.75,null,25.98,26.059999,null,25.92,26,null,25.34,25.98,null,26.51,26.610001,null,26.27,26.860001,null,25.780001,26.190001,null,26.32,26.4,null,26.43,26.43,null,24.57,25.540001,null,24.120001,24.209999,null,24.209999,24.370001,null,24.200001,24.98,null,22.85,23.280001,null,21.629999,21.959999,null,22.41,22.639999,null,22.190001,22.26,null,22.309999,22.940001,null,21.969999,21.969999,null,22.540001,22.700001,null,22.15,22.23,null,22.32,22.440001,null,21.92,22.23,null,21.4,21.4,null,21.18,21.290001,null,21.190001,21.35,null,21.709999,21.91,null,21.450001,21.540001,null,21.290001,21.34],"text":["date: 2022-01-03<br />open: 24.46<br />date: 18995<br />close: 24.54<br />greenRed: Green","date: 2022-01-03<br />open: 24.46<br />date: 18995<br />close: 24.54<br />greenRed: Green",null,"date: 2022-01-05<br />open: 25.03<br />date: 18997<br />close: 25.10<br />greenRed: Green","date: 2022-01-05<br />open: 25.03<br />date: 18997<br />close: 25.10<br />greenRed: Green",null,"date: 2022-01-06<br />open: 25.02<br />date: 18998<br />close: 25.15<br />greenRed: Green","date: 2022-01-06<br />open: 25.02<br />date: 18998<br />close: 25.15<br />greenRed: Green",null,"date: 2022-01-11<br />open: 25.82<br />date: 19003<br />close: 26.44<br />greenRed: Green","date: 2022-01-11<br />open: 25.82<br />date: 19003<br />close: 26.44<br />greenRed: Green",null,"date: 2022-01-20<br />open: 27.03<br />date: 19012<br />close: 27.10<br />greenRed: Green","date: 2022-01-20<br />open: 27.03<br />date: 19012<br />close: 27.10<br />greenRed: Green",null,"date: 2022-01-21<br />open: 26.45<br />date: 19013<br />close: 26.51<br />greenRed: Green","date: 2022-01-21<br />open: 26.45<br />date: 19013<br />close: 26.51<br />greenRed: Green",null,"date: 2022-01-31<br />open: 25.96<br />date: 19023<br />close: 26.43<br />greenRed: Green","date: 2022-01-31<br />open: 25.96<br />date: 19023<br />close: 26.43<br />greenRed: Green",null,"date: 2022-02-01<br />open: 27.37<br />date: 19024<br />close: 27.45<br />greenRed: Green","date: 2022-02-01<br />open: 27.37<br />date: 19024<br />close: 27.45<br />greenRed: Green",null,"date: 2022-02-02<br />open: 26.83<br />date: 19025<br />close: 26.91<br />greenRed: Green","date: 2022-02-02<br />open: 26.83<br />date: 19025<br />close: 26.91<br />greenRed: Green",null,"date: 2022-02-07<br />open: 27.95<br />date: 19030<br />close: 27.95<br />greenRed: Green","date: 2022-02-07<br />open: 27.95<br />date: 19030<br />close: 27.95<br />greenRed: Green",null,"date: 2022-02-08<br />open: 26.64<br />date: 19031<br />close: 27.82<br />greenRed: Green","date: 2022-02-08<br />open: 26.64<br />date: 19031<br />close: 27.82<br />greenRed: Green",null,"date: 2022-02-10<br />open: 27.03<br />date: 19033<br />close: 27.40<br />greenRed: Green","date: 2022-02-10<br />open: 27.03<br />date: 19033<br />close: 27.40<br />greenRed: Green",null,"date: 2022-02-14<br />open: 27.06<br />date: 19037<br />close: 28.15<br />greenRed: Green","date: 2022-02-14<br />open: 27.06<br />date: 19037<br />close: 28.15<br />greenRed: Green",null,"date: 2022-02-15<br />open: 27.71<br />date: 19038<br />close: 27.75<br />greenRed: Green","date: 2022-02-15<br />open: 27.71<br />date: 19038<br />close: 27.75<br />greenRed: Green",null,"date: 2022-02-16<br />open: 27.39<br />date: 19039<br />close: 27.48<br />greenRed: Green","date: 2022-02-16<br />open: 27.39<br />date: 19039<br />close: 27.48<br />greenRed: Green",null,"date: 2022-02-24<br />open: 25.39<br />date: 19047<br />close: 26.24<br />greenRed: Green","date: 2022-02-24<br />open: 25.39<br />date: 19047<br />close: 26.24<br />greenRed: Green",null,"date: 2022-03-02<br />open: 24.82<br />date: 19053<br />close: 24.96<br />greenRed: Green","date: 2022-03-02<br />open: 24.82<br />date: 19053<br />close: 24.96<br />greenRed: Green",null,"date: 2022-03-03<br />open: 24.42<br />date: 19054<br />close: 24.42<br />greenRed: Green","date: 2022-03-03<br />open: 24.42<br />date: 19054<br />close: 24.42<br />greenRed: Green",null,"date: 2022-03-11<br />open: 24.25<br />date: 19062<br />close: 24.44<br />greenRed: Green","date: 2022-03-11<br />open: 24.25<br />date: 19062<br />close: 24.44<br />greenRed: Green",null,"date: 2022-03-15<br />open: 25.27<br />date: 19066<br />close: 25.35<br />greenRed: Green","date: 2022-03-15<br />open: 25.27<br />date: 19066<br />close: 25.35<br />greenRed: Green",null,"date: 2022-03-16<br />open: 25.28<br />date: 19067<br />close: 25.75<br />greenRed: Green","date: 2022-03-16<br />open: 25.28<br />date: 19067<br />close: 25.75<br />greenRed: Green",null,"date: 2022-03-18<br />open: 25.98<br />date: 19069<br />close: 26.06<br />greenRed: Green","date: 2022-03-18<br />open: 25.98<br />date: 19069<br />close: 26.06<br />greenRed: Green",null,"date: 2022-03-21<br />open: 25.92<br />date: 19072<br />close: 26.00<br />greenRed: Green","date: 2022-03-21<br />open: 25.92<br />date: 19072<br />close: 26.00<br />greenRed: Green",null,"date: 2022-03-23<br />open: 25.34<br />date: 19074<br />close: 25.98<br />greenRed: Green","date: 2022-03-23<br />open: 25.34<br />date: 19074<br />close: 25.98<br />greenRed: Green",null,"date: 2022-03-24<br />open: 26.51<br />date: 19075<br />close: 26.61<br />greenRed: Green","date: 2022-03-24<br />open: 26.51<br />date: 19075<br />close: 26.61<br />greenRed: Green",null,"date: 2022-03-29<br />open: 26.27<br />date: 19080<br />close: 26.86<br />greenRed: Green","date: 2022-03-29<br />open: 26.27<br />date: 19080<br />close: 26.86<br />greenRed: Green",null,"date: 2022-04-01<br />open: 25.78<br />date: 19083<br />close: 26.19<br />greenRed: Green","date: 2022-04-01<br />open: 25.78<br />date: 19083<br />close: 26.19<br />greenRed: Green",null,"date: 2022-04-04<br />open: 26.32<br />date: 19086<br />close: 26.40<br />greenRed: Green","date: 2022-04-04<br />open: 26.32<br />date: 19086<br />close: 26.40<br />greenRed: Green",null,"date: 2022-04-06<br />open: 26.43<br />date: 19088<br />close: 26.43<br />greenRed: Green","date: 2022-04-06<br />open: 26.43<br />date: 19088<br />close: 26.43<br />greenRed: Green",null,"date: 2022-04-08<br />open: 24.57<br />date: 19090<br />close: 25.54<br />greenRed: Green","date: 2022-04-08<br />open: 24.57<br />date: 19090<br />close: 25.54<br />greenRed: Green",null,"date: 2022-04-11<br />open: 24.12<br />date: 19093<br />close: 24.21<br />greenRed: Green","date: 2022-04-11<br />open: 24.12<br />date: 19093<br />close: 24.21<br />greenRed: Green",null,"date: 2022-04-12<br />open: 24.21<br />date: 19094<br />close: 24.37<br />greenRed: Green","date: 2022-04-12<br />open: 24.21<br />date: 19094<br />close: 24.37<br />greenRed: Green",null,"date: 2022-04-29<br />open: 24.20<br />date: 19111<br />close: 24.98<br />greenRed: Green","date: 2022-04-29<br />open: 24.20<br />date: 19111<br />close: 24.98<br />greenRed: Green",null,"date: 2022-05-11<br />open: 22.85<br />date: 19123<br />close: 23.28<br />greenRed: Green","date: 2022-05-11<br />open: 22.85<br />date: 19123<br />close: 23.28<br />greenRed: Green",null,"date: 2022-05-12<br />open: 21.63<br />date: 19124<br />close: 21.96<br />greenRed: Green","date: 2022-05-12<br />open: 21.63<br />date: 19124<br />close: 21.96<br />greenRed: Green",null,"date: 2022-05-13<br />open: 22.41<br />date: 19125<br />close: 22.64<br />greenRed: Green","date: 2022-05-13<br />open: 22.41<br />date: 19125<br />close: 22.64<br />greenRed: Green",null,"date: 2022-05-16<br />open: 22.19<br />date: 19128<br />close: 22.26<br />greenRed: Green","date: 2022-05-16<br />open: 22.19<br />date: 19128<br />close: 22.26<br />greenRed: Green",null,"date: 2022-05-17<br />open: 22.31<br />date: 19129<br />close: 22.94<br />greenRed: Green","date: 2022-05-17<br />open: 22.31<br />date: 19129<br />close: 22.94<br />greenRed: Green",null,"date: 2022-05-25<br />open: 21.97<br />date: 19137<br />close: 21.97<br />greenRed: Green","date: 2022-05-25<br />open: 21.97<br />date: 19137<br />close: 21.97<br />greenRed: Green",null,"date: 2022-06-01<br />open: 22.54<br />date: 19144<br />close: 22.70<br />greenRed: Green","date: 2022-06-01<br />open: 22.54<br />date: 19144<br />close: 22.70<br />greenRed: Green",null,"date: 2022-06-03<br />open: 22.15<br />date: 19146<br />close: 22.23<br />greenRed: Green","date: 2022-06-03<br />open: 22.15<br />date: 19146<br />close: 22.23<br />greenRed: Green",null,"date: 2022-06-07<br />open: 22.32<br />date: 19150<br />close: 22.44<br />greenRed: Green","date: 2022-06-07<br />open: 22.32<br />date: 19150<br />close: 22.44<br />greenRed: Green",null,"date: 2022-06-08<br />open: 21.92<br />date: 19151<br />close: 22.23<br />greenRed: Green","date: 2022-06-08<br />open: 21.92<br />date: 19151<br />close: 22.23<br />greenRed: Green",null,"date: 2022-06-10<br />open: 21.40<br />date: 19153<br />close: 21.40<br />greenRed: Green","date: 2022-06-10<br />open: 21.40<br />date: 19153<br />close: 21.40<br />greenRed: Green",null,"date: 2022-06-15<br />open: 21.18<br />date: 19158<br />close: 21.29<br />greenRed: Green","date: 2022-06-15<br />open: 21.18<br />date: 19158<br />close: 21.29<br />greenRed: Green",null,"date: 2022-06-17<br />open: 21.19<br />date: 19160<br />close: 21.35<br />greenRed: Green","date: 2022-06-17<br />open: 21.19<br />date: 19160<br />close: 21.35<br />greenRed: Green",null,"date: 2022-06-21<br />open: 21.71<br />date: 19164<br />close: 21.91<br />greenRed: Green","date: 2022-06-21<br />open: 21.71<br />date: 19164<br />close: 21.91<br />greenRed: Green",null,"date: 2022-06-22<br />open: 21.45<br />date: 19165<br />close: 21.54<br />greenRed: Green","date: 2022-06-22<br />open: 21.45<br />date: 19165<br />close: 21.54<br />greenRed: Green",null,"date: 2022-06-23<br />open: 21.29<br />date: 19166<br />close: 21.34<br />greenRed: Green","date: 2022-06-23<br />open: 21.29<br />date: 19166<br />close: 21.34<br />greenRed: Green"],"type":"scatter","mode":"lines","line":{"width":11.3385826771654,"color":"rgba(34,139,34,1)","dash":"solid"},"hoveron":"points","name":"Green","legendgroup":"Green","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18996,18996,null,18999,18999,null,19002,19002,null,19004,19004,null,19005,19005,null,19006,19006,null,19010,19010,null,19011,19011,null,19016,19016,null,19017,19017,null,19018,19018,null,19019,19019,null,19020,19020,null,19026,19026,null,19027,19027,null,19032,19032,null,19034,19034,null,19040,19040,null,19041,19041,null,19045,19045,null,19046,19046,null,19048,19048,null,19051,19051,null,19052,19052,null,19055,19055,null,19058,19058,null,19059,19059,null,19060,19060,null,19061,19061,null,19065,19065,null,19068,19068,null,19073,19073,null,19076,19076,null,19079,19079,null,19081,19081,null,19082,19082,null,19087,19087,null,19089,19089,null,19095,19095,null,19096,19096,null,19100,19100,null,19101,19101,null,19102,19102,null,19103,19103,null,19104,19104,null,19107,19107,null,19108,19108,null,19109,19109,null,19110,19110,null,19114,19114,null,19115,19115,null,19116,19116,null,19117,19117,null,19118,19118,null,19121,19121,null,19122,19122,null,19130,19130,null,19131,19131,null,19132,19132,null,19135,19135,null,19136,19136,null,19138,19138,null,19139,19139,null,19143,19143,null,19145,19145,null,19149,19149,null,19152,19152,null,19156,19156,null,19157,19157,null,19159,19159,null,19167,19167],"y":[25.17,25.1,null,25.25,25.23,null,25.83,25.41,null,27.049999,26.629999,null,27.129999,26.719999,null,27.4,26.459999,null,26.870001,26.66,null,27.469999,27,null,27.200001,26.09,null,26.700001,26.18,null,26.790001,26.27,null,26.870001,26.059999,null,26.49,25.83,null,27.27,27.17,null,27.23,26.190001,null,28.110001,27.84,null,28.27,27.309999,null,27.719999,27.370001,null,27.969999,27.16,null,27.639999,26.940001,null,27.549999,27.190001,null,26.08,25.959999,null,25.16,24.59,null,25,24.75,null,24.139999,23.629999,null,23.65,23.25,null,23.6,22.790001,null,23.99,23.780001,null,24.43,24.290001,null,24.66,24.5,null,25.879999,25.139999,null,26.690001,25.959999,null,26.5,26.09,null,26.700001,26.42,null,26.84,26.440001,null,26.450001,26.18,null,26.459999,26.02,null,26.1,25.959999,null,24.719999,24.559999,null,24.75,24.74,null,24.73,23.99,null,24.92,24.129999,null,24.77,23.969999,null,24.77,24.35,null,24.809999,24.48,null,24.549999,23.75,null,23.559999,23.42,null,24.139999,23.5,null,23.309999,23.26,null,24.08,24,null,25,24.42,null,25.129999,24.43,null,23.639999,23.120001,null,23.58,23.540001,null,23.41,23.129999,null,22.959999,22.9,null,22.139999,21.940001,null,22.42,22.110001,null,22.66,22.360001,null,22.549999,22.16,null,22.25,21.950001,null,23.030001,22.530001,null,22.700001,22.620001,null,22.620001,22.290001,null,22.620001,22.57,null,22.4,22.209999,null,22.09,21.959999,null,21.51,20.940001,null,21.74,21,null,21.620001,21.32,null,21.58,21.5],"text":["date: 2022-01-04<br />open: 25.17<br />date: 18996<br />close: 25.10<br />greenRed: Red","date: 2022-01-04<br />open: 25.17<br />date: 18996<br />close: 25.10<br />greenRed: Red",null,"date: 2022-01-07<br />open: 25.25<br />date: 18999<br />close: 25.23<br />greenRed: Red","date: 2022-01-07<br />open: 25.25<br />date: 18999<br />close: 25.23<br />greenRed: Red",null,"date: 2022-01-10<br />open: 25.83<br />date: 19002<br />close: 25.41<br />greenRed: Red","date: 2022-01-10<br />open: 25.83<br />date: 19002<br />close: 25.41<br />greenRed: Red",null,"date: 2022-01-12<br />open: 27.05<br />date: 19004<br />close: 26.63<br />greenRed: Red","date: 2022-01-12<br />open: 27.05<br />date: 19004<br />close: 26.63<br />greenRed: Red",null,"date: 2022-01-13<br />open: 27.13<br />date: 19005<br />close: 26.72<br />greenRed: Red","date: 2022-01-13<br />open: 27.13<br />date: 19005<br />close: 26.72<br />greenRed: Red",null,"date: 2022-01-14<br />open: 27.40<br />date: 19006<br />close: 26.46<br />greenRed: Red","date: 2022-01-14<br />open: 27.40<br />date: 19006<br />close: 26.46<br />greenRed: Red",null,"date: 2022-01-18<br />open: 26.87<br />date: 19010<br />close: 26.66<br />greenRed: Red","date: 2022-01-18<br />open: 26.87<br />date: 19010<br />close: 26.66<br />greenRed: Red",null,"date: 2022-01-19<br />open: 27.47<br />date: 19011<br />close: 27.00<br />greenRed: Red","date: 2022-01-19<br />open: 27.47<br />date: 19011<br />close: 27.00<br />greenRed: Red",null,"date: 2022-01-24<br />open: 27.20<br />date: 19016<br />close: 26.09<br />greenRed: Red","date: 2022-01-24<br />open: 27.20<br />date: 19016<br />close: 26.09<br />greenRed: Red",null,"date: 2022-01-25<br />open: 26.70<br />date: 19017<br />close: 26.18<br />greenRed: Red","date: 2022-01-25<br />open: 26.70<br />date: 19017<br />close: 26.18<br />greenRed: Red",null,"date: 2022-01-26<br />open: 26.79<br />date: 19018<br />close: 26.27<br />greenRed: Red","date: 2022-01-26<br />open: 26.79<br />date: 19018<br />close: 26.27<br />greenRed: Red",null,"date: 2022-01-27<br />open: 26.87<br />date: 19019<br />close: 26.06<br />greenRed: Red","date: 2022-01-27<br />open: 26.87<br />date: 19019<br />close: 26.06<br />greenRed: Red",null,"date: 2022-01-28<br />open: 26.49<br />date: 19020<br />close: 25.83<br />greenRed: Red","date: 2022-01-28<br />open: 26.49<br />date: 19020<br />close: 25.83<br />greenRed: Red",null,"date: 2022-02-03<br />open: 27.27<br />date: 19026<br />close: 27.17<br />greenRed: Red","date: 2022-02-03<br />open: 27.27<br />date: 19026<br />close: 27.17<br />greenRed: Red",null,"date: 2022-02-04<br />open: 27.23<br />date: 19027<br />close: 26.19<br />greenRed: Red","date: 2022-02-04<br />open: 27.23<br />date: 19027<br />close: 26.19<br />greenRed: Red",null,"date: 2022-02-09<br />open: 28.11<br />date: 19032<br />close: 27.84<br />greenRed: Red","date: 2022-02-09<br />open: 28.11<br />date: 19032<br />close: 27.84<br />greenRed: Red",null,"date: 2022-02-11<br />open: 28.27<br />date: 19034<br />close: 27.31<br />greenRed: Red","date: 2022-02-11<br />open: 28.27<br />date: 19034<br />close: 27.31<br />greenRed: Red",null,"date: 2022-02-17<br />open: 27.72<br />date: 19040<br />close: 27.37<br />greenRed: Red","date: 2022-02-17<br />open: 27.72<br />date: 19040<br />close: 27.37<br />greenRed: Red",null,"date: 2022-02-18<br />open: 27.97<br />date: 19041<br />close: 27.16<br />greenRed: Red","date: 2022-02-18<br />open: 27.97<br />date: 19041<br />close: 27.16<br />greenRed: Red",null,"date: 2022-02-22<br />open: 27.64<br />date: 19045<br />close: 26.94<br />greenRed: Red","date: 2022-02-22<br />open: 27.64<br />date: 19045<br />close: 26.94<br />greenRed: Red",null,"date: 2022-02-23<br />open: 27.55<br />date: 19046<br />close: 27.19<br />greenRed: Red","date: 2022-02-23<br />open: 27.55<br />date: 19046<br />close: 27.19<br />greenRed: Red",null,"date: 2022-02-25<br />open: 26.08<br />date: 19048<br />close: 25.96<br />greenRed: Red","date: 2022-02-25<br />open: 26.08<br />date: 19048<br />close: 25.96<br />greenRed: Red",null,"date: 2022-02-28<br />open: 25.16<br />date: 19051<br />close: 24.59<br />greenRed: Red","date: 2022-02-28<br />open: 25.16<br />date: 19051<br />close: 24.59<br />greenRed: Red",null,"date: 2022-03-01<br />open: 25.00<br />date: 19052<br />close: 24.75<br />greenRed: Red","date: 2022-03-01<br />open: 25.00<br />date: 19052<br />close: 24.75<br />greenRed: Red",null,"date: 2022-03-04<br />open: 24.14<br />date: 19055<br />close: 23.63<br />greenRed: Red","date: 2022-03-04<br />open: 24.14<br />date: 19055<br />close: 23.63<br />greenRed: Red",null,"date: 2022-03-07<br />open: 23.65<br />date: 19058<br />close: 23.25<br />greenRed: Red","date: 2022-03-07<br />open: 23.65<br />date: 19058<br />close: 23.25<br />greenRed: Red",null,"date: 2022-03-08<br />open: 23.60<br />date: 19059<br />close: 22.79<br />greenRed: Red","date: 2022-03-08<br />open: 23.60<br />date: 19059<br />close: 22.79<br />greenRed: Red",null,"date: 2022-03-09<br />open: 23.99<br />date: 19060<br />close: 23.78<br />greenRed: Red","date: 2022-03-09<br />open: 23.99<br />date: 19060<br />close: 23.78<br />greenRed: Red",null,"date: 2022-03-10<br />open: 24.43<br />date: 19061<br />close: 24.29<br />greenRed: Red","date: 2022-03-10<br />open: 24.43<br />date: 19061<br />close: 24.29<br />greenRed: Red",null,"date: 2022-03-14<br />open: 24.66<br />date: 19065<br />close: 24.50<br />greenRed: Red","date: 2022-03-14<br />open: 24.66<br />date: 19065<br />close: 24.50<br />greenRed: Red",null,"date: 2022-03-17<br />open: 25.88<br />date: 19068<br />close: 25.14<br />greenRed: Red","date: 2022-03-17<br />open: 25.88<br />date: 19068<br />close: 25.14<br />greenRed: Red",null,"date: 2022-03-22<br />open: 26.69<br />date: 19073<br />close: 25.96<br />greenRed: Red","date: 2022-03-22<br />open: 26.69<br />date: 19073<br />close: 25.96<br />greenRed: Red",null,"date: 2022-03-25<br />open: 26.50<br />date: 19076<br />close: 26.09<br />greenRed: Red","date: 2022-03-25<br />open: 26.50<br />date: 19076<br />close: 26.09<br />greenRed: Red",null,"date: 2022-03-28<br />open: 26.70<br />date: 19079<br />close: 26.42<br />greenRed: Red","date: 2022-03-28<br />open: 26.70<br />date: 19079<br />close: 26.42<br />greenRed: Red",null,"date: 2022-03-30<br />open: 26.84<br />date: 19081<br />close: 26.44<br />greenRed: Red","date: 2022-03-30<br />open: 26.84<br />date: 19081<br />close: 26.44<br />greenRed: Red",null,"date: 2022-03-31<br />open: 26.45<br />date: 19082<br />close: 26.18<br />greenRed: Red","date: 2022-03-31<br />open: 26.45<br />date: 19082<br />close: 26.18<br />greenRed: Red",null,"date: 2022-04-05<br />open: 26.46<br />date: 19087<br />close: 26.02<br />greenRed: Red","date: 2022-04-05<br />open: 26.46<br />date: 19087<br />close: 26.02<br />greenRed: Red",null,"date: 2022-04-07<br />open: 26.10<br />date: 19089<br />close: 25.96<br />greenRed: Red","date: 2022-04-07<br />open: 26.10<br />date: 19089<br />close: 25.96<br />greenRed: Red",null,"date: 2022-04-13<br />open: 24.72<br />date: 19095<br />close: 24.56<br />greenRed: Red","date: 2022-04-13<br />open: 24.72<br />date: 19095<br />close: 24.56<br />greenRed: Red",null,"date: 2022-04-14<br />open: 24.75<br />date: 19096<br />close: 24.74<br />greenRed: Red","date: 2022-04-14<br />open: 24.75<br />date: 19096<br />close: 24.74<br />greenRed: Red",null,"date: 2022-04-18<br />open: 24.73<br />date: 19100<br />close: 23.99<br />greenRed: Red","date: 2022-04-18<br />open: 24.73<br />date: 19100<br />close: 23.99<br />greenRed: Red",null,"date: 2022-04-19<br />open: 24.92<br />date: 19101<br />close: 24.13<br />greenRed: Red","date: 2022-04-19<br />open: 24.92<br />date: 19101<br />close: 24.13<br />greenRed: Red",null,"date: 2022-04-20<br />open: 24.77<br />date: 19102<br />close: 23.97<br />greenRed: Red","date: 2022-04-20<br />open: 24.77<br />date: 19102<br />close: 23.97<br />greenRed: Red",null,"date: 2022-04-21<br />open: 24.77<br />date: 19103<br />close: 24.35<br />greenRed: Red","date: 2022-04-21<br />open: 24.77<br />date: 19103<br />close: 24.35<br />greenRed: Red",null,"date: 2022-04-22<br />open: 24.81<br />date: 19104<br />close: 24.48<br />greenRed: Red","date: 2022-04-22<br />open: 24.81<br />date: 19104<br />close: 24.48<br />greenRed: Red",null,"date: 2022-04-25<br />open: 24.55<br />date: 19107<br />close: 23.75<br />greenRed: Red","date: 2022-04-25<br />open: 24.55<br />date: 19107<br />close: 23.75<br />greenRed: Red",null,"date: 2022-04-26<br />open: 23.56<br />date: 19108<br />close: 23.42<br />greenRed: Red","date: 2022-04-26<br />open: 23.56<br />date: 19108<br />close: 23.42<br />greenRed: Red",null,"date: 2022-04-27<br />open: 24.14<br />date: 19109<br />close: 23.50<br />greenRed: Red","date: 2022-04-27<br />open: 24.14<br />date: 19109<br />close: 23.50<br />greenRed: Red",null,"date: 2022-04-28<br />open: 23.31<br />date: 19110<br />close: 23.26<br />greenRed: Red","date: 2022-04-28<br />open: 23.31<br />date: 19110<br />close: 23.26<br />greenRed: Red",null,"date: 2022-05-02<br />open: 24.08<br />date: 19114<br />close: 24.00<br />greenRed: Red","date: 2022-05-02<br />open: 24.08<br />date: 19114<br />close: 24.00<br />greenRed: Red",null,"date: 2022-05-03<br />open: 25.00<br />date: 19115<br />close: 24.42<br />greenRed: Red","date: 2022-05-03<br />open: 25.00<br />date: 19115<br />close: 24.42<br />greenRed: Red",null,"date: 2022-05-04<br />open: 25.13<br />date: 19116<br />close: 24.43<br />greenRed: Red","date: 2022-05-04<br />open: 25.13<br />date: 19116<br />close: 24.43<br />greenRed: Red",null,"date: 2022-05-05<br />open: 23.64<br />date: 19117<br />close: 23.12<br />greenRed: Red","date: 2022-05-05<br />open: 23.64<br />date: 19117<br />close: 23.12<br />greenRed: Red",null,"date: 2022-05-06<br />open: 23.58<br />date: 19118<br />close: 23.54<br />greenRed: Red","date: 2022-05-06<br />open: 23.58<br />date: 19118<br />close: 23.54<br />greenRed: Red",null,"date: 2022-05-09<br />open: 23.41<br />date: 19121<br />close: 23.13<br />greenRed: Red","date: 2022-05-09<br />open: 23.41<br />date: 19121<br />close: 23.13<br />greenRed: Red",null,"date: 2022-05-10<br />open: 22.96<br />date: 19122<br />close: 22.90<br />greenRed: Red","date: 2022-05-10<br />open: 22.96<br />date: 19122<br />close: 22.90<br />greenRed: Red",null,"date: 2022-05-18<br />open: 22.14<br />date: 19130<br />close: 21.94<br />greenRed: Red","date: 2022-05-18<br />open: 22.14<br />date: 19130<br />close: 21.94<br />greenRed: Red",null,"date: 2022-05-19<br />open: 22.42<br />date: 19131<br />close: 22.11<br />greenRed: Red","date: 2022-05-19<br />open: 22.42<br />date: 19131<br />close: 22.11<br />greenRed: Red",null,"date: 2022-05-20<br />open: 22.66<br />date: 19132<br />close: 22.36<br />greenRed: Red","date: 2022-05-20<br />open: 22.66<br />date: 19132<br />close: 22.36<br />greenRed: Red",null,"date: 2022-05-23<br />open: 22.55<br />date: 19135<br />close: 22.16<br />greenRed: Red","date: 2022-05-23<br />open: 22.55<br />date: 19135<br />close: 22.16<br />greenRed: Red",null,"date: 2022-05-24<br />open: 22.25<br />date: 19136<br />close: 21.95<br />greenRed: Red","date: 2022-05-24<br />open: 22.25<br />date: 19136<br />close: 21.95<br />greenRed: Red",null,"date: 2022-05-26<br />open: 23.03<br />date: 19138<br />close: 22.53<br />greenRed: Red","date: 2022-05-26<br />open: 23.03<br />date: 19138<br />close: 22.53<br />greenRed: Red",null,"date: 2022-05-27<br />open: 22.70<br />date: 19139<br />close: 22.62<br />greenRed: Red","date: 2022-05-27<br />open: 22.70<br />date: 19139<br />close: 22.62<br />greenRed: Red",null,"date: 2022-05-31<br />open: 22.62<br />date: 19143<br />close: 22.29<br />greenRed: Red","date: 2022-05-31<br />open: 22.62<br />date: 19143<br />close: 22.29<br />greenRed: Red",null,"date: 2022-06-02<br />open: 22.62<br />date: 19145<br />close: 22.57<br />greenRed: Red","date: 2022-06-02<br />open: 22.62<br />date: 19145<br />close: 22.57<br />greenRed: Red",null,"date: 2022-06-06<br />open: 22.40<br />date: 19149<br />close: 22.21<br />greenRed: Red","date: 2022-06-06<br />open: 22.40<br />date: 19149<br />close: 22.21<br />greenRed: Red",null,"date: 2022-06-09<br />open: 22.09<br />date: 19152<br />close: 21.96<br />greenRed: Red","date: 2022-06-09<br />open: 22.09<br />date: 19152<br />close: 21.96<br />greenRed: Red",null,"date: 2022-06-13<br />open: 21.51<br />date: 19156<br />close: 20.94<br />greenRed: Red","date: 2022-06-13<br />open: 21.51<br />date: 19156<br />close: 20.94<br />greenRed: Red",null,"date: 2022-06-14<br />open: 21.74<br />date: 19157<br />close: 21.00<br />greenRed: Red","date: 2022-06-14<br />open: 21.74<br />date: 19157<br />close: 21.00<br />greenRed: Red",null,"date: 2022-06-16<br />open: 21.62<br />date: 19159<br />close: 21.32<br />greenRed: Red","date: 2022-06-16<br />open: 21.62<br />date: 19159<br />close: 21.32<br />greenRed: Red",null,"date: 2022-06-24<br />open: 21.58<br />date: 19167<br />close: 21.50<br />greenRed: Red","date: 2022-06-24<br />open: 21.58<br />date: 19167<br />close: 21.50<br />greenRed: Red"],"type":"scatter","mode":"lines","line":{"width":11.3385826771654,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"Red","legendgroup":"Red","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18995,18995,null,18997,18997,null,18998,18998,null,19003,19003,null,19012,19012,null,19013,19013,null,19023,19023,null,19024,19024,null,19025,19025,null,19030,19030,null,19031,19031,null,19033,19033,null,19037,19037,null,19038,19038,null,19039,19039,null,19047,19047,null,19053,19053,null,19054,19054,null,19062,19062,null,19066,19066,null,19067,19067,null,19069,19069,null,19072,19072,null,19074,19074,null,19075,19075,null,19080,19080,null,19083,19083,null,19086,19086,null,19088,19088,null,19090,19090,null,19093,19093,null,19094,19094,null,19111,19111,null,19123,19123,null,19124,19124,null,19125,19125,null,19128,19128,null,19129,19129,null,19137,19137,null,19144,19144,null,19146,19146,null,19150,19150,null,19151,19151,null,19153,19153,null,19158,19158,null,19160,19160,null,19164,19164,null,19165,19165,null,19166,19166],"y":[24.540001,23.99,null,25.1,24.030001,null,25.15,24.82,null,26.440001,25.82,null,27.110001,26.77,null,26.65,26.190001,null,26.43,25.700001,null,27.450001,25.49,null,26.91,25.52,null,27.950001,26.370001,null,27.82,26.639999,null,27.709999,27.030001,null,28.16,26.98,null,27.790001,27.08,null,27.48,27.389999,null,26.24,25.299999,null,24.969999,24.82,null,24.42,24.09,null,24.9,23.85,null,25.35,24.809999,null,25.91,25.280001,null,26.059999,25.620001,null,26,25.459999,null,25.98,25.34,null,26.610001,26.110001,null,27.049999,26.190001,null,27.059999,25.780001,null,26.41,26.32,null,26.43,26.43,null,26.02,24.57,null,25.58,24.120001,null,24.52,24.209999,null,24.98,24.200001,null,23.280001,22.690001,null,22.85,21.629999,null,22.639999,22.35,null,22.85,22.110001,null,22.940001,22.23,null,22.17,21.969999,null,22.700001,22.540001,null,22.780001,22.07,null,22.82,22.32,null,22.23,21.92,null,21.549999,21.209999,null,22.040001,21.1,null,21.719999,21.139999,null,22.129999,21.709999,null,21.709999,21.450001,null,21.719999,21.129999],"text":["date: 2022-01-03<br />high: 24.54<br />date: 18995<br />low: 23.99<br />greenRed: Green","date: 2022-01-03<br />high: 24.54<br />date: 18995<br />low: 23.99<br />greenRed: Green",null,"date: 2022-01-05<br />high: 25.10<br />date: 18997<br />low: 24.03<br />greenRed: Green","date: 2022-01-05<br />high: 25.10<br />date: 18997<br />low: 24.03<br />greenRed: Green",null,"date: 2022-01-06<br />high: 25.15<br />date: 18998<br />low: 24.82<br />greenRed: Green","date: 2022-01-06<br />high: 25.15<br />date: 18998<br />low: 24.82<br />greenRed: Green",null,"date: 2022-01-11<br />high: 26.44<br />date: 19003<br />low: 25.82<br />greenRed: Green","date: 2022-01-11<br />high: 26.44<br />date: 19003<br />low: 25.82<br />greenRed: Green",null,"date: 2022-01-20<br />high: 27.11<br />date: 19012<br />low: 26.77<br />greenRed: Green","date: 2022-01-20<br />high: 27.11<br />date: 19012<br />low: 26.77<br />greenRed: Green",null,"date: 2022-01-21<br />high: 26.65<br />date: 19013<br />low: 26.19<br />greenRed: Green","date: 2022-01-21<br />high: 26.65<br />date: 19013<br />low: 26.19<br />greenRed: Green",null,"date: 2022-01-31<br />high: 26.43<br />date: 19023<br />low: 25.70<br />greenRed: Green","date: 2022-01-31<br />high: 26.43<br />date: 19023<br />low: 25.70<br />greenRed: Green",null,"date: 2022-02-01<br />high: 27.45<br />date: 19024<br />low: 25.49<br />greenRed: Green","date: 2022-02-01<br />high: 27.45<br />date: 19024<br />low: 25.49<br />greenRed: Green",null,"date: 2022-02-02<br />high: 26.91<br />date: 19025<br />low: 25.52<br />greenRed: Green","date: 2022-02-02<br />high: 26.91<br />date: 19025<br />low: 25.52<br />greenRed: Green",null,"date: 2022-02-07<br />high: 27.95<br />date: 19030<br />low: 26.37<br />greenRed: Green","date: 2022-02-07<br />high: 27.95<br />date: 19030<br />low: 26.37<br />greenRed: Green",null,"date: 2022-02-08<br />high: 27.82<br />date: 19031<br />low: 26.64<br />greenRed: Green","date: 2022-02-08<br />high: 27.82<br />date: 19031<br />low: 26.64<br />greenRed: Green",null,"date: 2022-02-10<br />high: 27.71<br />date: 19033<br />low: 27.03<br />greenRed: Green","date: 2022-02-10<br />high: 27.71<br />date: 19033<br />low: 27.03<br />greenRed: Green",null,"date: 2022-02-14<br />high: 28.16<br />date: 19037<br />low: 26.98<br />greenRed: Green","date: 2022-02-14<br />high: 28.16<br />date: 19037<br />low: 26.98<br />greenRed: Green",null,"date: 2022-02-15<br />high: 27.79<br />date: 19038<br />low: 27.08<br />greenRed: Green","date: 2022-02-15<br />high: 27.79<br />date: 19038<br />low: 27.08<br />greenRed: Green",null,"date: 2022-02-16<br />high: 27.48<br />date: 19039<br />low: 27.39<br />greenRed: Green","date: 2022-02-16<br />high: 27.48<br />date: 19039<br />low: 27.39<br />greenRed: Green",null,"date: 2022-02-24<br />high: 26.24<br />date: 19047<br />low: 25.30<br />greenRed: Green","date: 2022-02-24<br />high: 26.24<br />date: 19047<br />low: 25.30<br />greenRed: Green",null,"date: 2022-03-02<br />high: 24.97<br />date: 19053<br />low: 24.82<br />greenRed: Green","date: 2022-03-02<br />high: 24.97<br />date: 19053<br />low: 24.82<br />greenRed: Green",null,"date: 2022-03-03<br />high: 24.42<br />date: 19054<br />low: 24.09<br />greenRed: Green","date: 2022-03-03<br />high: 24.42<br />date: 19054<br />low: 24.09<br />greenRed: Green",null,"date: 2022-03-11<br />high: 24.90<br />date: 19062<br />low: 23.85<br />greenRed: Green","date: 2022-03-11<br />high: 24.90<br />date: 19062<br />low: 23.85<br />greenRed: Green",null,"date: 2022-03-15<br />high: 25.35<br />date: 19066<br />low: 24.81<br />greenRed: Green","date: 2022-03-15<br />high: 25.35<br />date: 19066<br />low: 24.81<br />greenRed: Green",null,"date: 2022-03-16<br />high: 25.91<br />date: 19067<br />low: 25.28<br />greenRed: Green","date: 2022-03-16<br />high: 25.91<br />date: 19067<br />low: 25.28<br />greenRed: Green",null,"date: 2022-03-18<br />high: 26.06<br />date: 19069<br />low: 25.62<br />greenRed: Green","date: 2022-03-18<br />high: 26.06<br />date: 19069<br />low: 25.62<br />greenRed: Green",null,"date: 2022-03-21<br />high: 26.00<br />date: 19072<br />low: 25.46<br />greenRed: Green","date: 2022-03-21<br />high: 26.00<br />date: 19072<br />low: 25.46<br />greenRed: Green",null,"date: 2022-03-23<br />high: 25.98<br />date: 19074<br />low: 25.34<br />greenRed: Green","date: 2022-03-23<br />high: 25.98<br />date: 19074<br />low: 25.34<br />greenRed: Green",null,"date: 2022-03-24<br />high: 26.61<br />date: 19075<br />low: 26.11<br />greenRed: Green","date: 2022-03-24<br />high: 26.61<br />date: 19075<br />low: 26.11<br />greenRed: Green",null,"date: 2022-03-29<br />high: 27.05<br />date: 19080<br />low: 26.19<br />greenRed: Green","date: 2022-03-29<br />high: 27.05<br />date: 19080<br />low: 26.19<br />greenRed: Green",null,"date: 2022-04-01<br />high: 27.06<br />date: 19083<br />low: 25.78<br />greenRed: Green","date: 2022-04-01<br />high: 27.06<br />date: 19083<br />low: 25.78<br />greenRed: Green",null,"date: 2022-04-04<br />high: 26.41<br />date: 19086<br />low: 26.32<br />greenRed: Green","date: 2022-04-04<br />high: 26.41<br />date: 19086<br />low: 26.32<br />greenRed: Green",null,"date: 2022-04-06<br />high: 26.43<br />date: 19088<br />low: 26.43<br />greenRed: Green","date: 2022-04-06<br />high: 26.43<br />date: 19088<br />low: 26.43<br />greenRed: Green",null,"date: 2022-04-08<br />high: 26.02<br />date: 19090<br />low: 24.57<br />greenRed: Green","date: 2022-04-08<br />high: 26.02<br />date: 19090<br />low: 24.57<br />greenRed: Green",null,"date: 2022-04-11<br />high: 25.58<br />date: 19093<br />low: 24.12<br />greenRed: Green","date: 2022-04-11<br />high: 25.58<br />date: 19093<br />low: 24.12<br />greenRed: Green",null,"date: 2022-04-12<br />high: 24.52<br />date: 19094<br />low: 24.21<br />greenRed: Green","date: 2022-04-12<br />high: 24.52<br />date: 19094<br />low: 24.21<br />greenRed: Green",null,"date: 2022-04-29<br />high: 24.98<br />date: 19111<br />low: 24.20<br />greenRed: Green","date: 2022-04-29<br />high: 24.98<br />date: 19111<br />low: 24.20<br />greenRed: Green",null,"date: 2022-05-11<br />high: 23.28<br />date: 19123<br />low: 22.69<br />greenRed: Green","date: 2022-05-11<br />high: 23.28<br />date: 19123<br />low: 22.69<br />greenRed: Green",null,"date: 2022-05-12<br />high: 22.85<br />date: 19124<br />low: 21.63<br />greenRed: Green","date: 2022-05-12<br />high: 22.85<br />date: 19124<br />low: 21.63<br />greenRed: Green",null,"date: 2022-05-13<br />high: 22.64<br />date: 19125<br />low: 22.35<br />greenRed: Green","date: 2022-05-13<br />high: 22.64<br />date: 19125<br />low: 22.35<br />greenRed: Green",null,"date: 2022-05-16<br />high: 22.85<br />date: 19128<br />low: 22.11<br />greenRed: Green","date: 2022-05-16<br />high: 22.85<br />date: 19128<br />low: 22.11<br />greenRed: Green",null,"date: 2022-05-17<br />high: 22.94<br />date: 19129<br />low: 22.23<br />greenRed: Green","date: 2022-05-17<br />high: 22.94<br />date: 19129<br />low: 22.23<br />greenRed: Green",null,"date: 2022-05-25<br />high: 22.17<br />date: 19137<br />low: 21.97<br />greenRed: Green","date: 2022-05-25<br />high: 22.17<br />date: 19137<br />low: 21.97<br />greenRed: Green",null,"date: 2022-06-01<br />high: 22.70<br />date: 19144<br />low: 22.54<br />greenRed: Green","date: 2022-06-01<br />high: 22.70<br />date: 19144<br />low: 22.54<br />greenRed: Green",null,"date: 2022-06-03<br />high: 22.78<br />date: 19146<br />low: 22.07<br />greenRed: Green","date: 2022-06-03<br />high: 22.78<br />date: 19146<br />low: 22.07<br />greenRed: Green",null,"date: 2022-06-07<br />high: 22.82<br />date: 19150<br />low: 22.32<br />greenRed: Green","date: 2022-06-07<br />high: 22.82<br />date: 19150<br />low: 22.32<br />greenRed: Green",null,"date: 2022-06-08<br />high: 22.23<br />date: 19151<br />low: 21.92<br />greenRed: Green","date: 2022-06-08<br />high: 22.23<br />date: 19151<br />low: 21.92<br />greenRed: Green",null,"date: 2022-06-10<br />high: 21.55<br />date: 19153<br />low: 21.21<br />greenRed: Green","date: 2022-06-10<br />high: 21.55<br />date: 19153<br />low: 21.21<br />greenRed: Green",null,"date: 2022-06-15<br />high: 22.04<br />date: 19158<br />low: 21.10<br />greenRed: Green","date: 2022-06-15<br />high: 22.04<br />date: 19158<br />low: 21.10<br />greenRed: Green",null,"date: 2022-06-17<br />high: 21.72<br />date: 19160<br />low: 21.14<br />greenRed: Green","date: 2022-06-17<br />high: 21.72<br />date: 19160<br />low: 21.14<br />greenRed: Green",null,"date: 2022-06-21<br />high: 22.13<br />date: 19164<br />low: 21.71<br />greenRed: Green","date: 2022-06-21<br />high: 22.13<br />date: 19164<br />low: 21.71<br />greenRed: Green",null,"date: 2022-06-22<br />high: 21.71<br />date: 19165<br />low: 21.45<br />greenRed: Green","date: 2022-06-22<br />high: 21.71<br />date: 19165<br />low: 21.45<br />greenRed: Green",null,"date: 2022-06-23<br />high: 21.72<br />date: 19166<br />low: 21.13<br />greenRed: Green","date: 2022-06-23<br />high: 21.72<br />date: 19166<br />low: 21.13<br />greenRed: Green"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(34,139,34,1)","dash":"solid"},"hoveron":"points","name":"Green","legendgroup":"Green","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18996,18996,null,18999,18999,null,19002,19002,null,19004,19004,null,19005,19005,null,19006,19006,null,19010,19010,null,19011,19011,null,19016,19016,null,19017,19017,null,19018,19018,null,19019,19019,null,19020,19020,null,19026,19026,null,19027,19027,null,19032,19032,null,19034,19034,null,19040,19040,null,19041,19041,null,19045,19045,null,19046,19046,null,19048,19048,null,19051,19051,null,19052,19052,null,19055,19055,null,19058,19058,null,19059,19059,null,19060,19060,null,19061,19061,null,19065,19065,null,19068,19068,null,19073,19073,null,19076,19076,null,19079,19079,null,19081,19081,null,19082,19082,null,19087,19087,null,19089,19089,null,19095,19095,null,19096,19096,null,19100,19100,null,19101,19101,null,19102,19102,null,19103,19103,null,19104,19104,null,19107,19107,null,19108,19108,null,19109,19109,null,19110,19110,null,19114,19114,null,19115,19115,null,19116,19116,null,19117,19117,null,19118,19118,null,19121,19121,null,19122,19122,null,19130,19130,null,19131,19131,null,19132,19132,null,19135,19135,null,19136,19136,null,19138,19138,null,19139,19139,null,19143,19143,null,19145,19145,null,19149,19149,null,19152,19152,null,19156,19156,null,19157,19157,null,19159,19159,null,19167,19167],"y":[25.17,24.43,null,25.27,24.809999,null,25.83,25.41,null,27.049999,25.82,null,27.129999,26.639999,null,27.4,26.459999,null,26.870001,26.08,null,27.469999,26.049999,null,27.200001,25.75,null,26.780001,25.66,null,26.790001,25.99,null,26.870001,25.35,null,26.49,25.32,null,27.27,25.790001,null,27.23,26.190001,null,28.110001,27.280001,null,28.27,27.309999,null,27.719999,27.15,null,27.969999,26.68,null,27.639999,26.68,null,27.549999,26.790001,null,26.200001,25.75,null,25.26,24.35,null,25.370001,24.75,null,24.200001,23.24,null,23.85,23.25,null,23.6,22.74,null,23.99,23.68,null,24.43,23.540001,null,24.66,24.030001,null,25.879999,24.77,null,26.690001,25.700001,null,26.5,26.09,null,26.700001,26.42,null,26.92,26.440001,null,26.48,26.18,null,26.459999,26.02,null,26.1,25.75,null,24.719999,24.559999,null,24.83,24.459999,null,24.73,23.99,null,24.92,24.01,null,24.85,23.969999,null,24.77,24.35,null,24.809999,24.09,null,24.59,23.75,null,23.9,23.42,null,24.139999,23.5,null,24.17,23.26,null,24.469999,24,null,25,24.16,null,25.129999,24.32,null,24.6,23.120001,null,24.18,23.540001,null,23.860001,23.129999,null,24.049999,22.879999,null,22.469999,21.940001,null,22.620001,22.1,null,22.66,22.360001,null,22.549999,22.07,null,22.25,21.93,null,23.049999,22.530001,null,22.940001,22.620001,null,22.620001,22.27,null,22.84,22.57,null,22.65,22.200001,null,22.09,21.719999,null,21.59,20.889999,null,21.74,20.99,null,21.620001,20.85,null,21.629999,21.450001],"text":["date: 2022-01-04<br />high: 25.17<br />date: 18996<br />low: 24.43<br />greenRed: Red","date: 2022-01-04<br />high: 25.17<br />date: 18996<br />low: 24.43<br />greenRed: Red",null,"date: 2022-01-07<br />high: 25.27<br />date: 18999<br />low: 24.81<br />greenRed: Red","date: 2022-01-07<br />high: 25.27<br />date: 18999<br />low: 24.81<br />greenRed: Red",null,"date: 2022-01-10<br />high: 25.83<br />date: 19002<br />low: 25.41<br />greenRed: Red","date: 2022-01-10<br />high: 25.83<br />date: 19002<br />low: 25.41<br />greenRed: Red",null,"date: 2022-01-12<br />high: 27.05<br />date: 19004<br />low: 25.82<br />greenRed: Red","date: 2022-01-12<br />high: 27.05<br />date: 19004<br />low: 25.82<br />greenRed: Red",null,"date: 2022-01-13<br />high: 27.13<br />date: 19005<br />low: 26.64<br />greenRed: Red","date: 2022-01-13<br />high: 27.13<br />date: 19005<br />low: 26.64<br />greenRed: Red",null,"date: 2022-01-14<br />high: 27.40<br />date: 19006<br />low: 26.46<br />greenRed: Red","date: 2022-01-14<br />high: 27.40<br />date: 19006<br />low: 26.46<br />greenRed: Red",null,"date: 2022-01-18<br />high: 26.87<br />date: 19010<br />low: 26.08<br />greenRed: Red","date: 2022-01-18<br />high: 26.87<br />date: 19010<br />low: 26.08<br />greenRed: Red",null,"date: 2022-01-19<br />high: 27.47<br />date: 19011<br />low: 26.05<br />greenRed: Red","date: 2022-01-19<br />high: 27.47<br />date: 19011<br />low: 26.05<br />greenRed: Red",null,"date: 2022-01-24<br />high: 27.20<br />date: 19016<br />low: 25.75<br />greenRed: Red","date: 2022-01-24<br />high: 27.20<br />date: 19016<br />low: 25.75<br />greenRed: Red",null,"date: 2022-01-25<br />high: 26.78<br />date: 19017<br />low: 25.66<br />greenRed: Red","date: 2022-01-25<br />high: 26.78<br />date: 19017<br />low: 25.66<br />greenRed: Red",null,"date: 2022-01-26<br />high: 26.79<br />date: 19018<br />low: 25.99<br />greenRed: Red","date: 2022-01-26<br />high: 26.79<br />date: 19018<br />low: 25.99<br />greenRed: Red",null,"date: 2022-01-27<br />high: 26.87<br />date: 19019<br />low: 25.35<br />greenRed: Red","date: 2022-01-27<br />high: 26.87<br />date: 19019<br />low: 25.35<br />greenRed: Red",null,"date: 2022-01-28<br />high: 26.49<br />date: 19020<br />low: 25.32<br />greenRed: Red","date: 2022-01-28<br />high: 26.49<br />date: 19020<br />low: 25.32<br />greenRed: Red",null,"date: 2022-02-03<br />high: 27.27<br />date: 19026<br />low: 25.79<br />greenRed: Red","date: 2022-02-03<br />high: 27.27<br />date: 19026<br />low: 25.79<br />greenRed: Red",null,"date: 2022-02-04<br />high: 27.23<br />date: 19027<br />low: 26.19<br />greenRed: Red","date: 2022-02-04<br />high: 27.23<br />date: 19027<br />low: 26.19<br />greenRed: Red",null,"date: 2022-02-09<br />high: 28.11<br />date: 19032<br />low: 27.28<br />greenRed: Red","date: 2022-02-09<br />high: 28.11<br />date: 19032<br />low: 27.28<br />greenRed: Red",null,"date: 2022-02-11<br />high: 28.27<br />date: 19034<br />low: 27.31<br />greenRed: Red","date: 2022-02-11<br />high: 28.27<br />date: 19034<br />low: 27.31<br />greenRed: Red",null,"date: 2022-02-17<br />high: 27.72<br />date: 19040<br />low: 27.15<br />greenRed: Red","date: 2022-02-17<br />high: 27.72<br />date: 19040<br />low: 27.15<br />greenRed: Red",null,"date: 2022-02-18<br />high: 27.97<br />date: 19041<br />low: 26.68<br />greenRed: Red","date: 2022-02-18<br />high: 27.97<br />date: 19041<br />low: 26.68<br />greenRed: Red",null,"date: 2022-02-22<br />high: 27.64<br />date: 19045<br />low: 26.68<br />greenRed: Red","date: 2022-02-22<br />high: 27.64<br />date: 19045<br />low: 26.68<br />greenRed: Red",null,"date: 2022-02-23<br />high: 27.55<br />date: 19046<br />low: 26.79<br />greenRed: Red","date: 2022-02-23<br />high: 27.55<br />date: 19046<br />low: 26.79<br />greenRed: Red",null,"date: 2022-02-25<br />high: 26.20<br />date: 19048<br />low: 25.75<br />greenRed: Red","date: 2022-02-25<br />high: 26.20<br />date: 19048<br />low: 25.75<br />greenRed: Red",null,"date: 2022-02-28<br />high: 25.26<br />date: 19051<br />low: 24.35<br />greenRed: Red","date: 2022-02-28<br />high: 25.26<br />date: 19051<br />low: 24.35<br />greenRed: Red",null,"date: 2022-03-01<br />high: 25.37<br />date: 19052<br />low: 24.75<br />greenRed: Red","date: 2022-03-01<br />high: 25.37<br />date: 19052<br />low: 24.75<br />greenRed: Red",null,"date: 2022-03-04<br />high: 24.20<br />date: 19055<br />low: 23.24<br />greenRed: Red","date: 2022-03-04<br />high: 24.20<br />date: 19055<br />low: 23.24<br />greenRed: Red",null,"date: 2022-03-07<br />high: 23.85<br />date: 19058<br />low: 23.25<br />greenRed: Red","date: 2022-03-07<br />high: 23.85<br />date: 19058<br />low: 23.25<br />greenRed: Red",null,"date: 2022-03-08<br />high: 23.60<br />date: 19059<br />low: 22.74<br />greenRed: Red","date: 2022-03-08<br />high: 23.60<br />date: 19059<br />low: 22.74<br />greenRed: Red",null,"date: 2022-03-09<br />high: 23.99<br />date: 19060<br />low: 23.68<br />greenRed: Red","date: 2022-03-09<br />high: 23.99<br />date: 19060<br />low: 23.68<br />greenRed: Red",null,"date: 2022-03-10<br />high: 24.43<br />date: 19061<br />low: 23.54<br />greenRed: Red","date: 2022-03-10<br />high: 24.43<br />date: 19061<br />low: 23.54<br />greenRed: Red",null,"date: 2022-03-14<br />high: 24.66<br />date: 19065<br />low: 24.03<br />greenRed: Red","date: 2022-03-14<br />high: 24.66<br />date: 19065<br />low: 24.03<br />greenRed: Red",null,"date: 2022-03-17<br />high: 25.88<br />date: 19068<br />low: 24.77<br />greenRed: Red","date: 2022-03-17<br />high: 25.88<br />date: 19068<br />low: 24.77<br />greenRed: Red",null,"date: 2022-03-22<br />high: 26.69<br />date: 19073<br />low: 25.70<br />greenRed: Red","date: 2022-03-22<br />high: 26.69<br />date: 19073<br />low: 25.70<br />greenRed: Red",null,"date: 2022-03-25<br />high: 26.50<br />date: 19076<br />low: 26.09<br />greenRed: Red","date: 2022-03-25<br />high: 26.50<br />date: 19076<br />low: 26.09<br />greenRed: Red",null,"date: 2022-03-28<br />high: 26.70<br />date: 19079<br />low: 26.42<br />greenRed: Red","date: 2022-03-28<br />high: 26.70<br />date: 19079<br />low: 26.42<br />greenRed: Red",null,"date: 2022-03-30<br />high: 26.92<br />date: 19081<br />low: 26.44<br />greenRed: Red","date: 2022-03-30<br />high: 26.92<br />date: 19081<br />low: 26.44<br />greenRed: Red",null,"date: 2022-03-31<br />high: 26.48<br />date: 19082<br />low: 26.18<br />greenRed: Red","date: 2022-03-31<br />high: 26.48<br />date: 19082<br />low: 26.18<br />greenRed: Red",null,"date: 2022-04-05<br />high: 26.46<br />date: 19087<br />low: 26.02<br />greenRed: Red","date: 2022-04-05<br />high: 26.46<br />date: 19087<br />low: 26.02<br />greenRed: Red",null,"date: 2022-04-07<br />high: 26.10<br />date: 19089<br />low: 25.75<br />greenRed: Red","date: 2022-04-07<br />high: 26.10<br />date: 19089<br />low: 25.75<br />greenRed: Red",null,"date: 2022-04-13<br />high: 24.72<br />date: 19095<br />low: 24.56<br />greenRed: Red","date: 2022-04-13<br />high: 24.72<br />date: 19095<br />low: 24.56<br />greenRed: Red",null,"date: 2022-04-14<br />high: 24.83<br />date: 19096<br />low: 24.46<br />greenRed: Red","date: 2022-04-14<br />high: 24.83<br />date: 19096<br />low: 24.46<br />greenRed: Red",null,"date: 2022-04-18<br />high: 24.73<br />date: 19100<br />low: 23.99<br />greenRed: Red","date: 2022-04-18<br />high: 24.73<br />date: 19100<br />low: 23.99<br />greenRed: Red",null,"date: 2022-04-19<br />high: 24.92<br />date: 19101<br />low: 24.01<br />greenRed: Red","date: 2022-04-19<br />high: 24.92<br />date: 19101<br />low: 24.01<br />greenRed: Red",null,"date: 2022-04-20<br />high: 24.85<br />date: 19102<br />low: 23.97<br />greenRed: Red","date: 2022-04-20<br />high: 24.85<br />date: 19102<br />low: 23.97<br />greenRed: Red",null,"date: 2022-04-21<br />high: 24.77<br />date: 19103<br />low: 24.35<br />greenRed: Red","date: 2022-04-21<br />high: 24.77<br />date: 19103<br />low: 24.35<br />greenRed: Red",null,"date: 2022-04-22<br />high: 24.81<br />date: 19104<br />low: 24.09<br />greenRed: Red","date: 2022-04-22<br />high: 24.81<br />date: 19104<br />low: 24.09<br />greenRed: Red",null,"date: 2022-04-25<br />high: 24.59<br />date: 19107<br />low: 23.75<br />greenRed: Red","date: 2022-04-25<br />high: 24.59<br />date: 19107<br />low: 23.75<br />greenRed: Red",null,"date: 2022-04-26<br />high: 23.90<br />date: 19108<br />low: 23.42<br />greenRed: Red","date: 2022-04-26<br />high: 23.90<br />date: 19108<br />low: 23.42<br />greenRed: Red",null,"date: 2022-04-27<br />high: 24.14<br />date: 19109<br />low: 23.50<br />greenRed: Red","date: 2022-04-27<br />high: 24.14<br />date: 19109<br />low: 23.50<br />greenRed: Red",null,"date: 2022-04-28<br />high: 24.17<br />date: 19110<br />low: 23.26<br />greenRed: Red","date: 2022-04-28<br />high: 24.17<br />date: 19110<br />low: 23.26<br />greenRed: Red",null,"date: 2022-05-02<br />high: 24.47<br />date: 19114<br />low: 24.00<br />greenRed: Red","date: 2022-05-02<br />high: 24.47<br />date: 19114<br />low: 24.00<br />greenRed: Red",null,"date: 2022-05-03<br />high: 25.00<br />date: 19115<br />low: 24.16<br />greenRed: Red","date: 2022-05-03<br />high: 25.00<br />date: 19115<br />low: 24.16<br />greenRed: Red",null,"date: 2022-05-04<br />high: 25.13<br />date: 19116<br />low: 24.32<br />greenRed: Red","date: 2022-05-04<br />high: 25.13<br />date: 19116<br />low: 24.32<br />greenRed: Red",null,"date: 2022-05-05<br />high: 24.60<br />date: 19117<br />low: 23.12<br />greenRed: Red","date: 2022-05-05<br />high: 24.60<br />date: 19117<br />low: 23.12<br />greenRed: Red",null,"date: 2022-05-06<br />high: 24.18<br />date: 19118<br />low: 23.54<br />greenRed: Red","date: 2022-05-06<br />high: 24.18<br />date: 19118<br />low: 23.54<br />greenRed: Red",null,"date: 2022-05-09<br />high: 23.86<br />date: 19121<br />low: 23.13<br />greenRed: Red","date: 2022-05-09<br />high: 23.86<br />date: 19121<br />low: 23.13<br />greenRed: Red",null,"date: 2022-05-10<br />high: 24.05<br />date: 19122<br />low: 22.88<br />greenRed: Red","date: 2022-05-10<br />high: 24.05<br />date: 19122<br />low: 22.88<br />greenRed: Red",null,"date: 2022-05-18<br />high: 22.47<br />date: 19130<br />low: 21.94<br />greenRed: Red","date: 2022-05-18<br />high: 22.47<br />date: 19130<br />low: 21.94<br />greenRed: Red",null,"date: 2022-05-19<br />high: 22.62<br />date: 19131<br />low: 22.10<br />greenRed: Red","date: 2022-05-19<br />high: 22.62<br />date: 19131<br />low: 22.10<br />greenRed: Red",null,"date: 2022-05-20<br />high: 22.66<br />date: 19132<br />low: 22.36<br />greenRed: Red","date: 2022-05-20<br />high: 22.66<br />date: 19132<br />low: 22.36<br />greenRed: Red",null,"date: 2022-05-23<br />high: 22.55<br />date: 19135<br />low: 22.07<br />greenRed: Red","date: 2022-05-23<br />high: 22.55<br />date: 19135<br />low: 22.07<br />greenRed: Red",null,"date: 2022-05-24<br />high: 22.25<br />date: 19136<br />low: 21.93<br />greenRed: Red","date: 2022-05-24<br />high: 22.25<br />date: 19136<br />low: 21.93<br />greenRed: Red",null,"date: 2022-05-26<br />high: 23.05<br />date: 19138<br />low: 22.53<br />greenRed: Red","date: 2022-05-26<br />high: 23.05<br />date: 19138<br />low: 22.53<br />greenRed: Red",null,"date: 2022-05-27<br />high: 22.94<br />date: 19139<br />low: 22.62<br />greenRed: Red","date: 2022-05-27<br />high: 22.94<br />date: 19139<br />low: 22.62<br />greenRed: Red",null,"date: 2022-05-31<br />high: 22.62<br />date: 19143<br />low: 22.27<br />greenRed: Red","date: 2022-05-31<br />high: 22.62<br />date: 19143<br />low: 22.27<br />greenRed: Red",null,"date: 2022-06-02<br />high: 22.84<br />date: 19145<br />low: 22.57<br />greenRed: Red","date: 2022-06-02<br />high: 22.84<br />date: 19145<br />low: 22.57<br />greenRed: Red",null,"date: 2022-06-06<br />high: 22.65<br />date: 19149<br />low: 22.20<br />greenRed: Red","date: 2022-06-06<br />high: 22.65<br />date: 19149<br />low: 22.20<br />greenRed: Red",null,"date: 2022-06-09<br />high: 22.09<br />date: 19152<br />low: 21.72<br />greenRed: Red","date: 2022-06-09<br />high: 22.09<br />date: 19152<br />low: 21.72<br />greenRed: Red",null,"date: 2022-06-13<br />high: 21.59<br />date: 19156<br />low: 20.89<br />greenRed: Red","date: 2022-06-13<br />high: 21.59<br />date: 19156<br />low: 20.89<br />greenRed: Red",null,"date: 2022-06-14<br />high: 21.74<br />date: 19157<br />low: 20.99<br />greenRed: Red","date: 2022-06-14<br />high: 21.74<br />date: 19157<br />low: 20.99<br />greenRed: Red",null,"date: 2022-06-16<br />high: 21.62<br />date: 19159<br />low: 20.85<br />greenRed: Red","date: 2022-06-16<br />high: 21.62<br />date: 19159<br />low: 20.85<br />greenRed: Red",null,"date: 2022-06-24<br />high: 21.63<br />date: 19167<br />low: 21.45<br />greenRed: Red","date: 2022-06-24<br />high: 21.63<br />date: 19167<br />low: 21.45<br />greenRed: Red"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"Red","legendgroup":"Red","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.4063926940639,"r":7.30593607305936,"b":27.2146118721461,"l":22.648401826484},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(44,62,80,1)","family":"","size":14.6118721461187},"title":{"text":"DBSDF (2022-01-01 - 2022-06-25)","font":{"color":"rgba(44,62,80,1)","family":"","size":17.5342465753425},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18986.4,19175.6],"tickmode":"array","ticktext":["Jan","Apr","Jul"],"tickvals":[18993,19083,19174],"categoryorder":"array","categoryarray":["Jan","Apr","Jul"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":null,"family":null,"size":0}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[20.479,28.641],"tickmode":"array","ticktext":["22","24","26","28"],"tickvals":[22,24,26,28],"categoryorder":"array","categoryarray":["22","24","26","28"],"nticks":null,"ticks":"outside","tickcolor":"rgba(204,204,204,1)","ticklen":3.65296803652968,"tickwidth":0.22139200221392,"showticklabels":true,"tickfont":{"color":"rgba(44,62,80,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(204,204,204,1)","gridwidth":0.22139200221392,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":null,"family":null,"size":0}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(44,62,80,1)","width":0.33208800332088,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(44,62,80,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"5cb7fe54995":{"x":{},"y":{},"xend":{},"yend":{},"colour":{},"type":"scatter"},"5cb264216cc":{"x":{},"y":{},"xend":{},"yend":{},"colour":{}}},"cur_data":"5cb7fe54995","visdat":{"5cb7fe54995":["function (y) ","x"],"5cb264216cc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
